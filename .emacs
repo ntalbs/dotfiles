@@ -51,10 +51,10 @@
 (projectile-global-mode)
 
 ;; helm
-(require 'helm-config)
-(setq helm-idle-delay 0.1)
-(setq helm-input-idle-delay 0.1)
-(global-set-key (kbd "M-t") 'helm-for-files)
+;; (require 'helm-config)
+;; (setq helm-idle-delay 0.1)
+;; (setq helm-input-idle-delay 0.1)
+;; (global-set-key (kbd "M-t") 'helm-for-files)
 
 ;; helm-projectile
 (require 'helm-projectile)
@@ -144,8 +144,6 @@
 (global-set-key [M-up] 'move-text-up)
 (global-set-key [M-down] 'move-text-down)
 
-
-
 ;; ;; switch buffers with arrow(left, right) key
 ;; (defun next-user-buffer ()
 ;;   "Switch to the next user buffer in cyclic order. User buffers are those not starting with *."
@@ -164,9 +162,12 @@
 ;;       (setq i (1+ i)) (previous-buffer) ))
 ;;   )
 
-;; (global-set-key [M-left] 'previous-user-buffer)
-;; (global-set-key [M-right] 'next-user-buffer)
-
+(global-set-key [s-left] 'previous-buffer)
+(global-set-key [s-right] 'next-buffer)
+(global-set-key (kbd "C-c C-<left>") 'windmove-left)
+(global-set-key (kbd "C-c C-<right>") 'windmove-right)
+(global-set-key (kbd "C-c C-<up>") 'windmove-up)
+(global-set-key (kbd "C-c C-<down>") 'windmove-down)
 
 
 ;; yasnippet
@@ -291,6 +292,13 @@
  '(italic ((t (:slant normal)))))
 (put 'erase-buffer 'disabled nil)
 
-
-
 (require 'js2-refactor)
+
+
+(eval-after-load "paredit.el"
+  '(require 'paredit-menu))
+
+(fset 'delete-to-line-start [?\S-\C-a backspace])
+(global-set-key [s-backspace] 'delete-to-line-start)
+
+; (setq clojure-defun-style-default-indent t)
