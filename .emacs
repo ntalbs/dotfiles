@@ -144,30 +144,31 @@
 (global-set-key [M-up] 'move-text-up)
 (global-set-key [M-down] 'move-text-down)
 
-;; ;; switch buffers with arrow(left, right) key
-;; (defun next-user-buffer ()
-;;   "Switch to the next user buffer in cyclic order. User buffers are those not starting with *."
-;;   (interactive)
-;;   (next-buffer)
-;;   (let ((i 0))
-;;     (while (and (string-match "^*" (buffer-name)) (< i 50))
-;;       (setq i (1+ i)) (next-buffer) )))
+(defun next-user-buffer ()
+  "Switch to the next user buffer in cyclic order. User buffers are those not starting with *."
+  (interactive)
+  (next-buffer)
+  (let ((i 0))
+    (while (and (string-match "^*" (buffer-name)) (< i 50))
+      (setq i (1+ i)) (next-buffer) )))
 
-;; (defun previous-user-buffer ()
-;;   "Switch to the previous user buffer in cyclic order. User buffers are those not starting with *."
-;;   (interactive)
-;;   (previous-buffer)
-;;   (let ((i 0))
-;;     (while (and (string-match "^*" (buffer-name)) (< i 50))
-;;       (setq i (1+ i)) (previous-buffer) ))
-;;   )
+(defun previous-user-buffer ()
+  "Switch to the previous user buffer in cyclic order. User buffers are those not starting with *."
+  (interactive)
+  (previous-buffer)
+  (let ((i 0))
+    (while (and (string-match "^*" (buffer-name)) (< i 50))
+      (setq i (1+ i)) (previous-buffer) )))
 
 (global-set-key [s-left] 'previous-buffer)
 (global-set-key [s-right] 'next-buffer)
-(global-set-key (kbd "C-c C-<left>") 'windmove-left)
-(global-set-key (kbd "C-c C-<right>") 'windmove-right)
-(global-set-key (kbd "C-c C-<up>") 'windmove-up)
-(global-set-key (kbd "C-c C-<down>") 'windmove-down)
+(global-set-key [S-s-left] 'previous-user-buffer)
+(global-set-key [S-s-right] 'next-user-buffer)
+
+(global-set-key (kbd "M-s-<left>") 'windmove-left)
+(global-set-key (kbd "M-s-<right>") 'windmove-right)
+(global-set-key (kbd "M-s-<up>") 'windmove-up)
+(global-set-key (kbd "M-s-<down>") 'windmove-down)
 
 
 ;; yasnippet
@@ -261,8 +262,6 @@
   (beginning-of-line)
   (open-line 1))
 
-;; (global-set-key [C-o] 'open-line-below)
-;; (global-set-key [C-S-o] 'open-line-above)
 (global-unset-key (kbd  "C-o"))
 (global-set-key (kbd "C-o") 'open-line-below)
 (global-set-key (kbd "C-S-o") 'open-line-above)
@@ -293,7 +292,6 @@
 (put 'erase-buffer 'disabled nil)
 
 (require 'js2-refactor)
-
 
 (eval-after-load "paredit.el"
   '(require 'paredit-menu))
