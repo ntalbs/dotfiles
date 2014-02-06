@@ -23,6 +23,10 @@
  '(text-mode-hook (quote (turn-off-auto-fill text-mode-hook-identify)))
  '(tool-bar-mode nil))
 
+(setq initial-scratch-message "")
+(setq inhibit-startup-message t)
+(setq inhibit-startup-echo-area-message "ntalbs")
+
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
 (package-initialize)
@@ -174,7 +178,7 @@
 ;; yasnippet
 (add-to-list 'load-path
              "~/.emacs.d/elpa/yasnippet-20131014.928")
-(setq yas-snippet-dirs '("~/.emacs.d/snippets" "~/.emacs.d/elpa/yasnippet-20131203.720/snippets"))
+(setq yas-snippet-dirs '("~/.emacs.d/snippets" "~/.emacs.d/elpa/yasnippet-20140106.1009/snippets"))
 (require 'yasnippet)
 (yas-global-mode 1)
 
