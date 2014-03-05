@@ -174,18 +174,27 @@
 (global-set-key (kbd "M-s-<up>") 'windmove-up)
 (global-set-key (kbd "M-s-<down>") 'windmove-down)
 
+(defun delete-after (fn)
+  `(lambda () (interactive)
+      (,fn)
+      (delete-window)))
+
+(global-set-key (kbd "C-s-<right>") (delete-after 'windmove-right))
+(global-set-key (kbd "C-s-<left>") (delete-after 'windmove-left))
+(global-set-key (kbd "C-s-<down>") (delete-after 'windmove-down))
+(global-set-key (kbd "C-s-<up>") (delete-after 'windmove-up))
 
 ;; yasnippet
 (add-to-list 'load-path
              "~/.emacs.d/elpa/yasnippet-20131014.928")
 (setq yas-snippet-dirs '("~/.emacs.d/snippets" "~/.emacs.d/elpa/yasnippet-20140106.1009/snippets"))
 (require 'yasnippet)
-(yas-global-mode 1)
-
+(yas-global-mode t)
 
 ;; auto-complete
 ;(add-to-list 'load-path "~/.emacs.d/elpa/popup-0.5")
 ;(add-to-list 'load-path "~/.emacs.d/elpa/auto-complete-1.4")
+
 (require 'auto-complete)
 (global-auto-complete-mode t)
 (auto-complete-mode t)
@@ -303,4 +312,5 @@
 (fset 'delete-to-line-start [?\S-\C-a backspace])
 (global-set-key [s-backspace] 'delete-to-line-start)
 
-; (setq clojure-defun-style-default-indent t)
+;(setq clojure-defun-style-default-indent t)
+;(setq lisp-indent-offset 2)
