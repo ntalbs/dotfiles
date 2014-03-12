@@ -192,44 +192,6 @@
 (define-key ac-complete-mode-map "\C-n" 'ac-next)
 (ac-set-trigger-key "TAB")
 
-(defun run-current-file ()
-  "Execute or compile the current file.
-   For example, if the current buffer is the file x.pl,
-   then it'll call ¡°perl x.pl¡± in a shell.
-   The file can be php, perl, python, ruby, javascript, bash, ocaml, vb, elisp.
-   File suffix is used to determine what program to run."
-  (interactive)
-  (let (suffixMap fname suffix progName cmdStr)
-    ;; a keyed list of file suffix to comand-line program path/name
-    (setq suffixMap
-          '(
-            ("py"    . "python")
-            ("rb"    . "ruby")
-            ("js"    . "node")
-            )
-          )
-    (save-buffer)
-    (setq fname (buffer-file-name))
-    (setq suffix (file-name-extension fname))
-    (setq progName (cdr (assoc suffix suffixMap)))
-    (setq cmdStr (concat progName " \""   fname "\""))
-
-    (if (string-equal suffix "el") ; special case for emacs lisp
-        (load-file fname)
-      (if progName
-    (progn
-      (message "Running...")
-      ;;(generalized-shell-command cmdStr)
-      (shell-command cmdStr "*run-current-file output*" )
-      (switch-to-buffer-other-window "*run-current-file output*" )
-      (previous-multiframe-window)
-      )
-        (message "No recognized program file suffix for this file.")
-        )
-      )))
-;; (global-set-key [C-c C-c] 'run-current-file)
-(global-set-key (kbd "C-c C-c") 'run-current-file)
-
 ;; js2-mode
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (require 'js2-refactor)
