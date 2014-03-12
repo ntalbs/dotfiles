@@ -11,21 +11,20 @@
  '(default-input-method "korean-hangul3")
  '(hightlight-parenthese-mode t)
  '(indent-tabs-mode nil)
+ '(inhibit-startup-echo-area-message "ntalbs")
+ '(inhibit-startup-screen t)
+ '(initial-scratch-message "")
  '(js-indent-level 2)
  '(js2-basic-offset 2)
+ '(js2-global-externs (quote ("define" "describe" "it" "after" "before" "expect" "xdescribe")))
+ '(js2-mode-show-strict-warnings nil)
  '(package-archives (quote (("marmalade" . "http://marmalade-repo.org/packages/") ("ELPA" . "http://tromey.com/elpa/") ("gnu" . "http://elpa.gnu.org/packages/") ("MELPA" . "http://melpa.milkbox.net/packages/"))))
- '(recenter-positions (quote (top middle bottom)))
- '(scala-interpreter "scala -deprecation")
  '(show-paren-mode t)
  '(standard-indent 1)
  '(tab-stop-list nil)
  '(tab-width 2)
  '(text-mode-hook (quote (turn-off-auto-fill text-mode-hook-identify)))
  '(tool-bar-mode nil))
-
-(setq initial-scratch-message "")
-(setq inhibit-startup-message t)
-(setq inhibit-startup-echo-area-message "ntalbs")
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
@@ -35,13 +34,12 @@
 (set-frame-height (selected-frame) 47)
 
 (setq
- backup-by-copying t      ; don't clobber symlinks
- backup-directory-alist
- '(("." . "~/.emacs_saves"))    ; don't litter my fs tree
+ backup-by-copying t            ; don't clobber symlinks
+ backup-directory-alist '(("." . "~/.emacs_saves")) ; don't litter my fs tree
  delete-old-versions t
  kept-new-versions 6
  kept-old-versions 2
- version-control t)       ; use versioned backups
+ version-control t)             ; use versioned backups
 
 ;; multiple cursors
 (require 'multiple-cursors)
@@ -63,14 +61,6 @@
 ;; helm-projectile
 (require 'helm-projectile)
 (global-set-key (kbd "C-x p") 'helm-projectile)
-
-;; powerline
-;;(add-to-list 'load-path "~/.emacs.d/powerline")
-;;(require 'powerline)
-;;(powerline-default)
-
-;; js-hint
-(require 'flymake-jshint-autoloads)
 
 ;; Set up unicode
 ;; (set-terminal-coding-system 'utf-8)
@@ -240,29 +230,13 @@
 ;; (global-set-key [C-c C-c] 'run-current-file)
 (global-set-key (kbd "C-c C-c") 'run-current-file)
 
-;; ;; Scala mode
-;; (add-to-list 'load-path "~/.emacs.d/plugins/scala-mode")
-;; (require 'scala-mode-auto)
-;; (add-hook 'scala-mode-hook
-;;           '(lambda ()
-;;              (progn
-;;                (yas/minor-mode-on)
-;;                (local-unset-key (kbd "C-c C-C"))
-;;                (local-set-key (kbd "C-c C-c") 'scala-eval-buffer))))
-
-;; (require 'scala-mode)
-
-;; (add-to-list 'auto-mode-alist '("\\.scala$" . scala-mode))
-;; (add-to-list 'load-path "~/.emacs.d/ensime_2.9.2-RC1-0.9.3.RC4/elisp/")
-;; (require 'ensime)
-;; (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
-
-;; (push "/PL/scala-2.9.0.1/bin" exec-path)
-;; (push "/Tools/sbt" exec-path)
-
 ;; js2-mode
-(autoload 'js2-mode "js2-mode" nil t)
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(require 'js2-refactor)
+
+;; js-hint
+(require 'flymake-jshint)
+(add-hook 'js2-mode-hook 'flymake-jshint-load)
 
 (defun open-line-below ()
   (interactive)
@@ -284,11 +258,6 @@
   (find-file "~/.emacs"))
 (global-set-key [f12] 'open-dot-emacs)
 
-;; (defun open-bash-profile ()
-;;   (interactive)
-;;   (find-file "~/.bash_profile"))
-
-(add-hook 'js2-mode-hook (lambda () (flymake-mode t)))
 (add-hook 'eshell-mode-hook
           'lambda nil
           (let ((bashpath (shell-command-to-string "/bin/bash -l -c 'printenv PATH'")))
@@ -296,6 +265,7 @@
               (setq exec-path pathlst))
             (setq eshell-path-env bashpath)
             (setenv "PATH" bashpath)))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -303,8 +273,6 @@
  ;; If there is more than one, they won't work right.
  '(italic ((t (:slant normal)))))
 (put 'erase-buffer 'disabled nil)
-
-(require 'js2-refactor)
 
 (eval-after-load "paredit.el"
   '(require 'paredit-menu))
