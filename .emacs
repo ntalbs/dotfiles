@@ -10,6 +10,8 @@
  '(css-indent-offset 2)
  '(current-language-environment "Korean")
  '(default-input-method "korean-hangul3")
+ '(exec-path (quote ("/Users/ntalbs/bin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" "/usr/local/share/npm/bin")))
+ '(fringe-mode (quote (nil . 0)) nil (fringe))
  '(help-at-pt-display-when-idle (quote (flymake-overlay)) nil (help-at-pt))
  '(help-at-pt-timer-delay 0.5)
  '(hightlight-parenthese-mode t)
@@ -17,28 +19,31 @@
  '(inhibit-startup-echo-area-message "ntalbs")
  '(inhibit-startup-screen t)
  '(initial-scratch-message "")
- '(js-indent-level 2)
  '(js2-basic-offset 2)
  '(js2-global-externs (quote ("define" "describe" "it" "after" "before" "expect" "xdescribe")))
  '(js2-mode-show-strict-warnings nil)
  '(package-archives (quote (("MELPA" . "http://melpa.milkbox.net/packages/"))))
+ '(scroll-bar-mode nil)
  '(show-paren-mode t)
- '(sr-speedbar-max-width 30)
+ '(sr-speedbar-max-width 50)
  '(sr-speedbar-right-side nil)
+ '(sr-speedbar-width-x 50)
  '(standard-indent 1)
  '(tab-stop-list nil)
  '(tab-width 2)
  '(text-mode-hook (quote (turn-off-auto-fill text-mode-hook-identify)))
  '(tool-bar-mode nil))
 
+(setq default-directory "~/")
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
 (package-initialize)
 
-(set-frame-width (selected-frame) 86)
-(set-frame-height (selected-frame) 47)
+;; (set-frame-width (selected-frame) 86)
+;; (set-frame-height (selected-frame) 47)
 
-(setq
+;; backup settings
+(setq-default
  backup-by-copying t            ; don't clobber symlinks
  backup-directory-alist '(("." . "~/.emacs_saves")) ; don't litter my fs tree
  delete-old-versions t
@@ -197,10 +202,8 @@
 (require 'js2-refactor)
 
 ;; flymake-jshint
-(setq exec-path (append exec-path '("/usr/local/share/npm/bin")))
 (require 'flymake-jshint)
 (add-hook 'js2-mode-hook 'flymake-jshint-load)
-
 
 ;; tern
 (add-to-list 'load-path "~/.emacs.d/elpa/tern-20130828.716/")
@@ -232,13 +235,13 @@
   (find-file "~/.emacs"))
 (global-set-key [f12] 'open-dot-emacs)
 
-(add-hook 'eshell-mode-hook
-          'lambda nil
-          (let ((bashpath (shell-command-to-string "/bin/bash -l -c 'printenv PATH'")))
-            (let ((pathlst (split-string bashpath ":")))
-              (setq exec-path pathlst))
-            (setq eshell-path-env bashpath)
-            (setenv "PATH" bashpath)))
+;; (add-hook 'eshell-mode-hook
+;;           'lambda nil
+;;           (let ((bashpath (shell-command-to-string "/bin/bash -l -c 'printenv PATH'")))
+;;             (let ((pathlst (split-string bashpath ":")))
+;;               (setq exec-path pathlst))
+;;             (setq eshell-path-env bashpath)
+;;             (setenv "PATH" bashpath)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
