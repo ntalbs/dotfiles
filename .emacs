@@ -6,9 +6,12 @@
  '(blink-cursor-mode nil)
  '(c-max-one-liner-length 120)
  '(column-number-mode t)
+ '(command-line-default-directory "~/" t)
  '(css-indent-offset 2)
  '(current-language-environment "Korean")
  '(default-input-method "korean-hangul3")
+ '(help-at-pt-display-when-idle (quote (flymake-overlay)) nil (help-at-pt))
+ '(help-at-pt-timer-delay 0.5)
  '(hightlight-parenthese-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-echo-area-message "ntalbs")
@@ -18,8 +21,10 @@
  '(js2-basic-offset 2)
  '(js2-global-externs (quote ("define" "describe" "it" "after" "before" "expect" "xdescribe")))
  '(js2-mode-show-strict-warnings nil)
- '(package-archives (quote (("marmalade" . "http://marmalade-repo.org/packages/") ("ELPA" . "http://tromey.com/elpa/") ("gnu" . "http://elpa.gnu.org/packages/") ("MELPA" . "http://melpa.milkbox.net/packages/"))))
+ '(package-archives (quote (("MELPA" . "http://melpa.milkbox.net/packages/"))))
  '(show-paren-mode t)
+ '(sr-speedbar-max-width 30)
+ '(sr-speedbar-right-side nil)
  '(standard-indent 1)
  '(tab-stop-list nil)
  '(tab-width 2)
@@ -175,16 +180,11 @@
 (global-set-key (kbd "C-s-<up>") (delete-after 'windmove-up))
 
 ;; yasnippet
-(add-to-list 'load-path
-             "~/.emacs.d/elpa/yasnippet-20131014.928")
-(setq yas-snippet-dirs '("~/.emacs.d/snippets" "~/.emacs.d/elpa/yasnippet-20140106.1009/snippets"))
+(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
 (require 'yasnippet)
 (yas-global-mode t)
 
 ;; auto-complete
-;(add-to-list 'load-path "~/.emacs.d/elpa/popup-0.5")
-;(add-to-list 'load-path "~/.emacs.d/elpa/auto-complete-1.4")
-
 (require 'auto-complete)
 (global-auto-complete-mode t)
 (auto-complete-mode t)
@@ -196,9 +196,21 @@
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (require 'js2-refactor)
 
-;; js-hint
+;; flymake-jshint
+(setq exec-path (append exec-path '("/usr/local/share/npm/bin")))
 (require 'flymake-jshint)
 (add-hook 'js2-mode-hook 'flymake-jshint-load)
+
+
+;; tern
+(add-to-list 'load-path "~/.emacs.d/elpa/tern-20130828.716/")
+(autoload 'tern-mode "tern.el" nil t)
+(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
+(eval-after-load 'tern
+  '(progn
+     (require 'tern-auto-complete)
+     (setq tern-ac-on-dot t)
+     (tern-ac-setup)))
 
 (defun open-line-below ()
   (interactive)
