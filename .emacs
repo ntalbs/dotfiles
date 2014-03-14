@@ -25,6 +25,8 @@
  '(package-archives (quote (("MELPA" . "http://melpa.milkbox.net/packages/"))))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
+ '(speedbar-supported-extension-expressions (quote (".org" ".[ch]\\(\\+\\+\\|pp\\|c\\|h\\|xx\\)?" ".tex\\(i\\(nfo\\)?\\)?" ".el" ".emacs" ".l" ".lsp" ".p" ".java" ".js" ".f\\(90\\|77\\|or\\)?" ".ad[abs]" ".p[lm]" ".tcl" ".m" ".scm" ".pm" ".py" ".g" ".s?html" ".ma?k" "[Mm]akefile\\(\\.in\\)?" ".clj")))
+ '(speedbar-use-images nil)
  '(sr-speedbar-max-width 50)
  '(sr-speedbar-right-side nil)
  '(sr-speedbar-width-x 50)
@@ -258,4 +260,7 @@
 (global-set-key [s-backspace] 'delete-to-line-start)
 
 ;(setq clojure-defun-style-default-indent t)
-;(setq lisp-indent-offset 2)
+(setq lisp-indent-offset 2)
+
+(global-unset-key (kbd "s-s"))
+(global-set-key (kbd "s-s s-s") 'sr-speedbar-open)
