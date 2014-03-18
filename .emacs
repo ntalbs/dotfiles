@@ -25,7 +25,8 @@
  '(package-archives (quote (("MELPA" . "http://melpa.milkbox.net/packages/"))))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
- '(speedbar-supported-extension-expressions (quote (".org" ".[ch]\\(\\+\\+\\|pp\\|c\\|h\\|xx\\)?" ".tex\\(i\\(nfo\\)?\\)?" ".el" ".emacs" ".l" ".lsp" ".p" ".java" ".js" ".f\\(90\\|77\\|or\\)?" ".ad[abs]" ".p[lm]" ".tcl" ".m" ".scm" ".pm" ".py" ".g" ".s?html" ".ma?k" "[Mm]akefile\\(\\.in\\)?" ".clj")))
+ '(speedbar-indentation-width 2)
+ '(speedbar-supported-extension-expressions (quote (".org" ".[ch]\\(\\+\\+\\|pp\\|c\\|h\\|xx\\)?" ".tex\\(i\\(nfo\\)?\\)?" ".el" ".emacs" ".l" ".lsp" ".p" ".java" ".js" ".f\\(90\\|77\\|or\\)?" ".ad[abs]" ".p[lm]" ".tcl" ".m" ".scm" ".pm" ".py" ".g" ".s?html" ".ma?k" "[Mm]akefile\\(\\.in\\)?" ".clj" ".json")))
  '(speedbar-use-images nil)
  '(sr-speedbar-max-width 50)
  '(sr-speedbar-right-side nil)
@@ -36,10 +37,12 @@
  '(text-mode-hook (quote (turn-off-auto-fill text-mode-hook-identify)))
  '(tool-bar-mode nil))
 
+(package-initialize)
+
 (setq default-directory "~/")
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
-(package-initialize)
+(exec-path-from-shell-initialize)
 
 ;; (set-frame-width (selected-frame) 86)
 ;; (set-frame-height (selected-frame) 47)
