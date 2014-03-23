@@ -16,7 +16,6 @@
  '(help-at-pt-timer-delay 0.5)
  '(hightlight-parenthese-mode t)
  '(indent-tabs-mode nil)
- '(inhibit-startup-echo-area-message "ntalbs")
  '(inhibit-startup-screen t)
  '(initial-scratch-message "")
  '(js2-basic-offset 2)
@@ -26,7 +25,7 @@
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(speedbar-indentation-width 2)
- '(speedbar-supported-extension-expressions (quote (".org" ".[ch]\\(\\+\\+\\|pp\\|c\\|h\\|xx\\)?" ".tex\\(i\\(nfo\\)?\\)?" ".el" ".emacs" ".l" ".lsp" ".p" ".java" ".js" ".f\\(90\\|77\\|or\\)?" ".ad[abs]" ".p[lm]" ".tcl" ".m" ".scm" ".pm" ".py" ".g" ".s?html" ".ma?k" "[Mm]akefile\\(\\.in\\)?" ".clj" ".json")))
+ '(speedbar-supported-extension-expressions (quote (".org" ".el" ".emacs" ".l" ".lsp" ".p" ".java" ".js" ".py" ".g" ".s?html" ".clj" ".json")))
  '(speedbar-use-images nil)
  '(sr-speedbar-max-width 50)
  '(sr-speedbar-right-side nil)
@@ -240,14 +239,6 @@
   (find-file "~/.emacs"))
 (global-set-key [f12] 'open-dot-emacs)
 
-;; (add-hook 'eshell-mode-hook
-;;           'lambda nil
-;;           (let ((bashpath (shell-command-to-string "/bin/bash -l -c 'printenv PATH'")))
-;;             (let ((pathlst (split-string bashpath ":")))
-;;               (setq exec-path pathlst))
-;;             (setq eshell-path-env bashpath)
-;;             (setenv "PATH" bashpath)))
-
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -259,11 +250,12 @@
 (eval-after-load "paredit.el"
   '(require 'paredit-menu))
 
+;; Cmd+delete 기능
 (fset 'delete-to-line-start [?\S-\C-a backspace])
 (global-set-key [s-backspace] 'delete-to-line-start)
 
 ;(setq clojure-defun-style-default-indent t)
-(setq lisp-indent-offset 2)
+;(setq lisp-indent-offset 2)
 
 (global-unset-key (kbd "s-s"))
 (global-set-key (kbd "s-s s-s") 'sr-speedbar-open)
