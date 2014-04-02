@@ -12,6 +12,7 @@
  '(default-input-method "korean-hangul3")
  '(exec-path (quote ("/Users/ntalbs/bin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" "/usr/local/share/npm/bin")))
  '(fringe-mode (quote (nil . 0)) nil (fringe))
+ '(global-hl-line-mode t)
  '(help-at-pt-display-when-idle (quote (flymake-overlay)) nil (help-at-pt))
  '(help-at-pt-timer-delay 0.5)
  '(hightlight-parenthese-mode t)
@@ -20,21 +21,33 @@
  '(initial-scratch-message "")
  '(js2-basic-offset 2)
  '(js2-global-externs (quote ("define" "describe" "it" "after" "before" "expect" "xdescribe")))
- '(js2-mode-show-strict-warnings nil)
+ '(js2-mode-show-strict-warnings t)
  '(package-archives (quote (("MELPA" . "http://melpa.milkbox.net/packages/"))))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(speedbar-indentation-width 2)
- '(speedbar-supported-extension-expressions (quote (".org" ".el" ".emacs" ".l" ".lsp" ".p" ".java" ".js" ".py" ".g" ".s?html" ".clj" ".json")))
+ '(speedbar-supported-extension-expressions (quote (".org" ".el" ".emacs" ".l" ".lsp" ".p" ".java" ".js" ".py" ".g" ".s?html" ".clj" ".json" ".md")))
  '(speedbar-use-images nil)
  '(sr-speedbar-max-width 50)
  '(sr-speedbar-right-side nil)
+ '(sr-speedbar-skip-other-window-p t)
  '(sr-speedbar-width-x 50)
  '(standard-indent 1)
  '(tab-stop-list nil)
  '(tab-width 2)
  '(text-mode-hook (quote (turn-off-auto-fill text-mode-hook-identify)))
  '(tool-bar-mode nil))
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(hl-line ((t (:background "DarkOliveGreen1"))))
+ '(italic ((t (:slant normal))))
+ '(js2-function-call ((t (:inherit default :foreground "dark blue"))))
+ '(markdown-italic-face ((t (:inherit font-lock-variable-name-face :slant normal)))))
+(put 'erase-buffer 'disabled nil)
 
 (package-initialize)
 
@@ -238,14 +251,6 @@
   (interactive)
   (find-file "~/.emacs"))
 (global-set-key [f12] 'open-dot-emacs)
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(italic ((t (:slant normal)))))
-(put 'erase-buffer 'disabled nil)
 
 (eval-after-load "paredit.el"
   '(require 'paredit-menu))
