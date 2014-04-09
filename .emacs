@@ -26,7 +26,7 @@
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(speedbar-indentation-width 2)
- '(speedbar-supported-extension-expressions (quote (".org" ".el" ".emacs" ".l" ".lsp" ".p" ".java" ".js" ".py" ".g" ".s?html" ".clj" ".json" ".md")))
+ '(speedbar-supported-extension-expressions (quote (".org" ".el" ".emacs" ".java" ".js" ".s?html" ".clj" ".json" ".md" ".css")))
  '(speedbar-use-images nil)
  '(sr-speedbar-max-width 50)
  '(sr-speedbar-right-side nil)
@@ -43,7 +43,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(hl-line ((t (:background "DarkOliveGreen1"))))
+ '(hl-line ((t (:background "azure"))))
  '(italic ((t (:slant normal))))
  '(js2-function-call ((t (:inherit default :foreground "dark blue"))))
  '(markdown-italic-face ((t (:inherit font-lock-variable-name-face :slant normal)))))
@@ -67,6 +67,10 @@
  kept-new-versions 6
  kept-old-versions 2
  version-control t)             ; use versioned backups
+
+;; goto last change
+(global-set-key [(control ?.)] 'goto-last-change)
+(global-set-key [(control ?,)] 'goto-last-change-reverse)
 
 ;; multiple cursors
 (require 'multiple-cursors)
