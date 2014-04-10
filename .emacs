@@ -251,10 +251,15 @@
 (global-set-key (kbd "C-o") 'open-line-below)
 (global-set-key (kbd "C-S-o") 'open-line-above)
 
-(defun open-dot-emacs()
+(defun open-dot-emacs ()
   (interactive)
   (find-file "~/.emacs"))
 (global-set-key [f12] 'open-dot-emacs)
+
+(defun open-todo ()
+  (interactive)
+  (find-file "~/todo.org"))
+(global-set-key [f11] 'open-todo)
 
 (eval-after-load "paredit.el"
   '(require 'paredit-menu))
