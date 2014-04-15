@@ -35,7 +35,7 @@
  '(standard-indent 1)
  '(tab-stop-list nil)
  '(tab-width 2)
- '(text-mode-hook (quote (turn-off-auto-fill text-mode-hook-identify)))
+ '(text-mode-hook (quote (visual-line-mode)))
  '(tool-bar-mode nil))
 
 (custom-set-faces
@@ -53,7 +53,6 @@
 
 (setq default-directory "~/")
 (add-hook 'before-save-hook 'whitespace-cleanup)
-(add-hook 'markdown-mode-hook 'visual-line-mode)
 
 (exec-path-from-shell-initialize)
 
