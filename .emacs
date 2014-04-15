@@ -53,6 +53,7 @@
 
 (setq default-directory "~/")
 (add-hook 'before-save-hook 'whitespace-cleanup)
+(add-hook 'markdown-mode-hook 'visual-line-mode)
 
 (exec-path-from-shell-initialize)
 
