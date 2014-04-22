@@ -56,6 +56,15 @@
 
 (exec-path-from-shell-initialize)
 
+;; font size
+(define-key global-map (kbd "C-+") 'text-scale-increase)
+(define-key global-map (kbd "C-=") 'text-scale-increase)
+(define-key global-map (kbd "C--") 'text-scale-decrease)
+(defun text-scale-default ()
+  (interactive)
+  (text-scale-adjust 0))
+(define-key global-map (kbd "C-0") 'text-scale-default)
+
 ;; (set-frame-width (selected-frame) 86)
 ;; (set-frame-height (selected-frame) 47)
 
@@ -205,6 +214,17 @@
 (global-set-key (kbd "C-s-<down>") (delete-after 'windmove-down))
 (global-set-key (kbd "C-s-<up>") (delete-after 'windmove-up))
 
+;; visual-regexp
+(require 'visual-regexp)
+(require 'visual-regexp-steroids)
+
+(define-key global-map (kbd "C-c r") 'vr/replace)
+(define-key global-map (kbd "C-c q") 'vr/query-replace)
+(define-key global-map (kbd "C-c m") 'vr/mc-mark)
+(define-key esc-map (kbd "C-r") 'vr/isearch-backward) ;; C-M-r
+(define-key esc-map (kbd "C-s") 'vr/isearch-forward) ;; C-M-s
+
+
 ;; yasnippet
 (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
 (require 'yasnippet)
@@ -272,4 +292,4 @@
 ;(setq lisp-indent-offset 2)
 
 (global-unset-key (kbd "s-s"))
-(global-set-key (kbd "s-s s-s") 'sr-speedbar-open)
+(global-set-key (kbd "s-s s-s") 'sr-speedbar-toggle)
