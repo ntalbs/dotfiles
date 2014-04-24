@@ -28,6 +28,7 @@
  '(speedbar-indentation-width 2)
  '(speedbar-supported-extension-expressions (quote (".org" ".el" ".emacs" ".java" ".js" ".s?html" ".clj" ".json" ".md" ".css")))
  '(speedbar-use-images nil)
+ '(split-height-threshold 20)
  '(sr-speedbar-max-width 50)
  '(sr-speedbar-right-side nil)
  '(sr-speedbar-skip-other-window-p t)
@@ -80,6 +81,23 @@
 ;; goto last change
 (global-set-key [(control ?.)] 'goto-last-change)
 (global-set-key [(control ?,)] 'goto-last-change-reverse)
+
+;; mmm-mode
+(require 'mmm-auto)
+(setq mmm-global-mode 'maybe)
+(mmm-add-classes
+ '((html-ejs :submode js-mode :front "<%[#=]?" :back "-?%>"
+             :match-face (("<%#" . mmm-comment-submode-face)
+                          ("<%=" . mmm-output-submode-face)
+                          ("<%" . mmm-code-submode-face))
+             :insert ((?% ejs-code nil @ "<%" @ " " _ " " @ "%>" @)
+                      (?# ejs-comment nil @ "<%#" @ " " _ " " @ "%>" @)
+                      (?= ejs-expression nil @ "<%=" @ " " _ " " @ "%>" @)))))
+
+;;; Add html-js, embedded-css and html-ejs to html-mode
+(mmm-add-mode-ext-class 'html-mode nil 'html-js)
+(mmm-add-mode-ext-class 'html-mode nil 'html-css)
+(mmm-add-mode-ext-class 'html-mode nil 'html-ejs)
 
 ;; multiple cursors
 (require 'multiple-cursors)
@@ -223,7 +241,6 @@
 (define-key global-map (kbd "C-c m") 'vr/mc-mark)
 (define-key esc-map (kbd "C-r") 'vr/isearch-backward) ;; C-M-r
 (define-key esc-map (kbd "C-s") 'vr/isearch-forward) ;; C-M-s
-
 
 ;; yasnippet
 (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
