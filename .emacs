@@ -17,15 +17,14 @@
  '(help-at-pt-timer-delay 0.5)
  '(hightlight-parenthese-mode t)
  '(indent-tabs-mode nil)
- '(inhibit-startup-screen t)
  '(initial-scratch-message "")
  '(js2-basic-offset 2)
- '(js2-global-externs (quote ("define" "describe" "it" "after" "before" "expect" "xdescribe")))
+ '(js2-global-externs (quote ("$" "_" "require" "define" "describe" "it" "after" "before" "expect" "xdescribe")))
  '(js2-mode-show-strict-warnings t)
  '(package-archives (quote (("MELPA" . "http://melpa.milkbox.net/packages/"))))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
- '(speedbar-indentation-width 2)
+ '(speedbar-indentation-width 2 t)
  '(speedbar-supported-extension-expressions (quote (".org" ".el" ".emacs" ".java" ".js" ".s?html" ".clj" ".json" ".md" ".css")))
  '(speedbar-use-images nil)
  '(split-height-threshold 20)
@@ -55,7 +54,21 @@
 (setq default-directory "~/")
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
+(defun set-ejs-mode ()
+  (when (and (stringp buffer-file-name)
+             (string-match "\\.ejs\\'" buffer-file-name))
+    (html-mode)))
+(add-hook 'find-file-hook 'set-ejs-mode)
+
+(add-hook 'clojure-mode-hook 'cider-mode)
+(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+
 (exec-path-from-shell-initialize)
+
+;; zen coding
+(require 'emmet-mode)
+(add-hook 'sgml-mode-hook 'emmet-mode)
+
 
 ;; font size
 (define-key global-map (kbd "C-+") 'text-scale-increase)
@@ -80,7 +93,6 @@
 
 ;; goto last change
 (global-set-key [(control ?.)] 'goto-last-change)
-(global-set-key [(control ?,)] 'goto-last-change-reverse)
 
 ;; mmm-mode
 (require 'mmm-auto)
@@ -107,8 +119,8 @@
 (global-set-key (kbd "C-c C->") 'mc/mark-all-like-this)
 
 ;; projectile
-(require 'projectile)
 (projectile-global-mode)
+(setq projectile-completion-system 'default)
 
 ;; helm
 ;; (require 'helm-config)
@@ -261,7 +273,12 @@
 
 ;; flymake-jshint
 (require 'flymake-jshint)
-(add-hook 'js2-mode-hook 'flymake-jshint-load)
+;(add-hook 'js2-mode-hook 'flymake-jshint-load)
+(add-hook 'js2-mode-hook
+          (lambda ()
+            (setq-local jshint-configuration-path
+                        (expand-file-name ".jshintrc" (locate-dominating-file default-directory ".jshintrc")))
+            (flymake-jshint-load)))
 
 ;; tern
 (add-to-list 'load-path "~/.emacs.d/elpa/tern-20130828.716/")
