@@ -19,7 +19,7 @@
  '(indent-tabs-mode nil)
  '(initial-scratch-message "")
  '(js2-basic-offset 2)
- '(js2-global-externs (quote ("$" "_" "require" "define" "describe" "it" "after" "before" "expect" "xdescribe")))
+ '(js2-global-externs (quote ("$" "_" "setTimeout" "require" "define" "describe" "it" "after" "before" "expect" "xdescribe")))
  '(js2-mode-show-strict-warnings t)
  '(package-archives (quote (("MELPA" . "http://melpa.milkbox.net/packages/"))))
  '(scroll-bar-mode nil)
@@ -46,6 +46,8 @@
  '(hl-line ((t (:background "azure"))))
  '(italic ((t (:slant normal))))
  '(js2-function-call ((t (:inherit default :foreground "dark blue"))))
+ '(markdown-bold-face ((t (:inherit font-lock-variable-name-face :foreground "Red" :weight semi-bold))))
+ '(markdown-header-face ((t (:inherit font-lock-function-name-face :weight semi-bold))))
  '(markdown-italic-face ((t (:inherit font-lock-variable-name-face :slant normal)))))
 (put 'erase-buffer 'disabled nil)
 
