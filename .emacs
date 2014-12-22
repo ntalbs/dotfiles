@@ -71,6 +71,9 @@
 (require 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode)
 
+;; font
+;; (set-face-font 'default "Monaco-12")
+(set-fontset-font "fontset-default" '(#x1100 . #xffdc) "AppleMyungjo")
 
 ;; font size
 (define-key global-map (kbd "C-+") 'text-scale-increase)
@@ -320,7 +323,7 @@
 (eval-after-load "paredit.el"
   '(require 'paredit-menu))
 
-;; Cmd+delete 기능
+;; Cmd+delete
 (fset 'delete-to-line-start [?\S-\C-a backspace])
 (global-set-key [s-backspace] 'delete-to-line-start)
 
@@ -329,3 +332,8 @@
 
 (global-unset-key (kbd "s-s"))
 (global-set-key (kbd "s-s s-s") 'sr-speedbar-toggle)
+
+;; ido
+(ido-mode 1)
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
