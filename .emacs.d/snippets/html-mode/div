@@ -1,0 +1,5 @@
+#name : <div...>...</div>
+# --
+<div ${1:id="${2:some_id}"}>
+    $0
+</div>
