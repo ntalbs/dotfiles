@@ -1,0 +1,7 @@
+#name : front-matter
+# --
+tags: [$1]
+date: $2
+title: $3
+---
+$0
