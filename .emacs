@@ -27,7 +27,7 @@
  '(speedbar-indentation-width 2 t)
  '(speedbar-supported-extension-expressions (quote (".org" ".el" ".emacs" ".java" ".js" ".s?html" ".clj" ".json" ".md" ".css")))
  '(speedbar-use-images nil)
- '(split-height-threshold 20)
+ '(split-height-threshold 80)
  '(sr-speedbar-max-width 50)
  '(sr-speedbar-right-side nil)
  '(sr-speedbar-skip-other-window-p t)
