@@ -337,3 +337,23 @@
 (ido-mode 1)
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
+
+;; join-line from top
+;; http://emacsredux.com/blog/2013/05/30/joining-lines/
+;; (defun top-join-line ()
+;;   "Join the current line with the line beneath it."
+;;   (interactive)
+;;   (delete-indentation 1))
+
+(defun join-lines-in-region (beg end)
+  "Apply join-line over region."
+  (interactive "r")
+  (if mark-active
+      (let ((beg (region-beginning))
+            (end (copy-marker (region-end))))
+        (goto-char beg)
+        (while (< (point) end)
+          (join-line 1)))
+    (delete-indentation 1)))
+
+(global-set-key (kbd "C-^") 'join-lines-in-region)
