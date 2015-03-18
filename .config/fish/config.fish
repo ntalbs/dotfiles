@@ -5,6 +5,8 @@ set -x JAVA_HOME $JAVA8_HOME
 
 set -x PGDATA /usr/local/pgsql/data
 
+set -x EDITOR vim
+
 alias java8 "set -x JAVA_HOME $JAVA8_HOME"
 alias java7 "set -x JAVA_HOME $JAVA7_HOME"
 alias bu "brew update; brew upgrade; brew cleanup; brew doctor"
