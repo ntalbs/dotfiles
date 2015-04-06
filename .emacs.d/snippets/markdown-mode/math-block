@@ -1,0 +1,7 @@
+#name : math-block
+# --
+{% math_block %}
+\begin{aligned}
+$0
+\end{aligned}
+{% endmath_block %}
