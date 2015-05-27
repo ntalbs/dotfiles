@@ -150,29 +150,35 @@
 ;; (set-clipboard-coding-system 'utf-16le-dos)
 
 ;; move line or region with arrow(up, down) key like in eclipse.
+
+(defun move-text-marked (arg)
+  (if (> (point) (mark))
+      (exchange-point-and-mark))
+  (let ((column (current-column))
+        (text (delete-and-extract-region (point) (mark))))
+    (forward-line arg)
+    (move-to-column column t)
+    (set-mark (point))
+    (insert text)
+    (exchange-point-and-mark)
+    (setq deactivate-mark nil)))
+
+(defun mark-current-line ()
+  (interactive)
+  (move-beginning-of-line nil)
+  (set-mark-command nil)
+  (forward-line)
+  (setq deactivate-mark nil))
+
 (defun move-text-internal (arg)
   (cond
    ((and mark-active transient-mark-mode)
-    (if (> (point) (mark))
-        (exchange-point-and-mark))
-    (let ((column (current-column))
-          (text (delete-and-extract-region (point) (mark))))
-      (forward-line arg)
-      (move-to-column column t)
-      (set-mark (point))
-      (insert text)
-      (exchange-point-and-mark)
-      (setq deactivate-mark nil)))
+    (move-text-marked arg))
    (t
     (let ((column (current-column)))
-      (beginning-of-line)
-      (forward-line)
-      (when (and (< 0 arg) (not (eobp)))
-        (transpose-lines arg)
-        (forward-line -1))
-      (when (and (< arg 0) (not (bobp)))
-        (transpose-lines arg)
-        (forward-line -2))
+      (mark-current-line)
+      (move-text-marked arg)
+      (setq deactivate-mark t)
       (move-to-column column t)))))
 
 (defun move-text-down (arg)
@@ -205,7 +211,6 @@
         (newline)
         (insert region)
         (setq end (point))))))
-
 
 (defun duplicate-current-line-or-region-up (arg)
   (duplicate-current-line-or-region-down (arg)))
