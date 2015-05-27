@@ -166,11 +166,13 @@
    (t
     (let ((column (current-column)))
       (beginning-of-line)
-      (when (or (> arg 0) (not (bobp)))
-        (forward-line)
-        (when (or (< arg 0) (not (eobp)))
-          (transpose-lines arg))
+      (forward-line)
+      (when (and (< 0 arg) (not (eobp)))
+        (transpose-lines arg)
         (forward-line -1))
+      (when (and (< arg 0) (not (bobp)))
+        (transpose-lines arg)
+        (forward-line -2))
       (move-to-column column t)))))
 
 (defun move-text-down (arg)
