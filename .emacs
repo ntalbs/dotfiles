@@ -150,75 +150,10 @@
 ;; (set-clipboard-coding-system 'utf-16le-dos)
 
 ;; move line or region with arrow(up, down) key like in eclipse.
-
-(defun move-text-marked (arg)
-  (if (> (point) (mark))
-      (exchange-point-and-mark))
-  (let ((column (current-column))
-        (text (delete-and-extract-region (point) (mark))))
-    (forward-line arg)
-    (move-to-column column t)
-    (set-mark (point))
-    (insert text)
-    (exchange-point-and-mark)
-    (setq deactivate-mark nil)))
-
-(defun mark-current-line ()
-  (interactive)
-  (move-beginning-of-line nil)
-  (set-mark-command nil)
-  (forward-line)
-  (setq deactivate-mark nil))
-
-(defun move-text-internal (arg)
-  (cond
-   ((and mark-active transient-mark-mode)
-    (move-text-marked arg))
-   (t
-    (let ((column (current-column)))
-      (mark-current-line)
-      (move-text-marked arg)
-      (setq deactivate-mark t)
-      (move-to-column column t)))))
-
-(defun move-text-down (arg)
-  "Move region (transient-mark-mode active) or current line
-  arg lines down."
-  (interactive "*p")
-  (move-text-internal arg))
-
-(defun move-text-up (arg)
-  "Move region (transient-mark-mode active) or current line
-  arg lines up."
-  (interactive "*p")
-  (move-text-internal (- arg)))
-
-(defun duplicate-current-line-or-region-down (arg)
-  "Duplicates the current line or region ARG times.
-   If there's no region, the current line will be duplicated. However, if
-   there's a region, all lines that region covers will be duplicated."
-  (interactive "p")
-  (let (beg end (origin (point)))
-    (if (and mark-active (> (point) (mark)))
-        (exchange-point-and-mark))
-    (setq beg (line-beginning-position))
-    (if mark-active
-        (exchange-point-and-mark))
-    (setq end (line-end-position))
-    (let ((region (buffer-substring-no-properties beg end)))
-      (dotimes (i arg)
-        (goto-char end)
-        (newline)
-        (insert region)
-        (setq end (point))))))
-
-(defun duplicate-current-line-or-region-up (arg)
-  (duplicate-current-line-or-region-down (arg)))
-
-(global-set-key [C-M-up] 'duplicate-current-line-or-region-up)
-(global-set-key [C-M-down] 'duplicate-current-line-or-region-down)
 (global-set-key [M-up] 'move-text-up)
 (global-set-key [M-down] 'move-text-down)
+;; duplicate line or region.
+(global-set-key [M-s-down] 'duplicate-thing)
 
 (defun next-user-buffer ()
   "Switch to the next user buffer in cyclic order. User buffers are those not starting with *."
