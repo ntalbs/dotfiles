@@ -25,6 +25,8 @@
    (quote
     ("$" "_" "setTimeout" "require" "define" "describe" "it" "after" "before" "expect" "xdescribe")))
  '(js2-mode-show-strict-warnings t)
+ '(markdown-enable-math t)
+ '(markdown-indent-on-enter nil)
  '(package-archives (quote (("MELPA" . "http://melpa.milkbox.net/packages/"))))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
