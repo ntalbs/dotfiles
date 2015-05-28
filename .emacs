@@ -10,7 +10,9 @@
  '(css-indent-offset 2)
  '(current-language-environment "Korean")
  '(default-input-method "korean-hangul3")
- '(exec-path (quote ("/Users/ntalbs/bin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" "/usr/local/share/npm/bin")))
+ '(exec-path
+   (quote
+    ("/Users/ntalbs/bin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" "/usr/local/share/npm/bin")))
  '(fringe-mode (quote (nil . 0)) nil (fringe))
  '(global-hl-line-mode t)
  '(help-at-pt-display-when-idle (quote (flymake-overlay)) nil (help-at-pt))
@@ -19,13 +21,17 @@
  '(indent-tabs-mode nil)
  '(initial-scratch-message "")
  '(js2-basic-offset 2)
- '(js2-global-externs (quote ("$" "_" "setTimeout" "require" "define" "describe" "it" "after" "before" "expect" "xdescribe")))
+ '(js2-global-externs
+   (quote
+    ("$" "_" "setTimeout" "require" "define" "describe" "it" "after" "before" "expect" "xdescribe")))
  '(js2-mode-show-strict-warnings t)
  '(package-archives (quote (("MELPA" . "http://melpa.milkbox.net/packages/"))))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
- '(speedbar-indentation-width 2 t)
- '(speedbar-supported-extension-expressions (quote (".org" ".el" ".emacs" ".java" ".js" ".s?html" ".clj" ".json" ".md" ".css")))
+ '(speedbar-indentation-width 2)
+ '(speedbar-supported-extension-expressions
+   (quote
+    (".org" ".el" ".emacs" ".java" ".js" ".s?html" ".clj" ".json" ".md" ".css")))
  '(speedbar-use-images nil)
  '(split-height-threshold 80)
  '(sr-speedbar-max-width 50)
