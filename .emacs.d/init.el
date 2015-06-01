@@ -260,10 +260,10 @@
 (global-set-key (kbd "C-o") 'open-line-below)
 (global-set-key (kbd "C-S-o") 'open-line-above)
 
-(defun open-dot-emacs ()
+(defun open-init-file ()
   (interactive)
-  (find-file "~/.emacs"))
-(global-set-key [f12] 'open-dot-emacs)
+  (find-file "~/.emacs.d/init.el"))
+(global-set-key [f12] 'open-init-file)
 
 (defun open-todo ()
   (interactive)
