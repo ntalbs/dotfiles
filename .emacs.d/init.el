@@ -179,10 +179,10 @@
     (while (and (string-match "^*" (buffer-name)) (< i 50))
       (setq i (1+ i)) (previous-buffer) )))
 
-(global-set-key [s-left] 'previous-buffer)
-(global-set-key [s-right] 'next-buffer)
-(global-set-key [S-s-left] 'previous-user-buffer)
-(global-set-key [S-s-right] 'next-user-buffer)
+(global-set-key [S-s-left] 'previous-buffer)
+(global-set-key [S-s-right] 'next-buffer)
+(global-set-key [s-left] 'previous-user-buffer)
+(global-set-key [s-right] 'next-user-buffer)
 
 (global-set-key [s-home]  'windmove-left)
 (global-set-key [s-end]   'windmove-right)
