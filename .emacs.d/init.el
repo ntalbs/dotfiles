@@ -29,6 +29,7 @@
  '(markdown-indent-on-enter nil)
  '(package-archives (quote (("MELPA" . "http://melpa.milkbox.net/packages/"))))
  '(scroll-bar-mode nil)
+ '(sentence-end-double-space nil)
  '(show-paren-mode t)
  '(speedbar-indentation-width 2)
  '(speedbar-supported-extension-expressions
@@ -63,6 +64,7 @@
 
 (setq default-directory "~/")
 (add-hook 'before-save-hook 'whitespace-cleanup)
+(global-unset-key (kbd  "s-t"))         ; disable Cmd+t which shows font dialog.
 
 (defun set-ejs-mode ()
   (when (and (stringp buffer-file-name)
