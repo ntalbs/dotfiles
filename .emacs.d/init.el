@@ -20,6 +20,7 @@
  '(hightlight-parenthese-mode t)
  '(indent-tabs-mode nil)
  '(initial-scratch-message "")
+ '(js-indent-level 2)
  '(js2-basic-offset 2)
  '(js2-global-externs
    (quote
