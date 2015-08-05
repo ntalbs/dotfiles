@@ -238,8 +238,6 @@
             (flymake-jshint-load)))
 
 ;; tern
-(add-to-list 'load-path "~/.emacs.d/elpa/tern-20130828.716/")
-(autoload 'tern-mode "tern.el" nil t)
 (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
 (eval-after-load 'tern
   '(progn
