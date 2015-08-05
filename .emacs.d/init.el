@@ -277,9 +277,6 @@
 (fset 'delete-to-line-start [?\S-\C-a backspace])
 (global-set-key [s-backspace] 'delete-to-line-start)
 
-;(setq clojure-defun-style-default-indent t)
-;(setq lisp-indent-offset 2)
-
 (global-unset-key (kbd "s-s"))
 (global-set-key (kbd "s-s s-s") 'sr-speedbar-toggle)
 
@@ -287,13 +284,6 @@
 (ido-mode 1)
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
-
-;; join-line from top
-;; http://emacsredux.com/blog/2013/05/30/joining-lines/
-;; (defun top-join-line ()
-;;   "Join the current line with the line beneath it."
-;;   (interactive)
-;;   (delete-indentation 1))
 
 (defun join-lines-in-region (beg end)
   "Apply join-line over region."
