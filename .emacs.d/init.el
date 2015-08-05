@@ -278,6 +278,7 @@
 (fset 'delete-to-line-start [?\S-\C-a backspace])
 (global-set-key [s-backspace] 'delete-to-line-start)
 
+;; sr-speedbar
 (global-unset-key (kbd "s-s"))
 (global-set-key (kbd "s-s s-s") 'sr-speedbar-toggle)
 
