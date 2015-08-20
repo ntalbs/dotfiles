@@ -1,3 +1,5 @@
+(package-initialize)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -62,7 +64,6 @@
  '(markdown-italic-face ((t (:inherit font-lock-variable-name-face :slant normal)))))
 (put 'erase-buffer 'disabled nil)
 
-(package-initialize)
 
 (setq default-directory "~/")
 (add-hook 'before-save-hook 'whitespace-cleanup)
