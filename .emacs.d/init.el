@@ -30,6 +30,7 @@
  '(js2-mode-show-strict-warnings t)
  '(markdown-enable-math t)
  '(markdown-indent-on-enter nil)
+ '(mmm-global-mode (quote maybe) nil (mmm-mode))
  '(package-archives
    (quote
     (("MELPA" . "http://melpa.milkbox.net/packages/")
@@ -115,10 +116,9 @@
 (global-set-key [(control ?.)] 'goto-last-change)
 
 ;; mmm-mode
-(require 'mmm-auto)
-(setq mmm-global-mode 'maybe)
+(load-library "mmm-auto")
 (mmm-add-classes
- '((html-ejs :submode js-mode :front "<%[#=]?" :back "-?%>"
+ '((html-ejs :submode js2-mode :front "<%[#=]?" :back "-?%>"
              :match-face (("<%#" . mmm-comment-submode-face)
                           ("<%=" . mmm-output-submode-face)
                           ("<%" . mmm-code-submode-face))
@@ -127,9 +127,9 @@
                       (?= ejs-expression nil @ "<%=" @ " " _ " " @ "%>" @)))))
 
 ;;; Add html-js, embedded-css and html-ejs to html-mode
-(mmm-add-mode-ext-class 'html-mode nil 'html-js)
-(mmm-add-mode-ext-class 'html-mode nil 'html-css)
-(mmm-add-mode-ext-class 'html-mode nil 'html-ejs)
+(add-to-list 'mmm-mode-ext-classes-alist '(html-mode nil html-js))
+(add-to-list 'mmm-mode-ext-classes-alist '(html-mode nil html-css))
+(add-to-list 'mmm-mode-ext-classes-alist '(html-mode nil html-ejs))
 
 ;; multiple cursors
 (require 'multiple-cursors)
