@@ -38,6 +38,7 @@
  '(scroll-bar-mode nil)
  '(sentence-end-double-space nil)
  '(show-paren-mode t)
+ '(simplenote2-directory "/Users/ntalbs/.emacs.d/.simplenote2/")
  '(speedbar-indentation-width 2)
  '(speedbar-supported-extension-expressions
    (quote
@@ -285,6 +286,10 @@
 ;; sr-speedbar
 (global-unset-key (kbd "s-s"))
 (global-set-key (kbd "s-s s-s") 'sr-speedbar-toggle)
+
+;; simplenote
+(require 'simplenote2)
+(simplenote2-setup)
 
 ;; ido
 (ido-mode 1)
