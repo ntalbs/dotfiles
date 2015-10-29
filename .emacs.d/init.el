@@ -32,6 +32,7 @@
  '(markdown-enable-math t)
  '(markdown-indent-on-enter nil)
  '(mmm-global-mode (quote maybe) nil (mmm-mode))
+ '(ns-right-alternate-modifier (quote none))
  '(package-archives
    (quote
     (("MELPA" . "http://melpa.milkbox.net/packages/")
