@@ -238,12 +238,12 @@
 
 ;; flymake-jshint
 (require 'flymake-jshint)
-;(add-hook 'js2-mode-hook 'flymake-jshint-load)
 (add-hook 'js2-mode-hook
           (lambda ()
             (setq-local jshint-configuration-path
                         (expand-file-name ".jshintrc" (locate-dominating-file default-directory ".jshintrc")))
-            (flymake-jshint-load)))
+            (flymake-jshint-load)
+            (ac-js2-mode)))
 
 ;; tern
 (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
