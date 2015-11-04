@@ -33,6 +33,11 @@
  '(markdown-indent-on-enter nil)
  '(mmm-global-mode (quote maybe) nil (mmm-mode))
  '(ns-right-alternate-modifier (quote none))
+ '(org-todo-keyword-faces
+   (quote
+    (("WAITING" . "dark orange")
+     ("IN-PROGRESS" . "blue"))))
+ '(org-todo-keywords (quote ((sequence "TODO" "IN-PROGRESS" "WAITING" "DONE"))))
  '(package-archives
    (quote
     (("MELPA" . "http://melpa.milkbox.net/packages/")
