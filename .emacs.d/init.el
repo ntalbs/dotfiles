@@ -35,7 +35,7 @@
  '(ns-right-alternate-modifier (quote none))
  '(org-todo-keyword-faces
    (quote
-    (("WAITING" . "dark orange")
+    (("WAITING" . "deep pink")
      ("IN-PROGRESS" . "blue"))))
  '(org-todo-keywords (quote ((sequence "TODO" "IN-PROGRESS" "WAITING" "DONE"))))
  '(package-archives
