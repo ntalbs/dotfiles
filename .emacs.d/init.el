@@ -12,9 +12,6 @@
  '(css-indent-offset 2)
  '(current-language-environment "Korean")
  '(default-input-method "korean-hangul3")
- '(exec-path
-   (quote
-    ("/Users/ntalbs/bin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" "/usr/local/share/npm/bin")))
  '(fringe-mode (quote (nil . 0)) nil (fringe))
  '(global-hl-line-mode t)
  '(help-at-pt-display-when-idle (quote (flymake-overlay)) nil (help-at-pt))
@@ -88,7 +85,7 @@
 (add-hook 'clojure-mode-hook 'cider-mode)
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 
-(exec-path-from-shell-initialize)
+;(exec-path-from-shell-initialize)
 
 ;; zen coding
 (require 'emmet-mode)
