@@ -6,6 +6,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(blink-cursor-mode nil)
+ '(c-basic-offset 2)
  '(c-max-one-liner-length 120)
  '(column-number-mode t)
  '(command-line-default-directory "~/" t)
@@ -41,6 +42,7 @@
      ("gnu" . "http://elpa.gnu.org/packages/"))))
  '(scroll-bar-mode nil)
  '(sentence-end-double-space nil)
+ '(shell-file-name "/bin/bash")
  '(show-paren-mode t)
  '(speedbar-indentation-width 2)
  '(speedbar-supported-extension-expressions
@@ -56,7 +58,8 @@
  '(tab-stop-list nil)
  '(tab-width 2)
  '(text-mode-hook (quote (visual-line-mode)))
- '(tool-bar-mode nil))
+ '(tool-bar-mode nil)
+ '(tramp-default-method "ssh"))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
