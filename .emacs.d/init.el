@@ -166,14 +166,8 @@
 (prefer-coding-system       'utf-8)
 (setq default-buffer-file-coding-system 'utf-8)
 
-;; ;; From Emacs wiki
-;; (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
-;; ;; MS Windows clipboard is UTF-16LE
-;; (set-clipboard-coding-system 'utf-16le-dos)
-
 ;; move line or region with arrow(up, down) key like in eclipse.
-(global-set-key [M-up] 'move-text-up)
-(global-set-key [M-down] 'move-text-down)
+(move-text-default-bindings)
 ;; duplicate line or region.
 (global-set-key [M-s-down] 'duplicate-thing)
 
