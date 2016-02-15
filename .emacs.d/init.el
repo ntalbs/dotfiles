@@ -145,20 +145,6 @@
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C->") 'mc/mark-all-like-this)
 
-;; projectile
-(projectile-global-mode)
-(setq projectile-completion-system 'default)
-
-;; helm
-;; (require 'helm-config)
-;; (setq helm-idle-delay 0.1)
-;; (setq helm-input-idle-delay 0.1)
-;; (global-set-key (kbd "M-t") 'helm-for-files)
-
-;; helm-projectile
-(require 'helm-projectile)
-(global-set-key (kbd "C-x p") 'helm-projectile)
-
 ;; Set up unicode
 ;; (set-terminal-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -287,10 +273,11 @@
 (global-unset-key (kbd "s-s"))
 (global-set-key (kbd "s-s s-s") 'sr-speedbar-toggle)
 
-;; ido
-(ido-mode 1)
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
+;; ;; ido
+;; (ido-mode 1)
+;; (setq ido-enable-flex-matching t)
+;; (setq ido-everywhere t)
+(ivy-mode t)
 
 (defun join-lines-in-region (beg end)
   "Apply join-line over region."
