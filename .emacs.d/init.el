@@ -8,11 +8,15 @@
  '(blink-cursor-mode nil)
  '(c-basic-offset 2)
  '(c-max-one-liner-length 120)
+ '(cider-repl-display-help-banner nil)
  '(column-number-mode t)
  '(command-line-default-directory "~/" t)
  '(css-indent-offset 2)
  '(current-language-environment "Korean")
  '(default-input-method "korean-hangul3")
+ '(exec-path
+   (quote
+    ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/usr/local/bin" "/usr/local/Cellar/emacs/24.5/libexec/emacs/24.5/x86_64-apple-darwin14.5.0")))
  '(fringe-mode (quote (nil . 0)) nil (fringe))
  '(global-hl-line-mode t)
  '(help-at-pt-display-when-idle (quote (flymake-overlay)) nil (help-at-pt))
@@ -291,3 +295,12 @@
     (delete-indentation 1)))
 
 (global-set-key (kbd "C-^") 'join-lines-in-region)
+
+;; langtool
+(setq langtool-language-tool-jar "/usr/local/LanguageTool-3.2/languagetool-commandline.jar")
+(setq langtool-default-language "en-US")
+(global-set-key "\C-x4w" 'langtool-check)
+(global-set-key "\C-x4W" 'langtool-check-done)
+(global-set-key "\C-x4l" 'langtool-switch-default-language)
+(global-set-key "\C-x44" 'langtool-show-message-at-point)
+(global-set-key "\C-x4c" 'langtool-correct-buffer)
