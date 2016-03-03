@@ -33,6 +33,7 @@
  '(js2-mode-show-strict-warnings t)
  '(markdown-enable-math t)
  '(markdown-indent-on-enter nil)
+ '(markdown-list-indent-width 2)
  '(mmm-global-mode (quote maybe) nil (mmm-mode))
  '(ns-right-alternate-modifier (quote none))
  '(org-todo-keyword-faces
@@ -135,12 +136,16 @@
                           ("<%" . mmm-code-submode-face))
              :insert ((?% ejs-code nil @ "<%" @ " " _ " " @ "%>" @)
                       (?# ejs-comment nil @ "<%#" @ " " _ " " @ "%>" @)
-                      (?= ejs-expression nil @ "<%=" @ " " _ " " @ "%>" @)))))
+                      (?= ejs-expression nil @ "<%=" @ " " _ " " @ "%>" @)))
+   (markdown-tex :submode tex-mode :front "{% math_block %}\n" :back "{% endmath_block %}")
+   (markdown-clj :submode clojure-mode :front "```clojure\n" :back "```")))
 
 ;;; Add html-js, embedded-css and html-ejs to html-mode
 (add-to-list 'mmm-mode-ext-classes-alist '(html-mode nil html-js))
 (add-to-list 'mmm-mode-ext-classes-alist '(html-mode nil html-css))
 (add-to-list 'mmm-mode-ext-classes-alist '(html-mode nil html-ejs))
+(add-to-list 'mmm-mode-ext-classes-alist '(markdown-mode nil markdown-tex))
+(add-to-list 'mmm-mode-ext-classes-alist '(markdown-mode nil markdown-clj))
 
 ;; multiple cursors
 (require 'multiple-cursors)
