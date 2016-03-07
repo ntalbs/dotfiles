@@ -309,3 +309,9 @@
 (global-set-key "\C-x4l" 'langtool-switch-default-language)
 (global-set-key "\C-x44" 'langtool-show-message-at-point)
 (global-set-key "\C-x4c" 'langtool-correct-buffer)
+
+;; recent file list
+(require 'recentf)
+(recentf-mode t)
+(global-set-key (kbd "C-x C-r") 'ivy-recentf)
+(setq recentf-max-saved-items 25)
