@@ -79,7 +79,6 @@
  '(markdown-italic-face ((t (:inherit font-lock-variable-name-face :slant normal)))))
 (put 'erase-buffer 'disabled nil)
 
-
 (setq default-directory "~/")
 (add-hook 'before-save-hook 'whitespace-cleanup)
 (global-unset-key (kbd  "s-t"))         ; disable Cmd+t which shows font dialog.
@@ -146,6 +145,11 @@
 (add-to-list 'mmm-mode-ext-classes-alist '(html-mode nil html-ejs))
 (add-to-list 'mmm-mode-ext-classes-alist '(markdown-mode nil markdown-tex))
 (add-to-list 'mmm-mode-ext-classes-alist '(markdown-mode nil markdown-clj))
+
+(defun restart-mmm-mode ()
+  (interactive)
+  (mmm-mode-off)
+  (mmm-mode-on))
 
 ;; multiple cursors
 (require 'multiple-cursors)
