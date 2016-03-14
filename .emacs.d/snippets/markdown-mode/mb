@@ -1,5 +1,5 @@
 #name : math-block
 # --
-{% math_block %}
+{% math %}
 $0
-{% endmath_block %}
+{% endmath %}

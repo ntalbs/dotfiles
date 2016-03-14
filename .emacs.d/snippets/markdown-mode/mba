@@ -1,7 +1,7 @@
-#name : math-block aligned
+#name : math-block
 # --
-{% math_block %}
+{% math %}
 \begin{aligned}
 $0
 \end{aligned}
-{% endmath_block %}
+{% endmath %}

@@ -136,7 +136,7 @@
              :insert ((?% ejs-code nil @ "<%" @ " " _ " " @ "%>" @)
                       (?# ejs-comment nil @ "<%#" @ " " _ " " @ "%>" @)
                       (?= ejs-expression nil @ "<%=" @ " " _ " " @ "%>" @)))
-   (markdown-tex :submode tex-mode :front "{% math_block %}\n" :back "{% endmath_block %}")
+   (markdown-tex :submode tex-mode :front "{% math %}\n" :back "{% endmath %}")
    (markdown-clj :submode clojure-mode :front "```clojure\n" :back "```")))
 
 ;;; Add html-js, embedded-css and html-ejs to html-mode
