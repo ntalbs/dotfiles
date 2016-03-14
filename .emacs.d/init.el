@@ -38,9 +38,9 @@
  '(ns-right-alternate-modifier (quote none))
  '(org-todo-keyword-faces
    (quote
-    (("WAITING" . "deep pink")
+    (("PENDING" . "deep pink")
      ("IN-PROGRESS" . "blue"))))
- '(org-todo-keywords (quote ((sequence "TODO" "IN-PROGRESS" "WAITING" "DONE"))))
+ '(org-todo-keywords (quote ((sequence "TODO" "IN-PROGRESS" "PENDING" "DONE"))))
  '(package-archives
    (quote
     (("MELPA" . "http://melpa.milkbox.net/packages/")
