@@ -146,7 +146,7 @@
 (add-to-list 'mmm-mode-ext-classes-alist '(markdown-mode nil markdown-tex))
 (add-to-list 'mmm-mode-ext-classes-alist '(markdown-mode nil markdown-clj))
 
-(defun restart-mmm-mode ()
+(defun mmm-restart ()
   (interactive)
   (mmm-mode-off)
   (mmm-mode-on))
