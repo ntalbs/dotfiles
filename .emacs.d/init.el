@@ -116,8 +116,8 @@
   (text-scale-adjust 0))
 (define-key global-map (kbd "C-0") 'text-scale-default)
 
-;; (set-frame-width (selected-frame) 86)
-;; (set-frame-height (selected-frame) 47)
+(set-frame-width (selected-frame) 100)
+(set-frame-height (selected-frame) 60)
 
 ;; backup settings
 (setq-default
