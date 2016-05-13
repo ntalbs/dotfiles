@@ -319,3 +319,6 @@
 (recentf-mode t)
 (global-set-key (kbd "C-x C-r") 'ivy-recentf)
 (setq recentf-max-saved-items 25)
+
+;; restclient mode
+(add-to-list 'auto-mode-alist '("\\.req\\'" . restclient-mode))
