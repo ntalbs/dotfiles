@@ -36,6 +36,10 @@
  '(markdown-list-indent-width 2)
  '(mmm-global-mode (quote maybe) nil (mmm-mode))
  '(ns-right-alternate-modifier (quote none))
+ '(org-default-priority 50)
+ '(org-enable-priority-commands t)
+ '(org-highest-priority 49)
+ '(org-lowest-priority 51)
  '(org-todo-keyword-faces
    (quote
     (("PENDING" . "deep pink")
