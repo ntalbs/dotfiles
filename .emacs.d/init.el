@@ -142,7 +142,8 @@
                       (?# ejs-comment nil @ "<%#" @ " " _ " " @ "%>" @)
                       (?= ejs-expression nil @ "<%=" @ " " _ " " @ "%>" @)))
    (markdown-tex :submode tex-mode :front "{% math %}\n" :back "{% endmath %}")
-   (markdown-clj :submode clojure-mode :front "```clojure\n" :back "```")))
+   (markdown-clj :submode clojure-mode :front "```clojure\n" :back "```")
+   (markdown-java :submode java-mode :front "```java\n" :back "```")))
 
 ;;; Add html-js, embedded-css and html-ejs to html-mode
 (add-to-list 'mmm-mode-ext-classes-alist '(html-mode nil html-js))
@@ -155,6 +156,7 @@
   (interactive)
   (mmm-mode-off)
   (mmm-mode-on))
+(add-to-list 'mmm-mode-ext-classes-alist '(markdown-mode nil markdown-java))
 
 ;; multiple cursors
 (require 'multiple-cursors)
