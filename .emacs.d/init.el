@@ -151,11 +151,6 @@
 (add-to-list 'mmm-mode-ext-classes-alist '(html-mode nil html-ejs))
 (add-to-list 'mmm-mode-ext-classes-alist '(markdown-mode nil markdown-tex))
 (add-to-list 'mmm-mode-ext-classes-alist '(markdown-mode nil markdown-clj))
-
-(defun mmm-restart ()
-  (interactive)
-  (mmm-mode-off)
-  (mmm-mode-on))
 (add-to-list 'mmm-mode-ext-classes-alist '(markdown-mode nil markdown-java))
 
 ;; multiple cursors
