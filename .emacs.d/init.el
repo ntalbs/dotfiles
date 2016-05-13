@@ -49,6 +49,7 @@
    (quote
     (("MELPA" . "http://melpa.milkbox.net/packages/")
      ("gnu" . "http://elpa.gnu.org/packages/"))))
+ '(recentf-exclude (quote (".*/\\.emacs\\.d\\/elpa/.*el")))
  '(scroll-bar-mode nil)
  '(sentence-end-double-space nil)
  '(shell-file-name "/bin/bash")
