@@ -95,7 +95,7 @@
 (add-hook 'find-file-hook 'set-ejs-mode)
 
 (add-hook 'clojure-mode-hook 'cider-mode)
-(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+(add-hook 'cider-mode-hook 'eldoc-mode)
 
 ;(exec-path-from-shell-initialize)
 
@@ -324,3 +324,6 @@
 
 ;; restclient mode
 (add-to-list 'auto-mode-alist '("\\.req\\'" . restclient-mode))
+
+;; prevent from creating new frame by cmd-N
+(global-unset-key (kbd  "s-n"))
