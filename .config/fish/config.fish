@@ -11,3 +11,7 @@ alias bu "brew update; brew upgrade --all; brew cleanup; brew doctor"
 
 alias pg_start "pg_ctl start -l /usr/local/pgsql/data/logfile"
 alias pg_stop "pg_ctl stop"
+
+alias g  "git"
+alias b  "brazil"
+alias bb "brazil-build"
