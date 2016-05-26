@@ -2,3 +2,7 @@ fishd.*
 fish_read_history
 fish_history
 elpa
+/.config/brazil/brazil.prefs
+/.emacs.d/.mc-lists.el
+/.emacs.d/ac-comphist.dat
+/.emacs.d/recentf
