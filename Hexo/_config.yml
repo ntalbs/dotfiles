@@ -130,12 +130,16 @@ sitemap:
 
 # Redirect from old URLs
 alias:
+  2015/09/22/why-emacs/: 2015/why-emacs/
   2015/01/09/sql-transpose/: 2015/sql-transpose/
+  2014/10/01/dba-story-4/: 2014/dba-story-4/
   2014/07/28/implementing-sin-x/: 2014/implementing-sin-x/
   2014/05/22/ignoring-ie8/: 2014/ignoring-ie8/
+  2014/05/08/lombok/: 2014/lombok/
   2014/04/08/clojure-fallacy/: 2014/clojure-fallacy/
   2010/12/14/sql-problem/: 2010/sql-problem/
   2010/08/13/meaning-of-default/: 2010/meaning-of-default/
+  2008/10/29/set-timing/: 2008/set-timing/
   2008/10/28/data-type/: 2008/data-type/
   2008/10/28/storing-dates/: 2008/storing-dates/
   2008/10/24/dbms-job/: 2008/dbms-job/
