@@ -6,3 +6,4 @@ elpa
 /.emacs.d/.mc-lists.el
 /.emacs.d/ac-comphist.dat
 /.emacs.d/recentf
+/.emacs.d/tramp
