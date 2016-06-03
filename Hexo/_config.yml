@@ -130,16 +130,43 @@ sitemap:
 
 # Redirect from old URLs
 alias:
+  2015/12/28/amazon-1/: 2015/amazon-1/
+  2015/09/24/project-euler-030/: 2015/project-euler-030/
   2015/09/22/why-emacs/: 2015/why-emacs/
+  2015/06/10/if-cond-condp-case/: 2015/if-cond-condp-case/
+  2015/05/11/project-euler-018/: 2015/project-euler-018/
+  2015/04/28/stop-using-tail/: 2015/stop-using-tail/
+  2015/03/17/project-euler-012/: 2015/project-euler-012/
   2015/01/09/sql-transpose/: 2015/sql-transpose/
+  2015/01/01/project-euler-001/: 2015/project-euler-001/
+  2014/12/15/multiple-jdk-on-macosx/: 2014/multiple-jdk-on-macosx/
+  2014/11/12/mysql-row-generator/: 2014/mysql-row-generator/
   2014/10/01/dba-story-4/: 2014/dba-story-4/
+  2014/09/12/dba-story-1/: 2014/dba-story-1/
+  2014/09/11/dba-story-1/: 2014/dba-story-1/
+  2014/08/22/html-str-in-js/: 2014/html-str-in-js/
   2014/07/28/implementing-sin-x/: 2014/implementing-sin-x/
+  2014/07/25/newtons-method/: 2014/newtons-method/
   2014/05/22/ignoring-ie8/: 2014/ignoring-ie8/
   2014/05/08/lombok/: 2014/lombok/
   2014/04/08/clojure-fallacy/: 2014/clojure-fallacy/
   2010/12/14/sql-problem/: 2010/sql-problem/
   2010/08/13/meaning-of-default/: 2010/meaning-of-default/
+  2010/08/01/export-compress/: 2010/export-compress/
+  2010/05/16/duplicated-codes/: 2010/duplicated-codes/
+  2009/11/11/create-db/: 2009/create-db/
+  2009/08/20/login-sql/: 2009/login-sql/
+  2009/04/10/credit-card/: 2009/credit-card/
+  2008/12/04/dbms-metadata/: 2008/dbms-metadata/
+  2008/11/18/sizing-index/: 2008/sizing-index/
+  2008/11/17/sizing-table/: 2008/sizing-table/
+  2008/11/08/extract-ddl/: 2008/extract-ddl/
+  2008/11/01/select-shell/: 2008/select-shell/
+  2008/10/30/disabling-xdb-in-oracle/: 2008/disabling-xdb-in-oracle/
   2008/10/29/set-timing/: 2008/set-timing/
-  2008/10/28/data-type/: 2008/data-type/
   2008/10/28/storing-dates/: 2008/storing-dates/
+  2008/10/28/partition-by-timestamp/: 2008/partition-by-timestamp/
+  2008/10/28/data-type/: 2008/data-type/
+  2008/10/27/direct-load-and-index/: 2008/direct-load-and-index/
+  2008/10/27/add-column-and-default-value/: 2008/add-column-and-default-value/
   2008/10/24/dbms-job/: 2008/dbms-job/
