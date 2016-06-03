@@ -87,6 +87,7 @@
 (setq default-directory "~/")
 (add-hook 'before-save-hook 'whitespace-cleanup)
 (global-unset-key (kbd  "s-t"))         ; disable Cmd+t which shows font dialog.
+(global-unset-key (kbd  "s-n"))         ; disable Cmd+n which opens a new frame.
 
 (defun set-ejs-mode ()
   (when (and (stringp buffer-file-name)
@@ -324,6 +325,3 @@
 
 ;; restclient mode
 (add-to-list 'auto-mode-alist '("\\.req\\'" . restclient-mode))
-
-;; prevent from creating new frame by cmd-N
-(global-unset-key (kbd  "s-n"))
