@@ -14,6 +14,7 @@
  '(css-indent-offset 2)
  '(current-language-environment "Korean")
  '(default-input-method "korean-hangul3")
+ '(ediff-window-setup-function (quote ediff-setup-windows-plain))
  '(exec-path
    (quote
     ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/usr/local/bin" "/usr/local/Cellar/emacs/24.5/libexec/emacs/24.5/x86_64-apple-darwin14.5.0")))
