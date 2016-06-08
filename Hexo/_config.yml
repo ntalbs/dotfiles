@@ -138,6 +138,7 @@ alias:
   2015/05/11/project-euler-018/: 2015/project-euler-018/
   2015/04/28/stop-using-tail/: 2015/stop-using-tail/
   2015/03/17/project-euler-012/: 2015/project-euler-012/
+  2015/01/11/changing-shortcut-in-macosx/: 2015/changing-shortcut-in-macosx/
   2015/01/09/sql-transpose/: 2015/sql-transpose/
   2015/01/01/project-euler-001/: 2015/project-euler-001/
   2014/12/15/multiple-jdk-on-macosx/: 2014/multiple-jdk-on-macosx/
@@ -171,6 +172,7 @@ alias:
   2008/10/28/storing-dates/: 2008/storing-dates/
   2008/10/28/partition-by-timestamp/: 2008/partition-by-timestamp/
   2008/10/28/data-type/: 2008/data-type/
+  2008/10/27/direct-path-load/: 2008/direct-path-load/
   2008/10/27/direct-load-and-index/: 2008/direct-load-and-index/
   2008/10/27/add-column-and-default-value/: 2008/add-column-and-default-value/
   2008/10/24/dbms-job/: 2008/dbms-job/
