@@ -131,6 +131,7 @@ sitemap:
 # Redirect from old URLs
 alias:
   2015/12/28/amazon-1/: 2015/amazon-1/
+  2015/11/02/project-euler-044/: 2015/project-euler-044/
   2015/10/26/project-euler-042/: 2015/project-euler-042/
   2015/09/24/project-euler-030/: 2015/project-euler-030/
   2015/09/22/why-emacs/: 2015/why-emacs/
@@ -147,11 +148,15 @@ alias:
   2014/09/12/dba-story-1/: 2014/dba-story-1/
   2014/09/11/dba-story-1/: 2014/dba-story-1/
   2014/08/22/html-str-in-js/: 2014/html-str-in-js/
+  2014/08/05/jps/: 2014/jps/
   2014/07/28/implementing-sin-x/: 2014/implementing-sin-x/
   2014/07/25/newtons-method/: 2014/newtons-method/
   2014/05/22/ignoring-ie8/: 2014/ignoring-ie8/
   2014/05/08/lombok/: 2014/lombok/
   2014/04/08/clojure-fallacy/: 2014/clojure-fallacy/
+  2011/08/11/no-such-method-error/: 2011/no-such-method-error/
+  2011/06/03/jstestdriver-exclude/: 2011/jstestdriver-exclude/
+  2011/04/13/tricky-xml/: 2011/tricky-xml/
   2010/12/14/sql-problem/: 2010/sql-problem/
   2010/11/26/parameter-argument/: 2010/parameter-argument/
   2010/08/13/meaning-of-default/: 2010/meaning-of-default/
