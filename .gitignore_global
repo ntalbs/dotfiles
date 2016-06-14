@@ -1,0 +1,6 @@
+*~
+.DS_Store
+*.iml
+build
+.emacs.d/.emacs_saves/
+.emacs.d/auto-save-list/
