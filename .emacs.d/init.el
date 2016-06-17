@@ -17,7 +17,7 @@
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
  '(exec-path
    (quote
-    ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/usr/local/bin" "/usr/local/Cellar/emacs/24.5/libexec/emacs/24.5/x86_64-apple-darwin14.5.0")))
+    ("/usr/local/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" "/usr/local/Cellar/emacs/24.5/libexec/emacs/24.5/x86_64-apple-darwin14.5.0")))
  '(fringe-mode (quote (nil . 0)) nil (fringe))
  '(global-hl-line-mode t)
  '(help-at-pt-display-when-idle (quote (flymake-overlay)) nil (help-at-pt))
@@ -48,11 +48,10 @@
  '(org-todo-keywords (quote ((sequence "TODO" "IN-PROGRESS" "PENDING" "DONE"))))
  '(package-archives
    (quote
-    (("MELPA" . "http://melpa.milkbox.net/packages/")
+    (("melpa" . "https://melpa.org/packages/")
      ("gnu" . "http://elpa.gnu.org/packages/"))))
  '(recentf-exclude (quote (".*/\\.emacs\\.d\\/elpa/.*el")))
  '(scroll-bar-mode nil)
- '(sentence-end-double-space nil)
  '(shell-file-name "/bin/bash")
  '(show-paren-mode t)
  '(speedbar-indentation-width 2)
@@ -90,6 +89,14 @@
 (global-unset-key (kbd  "s-t"))         ; disable Cmd+t which shows font dialog.
 (global-unset-key (kbd  "s-n"))         ; disable Cmd+n which opens a new frame.
 
+(exec-path-from-shell-initialize)
+
+;; flycheck
+(require 'package)
+(use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode))
+
 (defun set-ejs-mode ()
   (when (and (stringp buffer-file-name)
              (string-match "\\.ejs\\'" buffer-file-name))
@@ -99,7 +106,6 @@
 (add-hook 'clojure-mode-hook 'cider-mode)
 (add-hook 'cider-mode-hook 'eldoc-mode)
 
-;(exec-path-from-shell-initialize)
 
 ;; zen coding
 (require 'emmet-mode)
@@ -167,7 +173,7 @@
 (set-default-coding-systems 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system       'utf-8)
-(setq default-buffer-file-coding-system 'utf-8)
+(setq buffer-file-coding-system 'utf-8)
 
 ;; move line or region with arrow(up, down) key like in eclipse.
 (move-text-default-bindings)
@@ -221,8 +227,8 @@
 (define-key esc-map (kbd "C-s") 'vr/isearch-forward) ;; C-M-s
 
 ;; yasnippet
-(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
 (require 'yasnippet)
+(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
 (yas-global-mode t)
 
 ;; auto-complete
@@ -237,28 +243,11 @@
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (require 'js2-refactor)
 
-;; flymake-jshint
-(require 'flymake-jshint)
-(add-hook 'js2-mode-hook
-          (lambda ()
-            (setq-local jshint-configuration-path
-                        (expand-file-name ".jshintrc" (locate-dominating-file default-directory ".jshintrc")))
-            (flymake-jshint-load)
-            (ac-js2-mode)))
-
-;; tern
-(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
-(eval-after-load 'tern
-  '(progn
-     (require 'tern-auto-complete)
-     (setq tern-ac-on-dot t)
-     (tern-ac-setup)))
-
 (defun open-line-below ()
   (interactive)
   (end-of-line)
   (open-line 1)
-  (next-line))
+  (forward-line))
 
 (defun open-line-above ()
   (interactive)
@@ -290,10 +279,6 @@
 (global-unset-key (kbd "s-s"))
 (global-set-key (kbd "s-s s-s") 'sr-speedbar-toggle)
 
-;; ;; ido
-;; (ido-mode 1)
-;; (setq ido-enable-flex-matching t)
-;; (setq ido-everywhere t)
 (ivy-mode t)
 
 (defun join-lines-in-region (beg end)
@@ -310,7 +295,8 @@
 (global-set-key (kbd "C-^") 'join-lines-in-region)
 
 ;; langtool
-(setq langtool-language-tool-jar "/usr/local/LanguageTool-3.2/languagetool-commandline.jar")
+(require 'langtool)
+(setq langtool-language-tool-jar "/usr/local/LanguageTool-3.3/languagetool-commandline.jar")
 (setq langtool-default-language "en-US")
 (global-set-key "\C-x4w" 'langtool-check)
 (global-set-key "\C-x4W" 'langtool-check-done)
