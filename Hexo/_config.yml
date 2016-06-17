@@ -141,7 +141,7 @@ alias:
   2008/10/30/disabling-xdb-in-oracle/: 2008/disabling-xdb-in-oracle/
   2008/11/01/select-shell/: 2008/select-shell/
   2008/11/01/sqlplus-ampersand/: 2008/sqlplus-ampersand/
-  2008/11/03/oracle-factorial/: 2008/11/03/oracle-factorial/
+  2008/11/03/oracle-factorial/: 2008/oracle-factorial/
   2008/11/08/extract-ddl/: 2008/extract-ddl/
   2008/11/17/sizing-table/: 2008/sizing-table/
   2008/11/18/sizing-index/: 2008/sizing-index/
@@ -151,7 +151,7 @@ alias:
   2009/06/25/625/: 2009/625/
   2009/08/20/login-sql/: 2009/login-sql/
   2009/11/11/create-db/: 2009/create-db/
-  2010/02/04/id/: 2010/id/
+  2010/02/04/id/: 2010/id-2/
   2010/05/16/duplicated-codes/: 2010/duplicated-codes/
   2010/07/09/postgresql-date/: 2010/postgresql-date/
   2010/07/27/sql-loader/: 2010/sql-loader/
@@ -177,7 +177,6 @@ alias:
   2014/09/12/dba-story-1/: 2014/dba-story-1/
   2014/10/01/dba-story-4/: 2014/dba-story-4/
   2014/11/12/mysql-row-generator/: 2014/mysql-row-generator/
-  2014/12/05/regexp-counter/: 2014/12/05/regexp-counter/
   2014/12/05/regexp-counter/: 2014/regexp-counter/
   2014/12/15/multiple-jdk-on-macosx/: 2014/multiple-jdk-on-macosx/
   2015/01/01/project-euler-001/: 2015/project-euler-001/
