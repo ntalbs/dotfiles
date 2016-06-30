@@ -137,6 +137,7 @@ alias:
   2008/10/28/data-type/: 2008/data-type/
   2008/10/28/partition-by-timestamp/: 2008/partition-by-timestamp/
   2008/10/28/storing-dates/: 2008/storing-dates/
+  2008/10/29/dbms-random/: 2008/dbms-random/
   2008/10/29/set-timing/: 2008/set-timing/
   2008/10/30/disabling-xdb-in-oracle/: 2008/disabling-xdb-in-oracle/
   2008/10/31/long-move-ts/: 2008/long-move-ts/
@@ -153,8 +154,10 @@ alias:
   2009/07/13/password/: 2009/password/
   2009/08/20/login-sql/: 2009/login-sql/
   2009/11/11/create-db/: 2009/create-db/
+  2009/12/03/first-and-last-day-of-week/: 2009/first-and-last-day-of-week/
   2010/02/04/id/: 2010/id-2/
   2010/05/16/duplicated-codes/: 2010/duplicated-codes/
+  2010/06/24/recover-db-archive-log-mode/: 2010/recover-db-archive-log-mode/
   2010/07/09/postgresql-date/: 2010/postgresql-date/
   2010/07/27/sql-loader/: 2010/sql-loader/
   2010/08/01/export-compress/: 2010/export-compress/
@@ -169,6 +172,7 @@ alias:
   2011/04/14/tricky-xml/: 2011/tricky-xml/
   2011/06/03/jstestdriver-exclude/: 2011/jstestdriver-exclude/
   2011/08/11/no-such-method-error/: 2011/no-such-method-error/
+  2011/08/12/no-such-method-error/: 2011/no-such-method-error/
   2011/08/23/final-local-var/: 2011/final-local-var/
   2014/04/08/clojure-fallacy/: 2014/clojure-fallacy/
   2014/04/09/word-lorem/: 2014/word-lorem/
@@ -203,9 +207,12 @@ alias:
   2015/05/14/project-euler-019/: 2015/project-euler-019/
   2015/06/10/if-cond-condp-case/: 2015/if-cond-condp-case/
   2015/06/11/editor-hierarchy/: 2015/editor-hierarchy/
+  2015/07/14/number-of-digits/: 2015/number-of-digits/
   2015/07/28/editor-ime/: 2015/editor-ime/
   2015/09/22/why-emacs/: 2015/why-emacs/
   2015/09/24/project-euler-030/: 2015/project-euler-030/
+  2015/10/11/project-euler-036/: 2015/project-euler-036/
   2015/10/26/project-euler-042/: 2015/project-euler-042/
   2015/11/02/project-euler-044/: 2015/project-euler-044/
   2015/12/28/amazon-1/: 2015/amazon-1/
+  2015/12/29/amazon-2/: 2015/amazon-2/
