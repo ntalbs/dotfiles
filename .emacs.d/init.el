@@ -5,6 +5,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(backup-by-copying t)
+ '(backup-directory-alist (quote (("." . "~/.emacs.d/.emacs_saves"))))
  '(blink-cursor-mode nil)
  '(c-basic-offset 2)
  '(c-max-one-liner-length 120)
@@ -14,6 +16,7 @@
  '(css-indent-offset 2)
  '(current-language-environment "Korean")
  '(default-input-method "korean-hangul3")
+ '(delete-old-versions t)
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
  '(exec-path
    (quote
@@ -32,6 +35,8 @@
    (quote
     ("$" "_" "setTimeout" "require" "define" "describe" "it" "after" "before" "expect" "xdescribe")))
  '(js2-mode-show-strict-warnings t)
+ '(kept-new-versions 6)
+ '(kept-old-versions 2)
  '(markdown-enable-math t)
  '(markdown-indent-on-enter nil)
  '(markdown-list-indent-width 2)
@@ -69,7 +74,8 @@
  '(tab-width 2)
  '(text-mode-hook (quote (visual-line-mode)))
  '(tool-bar-mode nil)
- '(tramp-default-method "ssh"))
+ '(tramp-default-method "ssh")
+ '(version-control t))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -126,15 +132,6 @@
 
 (set-frame-width (selected-frame) 100)
 (set-frame-height (selected-frame) 60)
-
-;; backup settings
-(setq-default
- backup-by-copying t            ; don't clobber symlinks
- backup-directory-alist '(("." . "~/.emacs.d/.emacs_saves")) ; don't litter my fs tree
- delete-old-versions t
- kept-new-versions 6
- kept-old-versions 2
- version-control t)             ; use versioned backups
 
 ;; goto last change
 (global-set-key [(control ?.)] 'goto-last-change)
