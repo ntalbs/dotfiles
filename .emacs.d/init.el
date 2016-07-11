@@ -98,7 +98,6 @@
 (exec-path-from-shell-initialize)
 
 ;; flycheck
-;(require 'package)
 (use-package flycheck
   :ensure t
   :init (global-flycheck-mode))
@@ -114,8 +113,9 @@
 
 
 ;; zen coding
-(require 'emmet-mode)
-(add-hook 'sgml-mode-hook 'emmet-mode)
+(use-package emmet-mode
+  :config
+  (add-hook 'sgml-mode-hook 'emmet-mode))
 
 ;; font
 ;; (set-face-font 'default "Monaco-12")
