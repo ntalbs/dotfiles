@@ -141,15 +141,20 @@ alias:
   2008/10/29/set-timing/: 2008/set-timing/
   2008/10/30/disabling-xdb-in-oracle/: 2008/disabling-xdb-in-oracle/
   2008/10/31/long-move-ts/: 2008/long-move-ts/
+  2008/11/01/db-files/: 2008/db-files/
   2008/11/01/select-shell/: 2008/select-shell/
   2008/11/01/sqlplus-ampersand/: 2008/sqlplus-ampersand/
+  2008/11/03/comp-indexes/: 2008/comp-indexes/
   2008/11/03/oracle-factorial/: 2008/oracle-factorial/
   2008/11/08/extract-ddl/: 2008/extract-ddl/
   2008/11/17/sizing-table/: 2008/sizing-table/
   2008/11/18/sizing-index/: 2008/sizing-index/
   2008/12/04/dbms-metadata/: 2008/dbms-metadata/
+  2009/02/15/db-performance/: 2009/db-performance/
   2009/02/16/db-performance/: 2009/db-performance/
   2009/04/10/credit-card/: 2009/credit-card/
+  2009/04/14/data-generator/: 2009/data-generator/
+  2009/06/23/process-and-result/: 2009/process-and-result/
   2009/06/25/625/: 2009/625/
   2009/07/13/password/: 2009/password/
   2009/08/20/login-sql/: 2009/login-sql/
@@ -178,6 +183,7 @@ alias:
   2014/04/09/word-lorem/: 2014/word-lorem/
   2014/04/16/numbering-multi-level-list/: 2014/numbering-multi-level-list/
   2014/05/08/lombok/: 2014/lombok/
+  2014/05/14/clojure-gae-howto/: 2014/clojure-gae-howto/
   2014/05/22/ignoring-ie8/: 2014/ignoring-ie8/
   2014/07/25/newtons-method/: 2014/newtons-method/
   2014/07/28/implementing-sin-x/: 2014/implementing-sin-x/
@@ -207,6 +213,7 @@ alias:
   2015/05/14/project-euler-019/: 2015/project-euler-019/
   2015/06/10/if-cond-condp-case/: 2015/if-cond-condp-case/
   2015/06/11/editor-hierarchy/: 2015/editor-hierarchy/
+  2015/06/21/editor-doc-model/: 2015/editor-doc-model/
   2015/07/14/number-of-digits/: 2015/number-of-digits/
   2015/07/28/editor-ime/: 2015/editor-ime/
   2015/09/22/why-emacs/: 2015/why-emacs/
