@@ -301,11 +301,11 @@
 (global-set-key "\C-x44" 'langtool-show-message-at-point)
 (global-set-key "\C-x4c" 'langtool-correct-buffer)
 
-;; recent file list
-(require 'recentf)
-(recentf-mode t)
-(global-set-key (kbd "C-x C-r") 'ivy-recentf)
-(setq recentf-max-saved-items 25)
+(use-package recentf
+  :init
+  (recentf-mode)
+  (setq recentf-max-saved-items 25)
+  :bind ("C-x C-r" . ivy-recentf))
 
 ;; restclient mode
 (add-to-list 'auto-mode-alist '("\\.req\\'" . restclient-mode))
