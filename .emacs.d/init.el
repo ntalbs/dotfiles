@@ -65,10 +65,6 @@
     (".org" ".el" ".emacs" ".java" ".js" ".s?html" ".clj" ".json" ".md" ".css")))
  '(speedbar-use-images nil)
  '(split-height-threshold 80)
- '(sr-speedbar-max-width 50)
- '(sr-speedbar-right-side nil)
- '(sr-speedbar-skip-other-window-p t)
- '(sr-speedbar-width-x 50)
  '(standard-indent 1)
  '(tab-stop-list nil)
  '(tab-width 2)
@@ -271,10 +267,6 @@
 ;; Cmd+delete
 (fset 'delete-to-line-start [?\S-\C-a backspace])
 (global-set-key [s-backspace] 'delete-to-line-start)
-
-;; sr-speedbar
-(global-unset-key (kbd "s-s"))
-(global-set-key (kbd "s-s s-s") 'sr-speedbar-toggle)
 
 (ivy-mode t)
 
