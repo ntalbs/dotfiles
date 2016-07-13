@@ -84,6 +84,7 @@
  '(markdown-bold-face ((t (:inherit font-lock-variable-name-face :foreground "Red" :weight semi-bold))))
  '(markdown-header-face ((t (:inherit font-lock-function-name-face :weight semi-bold))))
  '(markdown-italic-face ((t (:inherit font-lock-variable-name-face :slant normal)))))
+
 (put 'erase-buffer 'disabled nil)
 
 (setq default-directory "~/")
@@ -93,10 +94,59 @@
 
 (exec-path-from-shell-initialize)
 
-;; flycheck
+
+;; packages
+(use-package recentf
+  :init
+  (recentf-mode)
+  (setq recentf-max-saved-items 25)
+  :bind ("C-x C-r" . ivy-recentf))
+
 (use-package flycheck
   :ensure t
   :init (global-flycheck-mode))
+
+(use-package emmet-mode                 ; zen coding
+  :config
+  (add-hook 'sgml-mode-hook 'emmet-mode))
+
+(use-package multiple-cursors
+  :bind (("C-S-c C-S-c" . mc/edit-lines)
+         ("C->" . mc/mark-next-like-this)
+         ("C-<" . mc/mark-previous-like-this)
+         ("C-c C->" . mc/mark-all-like-this)))
+
+(use-package visual-regexp
+  :bind (("C-c r" . vr/replace)
+         ("C-c q" . vr/query-replace)
+         ("C-c m" . vr/mc-mark)))
+
+(use-package visual-regexp-steroids)
+
+(use-package yasnippet
+  :init
+  (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+  (yas-global-mode t))
+
+(use-package auto-complete
+  :init
+  (global-auto-complete-mode t)
+  (auto-complete-mode t)
+  (ac-set-trigger-key "TAB")
+  :bind
+  (:map ac-complete-mode-map
+        ("\C-p" . ac-previous)
+        ("\C-n" . ac-next)))
+
+(use-package langtool
+  :init
+  (setq langtool-language-tool-jar "/usr/local/LanguageTool-3.3/languagetool-commandline.jar")
+  (setq langtool-default-language "en-US")
+  :bind (("C-x 4 w" . langtool-check)
+         ("C-x 4 W" . langtool-check-done)
+         ("C-x 4 l" . langtool-switch-default-language)
+         ("C-x 4 4" . langtool-show-message-at-point)
+         ("C-x 4 c" . langtool-correct-buffer)))
 
 (defun set-ejs-mode ()
   (when (and (stringp buffer-file-name)
@@ -107,14 +157,7 @@
 (add-hook 'clojure-mode-hook 'cider-mode)
 (add-hook 'cider-mode-hook 'eldoc-mode)
 
-
-;; zen coding
-(use-package emmet-mode
-  :config
-  (add-hook 'sgml-mode-hook 'emmet-mode))
-
 ;; font
-;; (set-face-font 'default "Monaco-12")
 (set-fontset-font "fontset-default" '(#x1100 . #xffdc) "AppleMyungjo")
 
 ;; font size
@@ -153,13 +196,6 @@
 (add-to-list 'mmm-mode-ext-classes-alist '(markdown-mode nil markdown-tex))
 (add-to-list 'mmm-mode-ext-classes-alist '(markdown-mode nil markdown-clj))
 (add-to-list 'mmm-mode-ext-classes-alist '(markdown-mode nil markdown-java))
-
-;; multiple cursors
-(use-package multiple-cursors
-  :bind (("C-S-c C-S-c" . mc/edit-lines)
-         ("C->" . mc/mark-next-like-this)
-         ("C-<" . mc/mark-previous-like-this)
-         ("C-c C->" . mc/mark-all-like-this)))
 
 ;; Set up unicode
 ;; (set-terminal-coding-system 'utf-8)
@@ -208,30 +244,6 @@
 (global-set-key (kbd "C-s-<left>") (delete-after 'windmove-left))
 (global-set-key (kbd "C-s-<down>") (delete-after 'windmove-down))
 (global-set-key (kbd "C-s-<up>") (delete-after 'windmove-up))
-
-;; visual-regexp
-(use-package visual-regexp
-  :bind (("C-c r" . vr/replace)
-         ("C-c q" . vr/query-replace)
-         ("C-c m" . vr/mc-mark)))
-(use-package visual-regexp-steroids)
-
-;; yasnippet
-(use-package yasnippet
-  :init
-  (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
-  (yas-global-mode t))
-
-;; auto-complete
-(use-package auto-complete
-  :init
-  (global-auto-complete-mode t)
-  (auto-complete-mode t)
-  (ac-set-trigger-key "TAB")
-  :bind
-  (:map ac-complete-mode-map
-        ("\C-p" . ac-previous)
-        ("\C-n" . ac-next)))
 
 ;; js2-mode
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
@@ -283,23 +295,6 @@
     (delete-indentation 1)))
 
 (global-set-key (kbd "C-^") 'join-lines-in-region)
-
-;; langtool
-(use-package langtool
-  :init
-  (setq langtool-language-tool-jar "/usr/local/LanguageTool-3.3/languagetool-commandline.jar")
-  (setq langtool-default-language "en-US")
-  :bind (("C-x 4 w" . langtool-check)
-         ("C-x 4 W" . langtool-check-done)
-         ("C-x 4 l" . langtool-switch-default-language)
-         ("C-x 4 4" . langtool-show-message-at-point)
-         ("C-x 4 c" . langtool-correct-buffer)))
-
-(use-package recentf
-  :init
-  (recentf-mode)
-  (setq recentf-max-saved-items 25)
-  :bind ("C-x C-r" . ivy-recentf))
 
 ;; restclient mode
 (add-to-list 'auto-mode-alist '("\\.req\\'" . restclient-mode))
