@@ -210,27 +210,28 @@
 (global-set-key (kbd "C-s-<up>") (delete-after 'windmove-up))
 
 ;; visual-regexp
-(require 'visual-regexp)
-(require 'visual-regexp-steroids)
-
-(define-key global-map (kbd "C-c r") 'vr/replace)
-(define-key global-map (kbd "C-c q") 'vr/query-replace)
-(define-key global-map (kbd "C-c m") 'vr/mc-mark)
-(define-key esc-map (kbd "C-r") 'vr/isearch-backward) ;; C-M-r
-(define-key esc-map (kbd "C-s") 'vr/isearch-forward) ;; C-M-s
+(use-package visual-regexp
+  :bind (("C-c r" . vr/replace)
+         ("C-c q" . vr/query-replace)
+         ("C-c m" . vr/mc-mark)))
+(use-package visual-regexp-steroids)
 
 ;; yasnippet
-(require 'yasnippet)
-(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
-(yas-global-mode t)
+(use-package yasnippet
+  :init
+  (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+  (yas-global-mode t))
 
 ;; auto-complete
-(require 'auto-complete)
-(global-auto-complete-mode t)
-(auto-complete-mode t)
-(define-key ac-complete-mode-map "\C-p" 'ac-previous)
-(define-key ac-complete-mode-map "\C-n" 'ac-next)
-(ac-set-trigger-key "TAB")
+(use-package auto-complete
+  :init
+  (global-auto-complete-mode t)
+  (auto-complete-mode t)
+  (ac-set-trigger-key "TAB")
+  :bind
+  (:map ac-complete-mode-map
+        ("\C-p" . ac-previous)
+        ("\C-n" . ac-next)))
 
 ;; js2-mode
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
@@ -284,14 +285,15 @@
 (global-set-key (kbd "C-^") 'join-lines-in-region)
 
 ;; langtool
-(require 'langtool)
-(setq langtool-language-tool-jar "/usr/local/LanguageTool-3.3/languagetool-commandline.jar")
-(setq langtool-default-language "en-US")
-(global-set-key "\C-x4w" 'langtool-check)
-(global-set-key "\C-x4W" 'langtool-check-done)
-(global-set-key "\C-x4l" 'langtool-switch-default-language)
-(global-set-key "\C-x44" 'langtool-show-message-at-point)
-(global-set-key "\C-x4c" 'langtool-correct-buffer)
+(use-package langtool
+  :init
+  (setq langtool-language-tool-jar "/usr/local/LanguageTool-3.3/languagetool-commandline.jar")
+  (setq langtool-default-language "en-US")
+  :bind (("C-x 4 w" . langtool-check)
+         ("C-x 4 W" . langtool-check-done)
+         ("C-x 4 l" . langtool-switch-default-language)
+         ("C-x 4 4" . langtool-show-message-at-point)
+         ("C-x 4 c" . langtool-correct-buffer)))
 
 (use-package recentf
   :init
