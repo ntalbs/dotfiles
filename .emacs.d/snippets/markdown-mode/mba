@@ -1,4 +1,4 @@
-#name : math-block
+#name : math-block-aligned
 # --
 {% math %}
 \begin{aligned}
