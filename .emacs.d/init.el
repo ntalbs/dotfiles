@@ -99,7 +99,7 @@
 (use-package recentf
   :init
   (recentf-mode)
-  (setq recentf-max-saved-items 25)
+  (setq recentf-max-saved-items 50)
   :bind ("C-x C-r" . ivy-recentf))
 
 (use-package flycheck
