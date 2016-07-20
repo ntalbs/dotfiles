@@ -139,6 +139,7 @@ alias:
   2008/10/28/storing-dates/: 2008/storing-dates/
   2008/10/29/dbms-random/: 2008/dbms-random/
   2008/10/29/set-timing/: 2008/set-timing/
+  2008/10/30/deleting-db-link/: 2008/deleting-db-link/
   2008/10/30/disabling-xdb-in-oracle/: 2008/disabling-xdb-in-oracle/
   2008/10/31/long-move-ts/: 2008/long-move-ts/
   2008/11/01/db-files/: 2008/db-files/
@@ -207,6 +208,7 @@ alias:
   2015/02/24/project-euler-008/: 2015/project-euler-008/
   2015/02/26/emacs-removing-blank-lines/: 2015/emacs-removing-blank-lines/
   2015/03/17/project-euler-012/: 2015/project-euler-012/
+  2015/03/17/project-euler-013/: 2015/project-euler-013/
   2015/04/07/statement-expresssion/: 2015/statement-expresssion/
   2015/04/28/stop-using-tail/: 2015/stop-using-tail/
   2015/05/11/project-euler-018/: 2015/project-euler-018/
@@ -223,3 +225,4 @@ alias:
   2015/11/02/project-euler-044/: 2015/project-euler-044/
   2015/12/28/amazon-1/: 2015/amazon-1/
   2015/12/29/amazon-2/: 2015/amazon-2/
+  2016/03/08/project-euler-054/: 2016/project-euler-054/
