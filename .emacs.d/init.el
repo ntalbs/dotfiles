@@ -83,7 +83,8 @@
  '(js2-function-call ((t (:inherit default :foreground "dark blue"))))
  '(markdown-bold-face ((t (:inherit font-lock-variable-name-face :foreground "Red" :weight semi-bold))))
  '(markdown-header-face ((t (:inherit font-lock-function-name-face :weight semi-bold))))
- '(markdown-italic-face ((t (:inherit font-lock-variable-name-face :slant normal)))))
+ '(markdown-italic-face ((t (:inherit font-lock-variable-name-face :slant normal))))
+ '(mode-line ((t (:background "light blue" :foreground "black" :box (:line-width -1 :style released-button))))))
 
 (put 'erase-buffer 'disabled nil)
 
