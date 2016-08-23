@@ -29,11 +29,14 @@
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(initial-scratch-message "")
+ '(ivy-count-format "(%d/%d) ")
+ '(ivy-use-virtual-buffers t)
  '(js-indent-level 2)
  '(js2-basic-offset 2)
  '(js2-global-externs
    (quote
     ("$" "_" "setTimeout" "require" "define" "describe" "it" "after" "before" "expect" "xdescribe")))
+ '(js2-mode-show-parse-errors nil)
  '(js2-mode-show-strict-warnings t)
  '(kept-new-versions 6)
  '(kept-old-versions 2)
@@ -56,6 +59,7 @@
     (("melpa" . "https://melpa.org/packages/")
      ("gnu" . "http://elpa.gnu.org/packages/"))))
  '(recentf-exclude (quote (".*/\\.emacs\\.d\\/elpa/.*el")))
+ '(recentf-max-saved-items 50)
  '(scroll-bar-mode nil)
  '(shell-file-name "/bin/bash")
  '(show-paren-mode t)
@@ -95,13 +99,15 @@
 
 (exec-path-from-shell-initialize)
 
-
 ;; packages
-(use-package recentf
+(use-package ivy-mode
   :init
-  (recentf-mode)
-  (setq recentf-max-saved-items 50)
-  :bind ("C-x C-r" . ivy-recentf))
+  (ivy-mode t)
+  (recentf-mode t)
+  :bind (("C-s" . swiper)
+         ("M-x" . counsel-M-x)
+         ("C-x C-f" . counsel-find-file)
+         ("C-x C-r" . counsel-recentf)))
 
 (use-package flycheck
   :ensure t
@@ -281,8 +287,6 @@
 ;; Cmd+delete
 (fset 'delete-to-line-start [?\S-\C-a backspace])
 (global-set-key [s-backspace] 'delete-to-line-start)
-
-(ivy-mode t)
 
 (defun join-lines-in-region (beg end)
   "Apply join-line over region."
