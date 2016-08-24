@@ -44,6 +44,7 @@
  '(markdown-indent-on-enter nil)
  '(markdown-list-indent-width 2)
  '(mmm-global-mode (quote maybe) nil (mmm-mode))
+ '(neo-theme (quote nerd))
  '(ns-right-alternate-modifier (quote none))
  '(org-default-priority 50)
  '(org-enable-priority-commands t)
@@ -108,6 +109,9 @@
          ("M-x" . counsel-M-x)
          ("C-x C-f" . counsel-find-file)
          ("C-x C-r" . counsel-recentf)))
+
+(use-package neotree
+  :bind (("<f8>" . neotree-toggle)))
 
 (use-package flycheck
   :ensure t
