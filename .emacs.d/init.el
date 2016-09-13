@@ -101,6 +101,17 @@
 (exec-path-from-shell-initialize)
 
 ;; packages
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(use-package try
+  :ensure t)
+
+(use-package which-key
+  :ensure t
+  :config (which-key-mode))
+
 (use-package ivy-mode
   :init
   (ivy-mode t)
@@ -109,6 +120,10 @@
          ("M-x" . counsel-M-x)
          ("C-x C-f" . counsel-find-file)
          ("C-x C-r" . counsel-recentf)))
+
+(use-package magit
+  :ensure t
+  :bind (("<f7>" . magit-status)))
 
 (use-package neotree
   :bind (("<f8>" . neotree-toggle)))
