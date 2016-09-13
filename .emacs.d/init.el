@@ -37,7 +37,7 @@
    (quote
     ("$" "_" "setTimeout" "require" "define" "describe" "it" "after" "before" "expect" "xdescribe")))
  '(js2-mode-show-parse-errors nil)
- '(js2-mode-show-strict-warnings t)
+ '(js2-mode-show-strict-warnings nil)
  '(kept-new-versions 6)
  '(kept-old-versions 2)
  '(markdown-enable-math t)
