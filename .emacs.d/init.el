@@ -47,7 +47,18 @@
  '(neo-theme (quote nerd))
  '(ns-right-alternate-modifier (quote none))
  '(org-default-priority 50)
+ '(org-emphasis-alist
+   (quote
+    (("*" bold)
+     ("/" italic)
+     ("_" underline)
+     ("=" org-verbatim verbatim)
+     ("~" org-code verbatim)
+     ("-"
+      (:strike-through t))
+     ("`" org-code verbatim))))
  '(org-enable-priority-commands t)
+ '(org-hide-emphasis-markers t)
  '(org-highest-priority 49)
  '(org-lowest-priority 51)
  '(org-todo-keyword-faces
