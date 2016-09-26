@@ -135,7 +135,7 @@
 
 (use-package magit
   :ensure t
-  :bind (("<f7>" . magit-status)))
+  :bind (("<f9>" . magit-status)))
 
 (use-package neotree
   :bind (("<f8>" . neotree-toggle)))
