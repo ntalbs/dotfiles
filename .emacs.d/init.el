@@ -99,7 +99,8 @@
  '(markdown-bold-face ((t (:inherit font-lock-variable-name-face :foreground "Red" :weight semi-bold))))
  '(markdown-header-face ((t (:inherit font-lock-function-name-face :weight semi-bold))))
  '(markdown-italic-face ((t (:inherit font-lock-variable-name-face :slant normal))))
- '(mode-line ((t (:background "light blue" :foreground "black" :box (:line-width -1 :style released-button))))))
+ '(mode-line ((t (:background "light blue" :foreground "black" :box (:line-width -1 :style released-button)))))
+ '(org-code ((t (:inherit nil :foreground "deep pink")))))
 
 (put 'erase-buffer 'disabled nil)
 
