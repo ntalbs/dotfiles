@@ -95,7 +95,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(hl-line ((t (:background "#ffa"))))
- '(italic ((t (:slant normal))))
  '(js2-function-call ((t (:inherit default :foreground "dark blue"))))
  '(markdown-bold-face ((t (:inherit font-lock-variable-name-face :foreground "Red" :weight semi-bold))))
  '(markdown-header-face ((t (:inherit font-lock-function-name-face :weight semi-bold))))
