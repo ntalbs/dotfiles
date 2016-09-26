@@ -70,6 +70,9 @@
    (quote
     (("melpa" . "https://melpa.org/packages/")
      ("gnu" . "http://elpa.gnu.org/packages/"))))
+ '(package-selected-packages
+   (quote
+    (yaml-mode which-key visual-regexp-steroids use-package try tern-auto-complete stylus-mode restclient paredit-menu org-journal neotree move-text mmm-mode markdown-mode+ magit langtool js2-refactor goto-last-change flycheck fish-mode exec-path-from-shell emmet-mode duplicate-thing counsel cider)))
  '(recentf-exclude (quote (".*/\\.emacs\\.d\\/elpa/.*el")))
  '(recentf-max-saved-items 50)
  '(scroll-bar-mode nil)
