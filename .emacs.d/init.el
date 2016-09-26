@@ -185,6 +185,13 @@
         ("\C-p" . ac-previous)
         ("\C-n" . ac-next)))
 
+(use-package js2-mode
+  :config
+  (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode)))
+
+(use-package js2-refactor
+  :ensure t)
+
 (use-package langtool
   :init
   (setq langtool-language-tool-jar "/usr/local/LanguageTool-3.3/languagetool-commandline.jar")
@@ -291,10 +298,6 @@
 (global-set-key (kbd "C-s-<left>") (delete-after 'windmove-left))
 (global-set-key (kbd "C-s-<down>") (delete-after 'windmove-down))
 (global-set-key (kbd "C-s-<up>") (delete-after 'windmove-up))
-
-;; js2-mode
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(require 'js2-refactor)
 
 (defun open-line-below ()
   (interactive)
