@@ -324,7 +324,7 @@
 
 (defun open-todo ()
   (interactive)
-  (find-file "~/Documents/memo.org"))
+  (find-file "~/Documents/todo.org"))
 (global-set-key [f11] 'open-todo)
 
 (eval-after-load "paredit.el"
