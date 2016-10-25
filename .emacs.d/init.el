@@ -135,7 +135,7 @@
   :bind (("s-f" . swiper)
          ("M-x" . counsel-M-x)
          ("C-x C-f" . counsel-find-file)
-         ("C-x C-r" . ivy-recentf)))
+         ("C-x C-r" . counsel-recentf)))
 
 (use-package magit
   :ensure t
