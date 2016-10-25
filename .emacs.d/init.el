@@ -127,14 +127,15 @@
   :ensure t
   :config (which-key-mode))
 
-(use-package ivy-mode
+(use-package ivy
+  :ensure t
   :init
   (ivy-mode t)
   (recentf-mode t)
   :bind (("s-f" . swiper)
          ("M-x" . counsel-M-x)
          ("C-x C-f" . counsel-find-file)
-         ("C-x C-r" . counsel-recentf)))
+         ("C-x C-r" . ivy-recentf)))
 
 (use-package magit
   :ensure t
