@@ -1,0 +1,6 @@
+#name : fm
+# --
+#+STARTUP: showall indent
+#+TITLE: $1
+
+$0
