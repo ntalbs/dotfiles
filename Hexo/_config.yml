@@ -73,30 +73,33 @@ disqus_shortname: ntalbs-stuff
 
 # Extensions
 ## Plugins: http://hexo.io/plugins/
-html_minifier:
+hfc_useref:
+  enable: false
+  concat: false
+  exclude:
+
+hfc_html:
   enable: true
   exclude:
 
-css_minifier:
+hfc_css:
   enable: true
   exclude:
-    - "*.min.css"
+    - '*.min.css'
 
-js_minifier:
+hfc_js:
   enable: true
   mangle: true
   output:
   compress:
   exclude:
-    - "*.min.js"
+    - '*.min.js'
 
-image_minifier:
+hfc_img:
   enable: false
-  interlaced: false
-  multipass: false
-  optimizationLevel: 2
-  pngquant: false
-  progressive: false
+
+hfc_favicons:
+  enable: false
 
 ## Themes: http://hexo.io/themes/
 theme: simplet
