@@ -158,6 +158,10 @@
          ("C-<" . mc/mark-previous-like-this)
          ("C-c C->" . mc/mark-all-like-this)))
 
+(use-package expand-region
+  :bind (("C-=" . er/expand-region)
+         ("C--" . er/contract-region)))
+
 (use-package visual-regexp
   :bind (("C-c r" . vr/replace)
          ("C-c q" . vr/query-replace)
