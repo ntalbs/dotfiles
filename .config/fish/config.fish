@@ -1,5 +1,5 @@
 set -x SHELL /usr/local/bin/fish
-set -x PATH /apollo/env/SDETools/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin /usr/local/share/git-core/contrib/diff-highlight
+set -x PATH $BRAZIL_CLI_BIN /usr/local/crux /usr/local/bin /usr/bin /bin /usr/sbin /sbin /usr/local/share/git-core/contrib/diff-highlight /workplace/AVClientServicesDevScripts/bin
 set -x JAVA8_HOME (/usr/libexec/java_home -v1.8)
 set -x JAVA_HOME $JAVA8_HOME
 
