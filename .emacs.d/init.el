@@ -223,13 +223,12 @@
 (set-fontset-font "fontset-default" '(#x1100 . #xffdc) "AppleMyungjo")
 
 ;; font size
-(define-key global-map (kbd "C-+") 'text-scale-increase)
-(define-key global-map (kbd "C-=") 'text-scale-increase)
-(define-key global-map (kbd "C--") 'text-scale-decrease)
+(define-key global-map (kbd "s-=") 'text-scale-increase)
+(define-key global-map (kbd "s--") 'text-scale-decrease)
 (defun text-scale-default ()
   (interactive)
   (text-scale-adjust 0))
-(define-key global-map (kbd "C-0") 'text-scale-default)
+(define-key global-map (kbd "s-0") 'text-scale-default)
 
 (set-frame-width (selected-frame) 100)
 (set-frame-height (selected-frame) 60)
