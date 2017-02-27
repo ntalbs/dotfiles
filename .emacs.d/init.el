@@ -45,7 +45,9 @@
  '(markdown-list-indent-width 2)
  '(mmm-global-mode (quote maybe) nil (mmm-mode))
  '(neo-theme (quote nerd))
+ '(neo-window-fixed-size nil)
  '(ns-right-alternate-modifier (quote none))
+ '(org-cycle-separator-lines 1)
  '(org-default-priority 50)
  '(org-emphasis-alist
    (quote
@@ -74,7 +76,7 @@
    (quote
     (yaml-mode which-key visual-regexp-steroids use-package try tern-auto-complete stylus-mode restclient paredit-menu org-journal neotree move-text mmm-mode markdown-mode+ magit langtool js2-refactor goto-last-change flycheck fish-mode exec-path-from-shell emmet-mode duplicate-thing counsel cider)))
  '(recentf-exclude (quote (".*/\\.emacs\\.d\\/elpa/.*el")))
- '(recentf-max-saved-items 50)
+ '(recentf-max-saved-items 100)
  '(scroll-bar-mode nil)
  '(shell-file-name "/bin/bash")
  '(show-paren-mode t)
