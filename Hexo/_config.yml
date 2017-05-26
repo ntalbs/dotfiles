@@ -130,6 +130,8 @@ deploy:
 # Sitemap Generation
 sitemap:
   path: sitemap.xml
+  tag: false
+  category: false
 
 # Redirect from old URLs
 alias:
