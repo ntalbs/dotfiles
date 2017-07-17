@@ -68,6 +68,10 @@ time_format: H:mm:ss
 per_page: 10
 pagination_dir: page
 
+# Math
+math:
+  engine: 'mathjax'
+
 # Disqus
 disqus_shortname: ntalbs-stuff
 
