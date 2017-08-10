@@ -75,6 +75,12 @@ math:
 # Disqus
 disqus_shortname: ntalbs-stuff
 
+# Twitter
+twitter_username: ntalbs
+
+# Github
+github_username: ntalbs
+
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 hfc_useref:
