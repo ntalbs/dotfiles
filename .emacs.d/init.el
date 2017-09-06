@@ -152,7 +152,8 @@
 
 (use-package emmet-mode                 ; zen coding
   :config
-  (add-hook 'sgml-mode-hook 'emmet-mode))
+  (add-hook 'sgml-mode-hook 'emmet-mode)
+  (add-hook 'web-mode-hook 'emmet-mode))
 
 (use-package multiple-cursors
   :bind (("C-S-c C-S-c" . mc/edit-lines)
@@ -201,6 +202,24 @@
 
 (use-package js2-refactor
   :ensure t)
+
+(use-package web-mode
+  :config
+;  (setq web-mode-enable-current-element-highlight t)
+;  (setq web-mode-enable-current-column-highlight t)
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-ac-sources-alist
+  '(("html" . (ac-source-emmet-html-aliases ac-source-emmet-html-snippets))
+    ("css" . (ac-source-css-property ac-source-emmet-css-snippets))))
+  (add-hook 'web-mode-before-auto-complete-hooks
+            '(lambda ()
+               (let ((web-mode-cur-language (web-mode-language-at-pos)))
+                 (if (string= web-mode-cur-language "css")
+                     (setq emmet-use-css-transform t)
+                   (setq emmet-use-css-transform nil)))))
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode)))
 
 (use-package langtool
   :init
