@@ -137,7 +137,9 @@
   :bind (("s-f" . swiper)
          ("M-x" . counsel-M-x)
          ("C-x C-f" . counsel-find-file)
-         ("C-x C-r" . counsel-recentf)))
+         ("C-x M-j" . counsel-file-jump)
+         ("C-x C-r" . counsel-recentf)
+         ("C-x C-g" . counsel-git-grep)))
 
 (use-package magit
   :ensure t
