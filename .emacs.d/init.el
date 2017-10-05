@@ -198,6 +198,15 @@
         ("\C-p" . ac-previous)
         ("\C-n" . ac-next)))
 
+(use-package cider-mode
+  :ensure t
+  :config
+  (add-hook 'clojure-mode-hook 'cider-mode)
+  (add-hook 'cider-mode-hook 'eldoc-mode)
+  :bind
+  (:map cider-repl-mode-map
+        ("C-c C-k" . cider-repl-clear-buffer)))
+
 (use-package js2-mode
   :config
   (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode)))
