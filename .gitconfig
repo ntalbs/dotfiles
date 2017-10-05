@@ -42,3 +42,5 @@
   whitespace = red reverse
 [diff-so-fancy]
   first-run = false
+[magit]
+	hideCampaign = true
