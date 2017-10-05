@@ -2,8 +2,15 @@ fishd.*
 fish_read_history
 fish_history
 elpa
-/.config/brazil/brazil.prefs
+/.config/brazil
+/.config/cr
+/.config/ninja-dev-sync.json
+/.config/configstore
 /.emacs.d/.mc-lists.el
 /.emacs.d/ac-comphist.dat
 /.emacs.d/recentf
 /.emacs.d/tramp
+/.emacs.d/games
+/.emacs.d/tutorial
+/.emacs.d/request
+/.lein/repl-history
