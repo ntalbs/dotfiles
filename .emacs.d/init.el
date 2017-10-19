@@ -74,7 +74,7 @@
      ("gnu" . "http://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (yaml-mode which-key visual-regexp-steroids use-package try tern-auto-complete stylus-mode restclient paredit-menu org-journal neotree move-text mmm-mode markdown-mode+ magit langtool js2-refactor goto-last-change flycheck fish-mode exec-path-from-shell emmet-mode duplicate-thing counsel cider)))
+    (cider-mode find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper ivy magit yaml-mode which-key visual-regexp-steroids use-package try tern-auto-complete stylus-mode restclient paredit-menu org-journal neotree move-text mmm-mode markdown-mode+ langtool js2-refactor goto-last-change flycheck fish-mode exec-path-from-shell emmet-mode duplicate-thing cider)))
  '(recentf-exclude (quote (".*/\\.emacs\\.d\\/elpa/.*el")))
  '(recentf-max-saved-items 100)
  '(scroll-bar-mode nil)
@@ -86,6 +86,7 @@
     (".org" ".el" ".emacs" ".java" ".js" ".s?html" ".clj" ".json" ".md" ".css")))
  '(speedbar-use-images nil)
  '(split-height-threshold 80)
+ '(split-width-threshold 300)
  '(standard-indent 1)
  '(tab-stop-list nil)
  '(tab-width 2)
@@ -215,6 +216,7 @@
   :ensure t)
 
 (use-package web-mode
+  :ensure t
   :config
 ;  (setq web-mode-enable-current-element-highlight t)
 ;  (setq web-mode-enable-current-column-highlight t)
@@ -232,6 +234,10 @@
                    (setq emmet-use-css-transform nil)))))
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode)))
 
+(use-package restclient
+  :config
+  (add-to-list 'auto-mode-alist '("\\.http\\'" . restclient-mode)))
+
 (use-package langtool
   :init
   (setq langtool-language-tool-jar "/usr/local/LanguageTool-3.3/languagetool-commandline.jar")
@@ -245,11 +251,8 @@
 (defun set-ejs-mode ()
   (when (and (stringp buffer-file-name)
              (string-match "\\.ejs\\'" buffer-file-name))
-    (html-mode)))
+    (web-mode)))
 (add-hook 'find-file-hook 'set-ejs-mode)
-
-(add-hook 'clojure-mode-hook 'cider-mode)
-(add-hook 'cider-mode-hook 'eldoc-mode)
 
 ;; font
 (set-fontset-font "fontset-default" '(#x1100 . #xffdc) "AppleMyungjo")
@@ -385,5 +388,9 @@
 
 (global-set-key (kbd "C-^") 'join-lines-in-region)
 
-;; restclient mode
-(add-to-list 'auto-mode-alist '("\\.req\\'" . restclient-mode))
+;; insert date
+(defun insert-date ()
+  (interactive)
+  (insert (format-time-string "%Y-%m-%d")))
+
+(global-set-key (kbd "C-c .") 'insert-date)
