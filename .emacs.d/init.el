@@ -40,6 +40,7 @@
  '(js2-mode-show-strict-warnings nil)
  '(kept-new-versions 6)
  '(kept-old-versions 2)
+ '(lua-indent-level 2)
  '(markdown-enable-math t)
  '(markdown-indent-on-enter nil)
  '(markdown-list-indent-width 2)
@@ -241,6 +242,12 @@
                      (setq emmet-use-css-transform t)
                    (setq emmet-use-css-transform nil)))))
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode)))
+
+(use-package lua-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
+  (add-to-list 'interpreter-mode-alist '("lua" . lua-mode)))
 
 (use-package restclient
   :config
