@@ -19,4 +19,3 @@ alias g  "git"
 alias b  "brazil"
 alias bb "brazil-build"
 
-alias post-review "post-review -u av-device-access-dev"
