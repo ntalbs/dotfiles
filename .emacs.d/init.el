@@ -130,6 +130,14 @@
   :ensure t
   :config (which-key-mode))
 
+(use-package projectile
+  :ensure t)
+
+(use-package counsel-projectile
+  :ensure t
+  :config
+  (counsel-projectile-on))
+
 (use-package ivy
   :ensure t
   :init
