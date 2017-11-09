@@ -263,6 +263,9 @@
          ("C-x 4 4" . langtool-show-message-at-point)
          ("C-x 4 c" . langtool-correct-buffer)))
 
+(use-package ace-window
+  :bind ("M-p" . ace-window))
+
 (defun set-ejs-mode ()
   (when (and (stringp buffer-file-name)
              (string-match "\\.ejs\\'" buffer-file-name))
@@ -342,21 +345,6 @@
 (global-set-key [S-s-right] 'next-buffer)
 (global-set-key [s-left] 'previous-user-buffer)
 (global-set-key [s-right] 'next-user-buffer)
-
-(global-set-key [s-home]  'windmove-left)
-(global-set-key [s-end]   'windmove-right)
-(global-set-key [s-prior] 'windmove-up)
-(global-set-key [s-next]  'windmove-down)
-
-(defun delete-after (fn)
-  `(lambda () (interactive)
-      (,fn)
-      (delete-window)))
-
-(global-set-key (kbd "C-s-<right>") (delete-after 'windmove-right))
-(global-set-key (kbd "C-s-<left>") (delete-after 'windmove-left))
-(global-set-key (kbd "C-s-<down>") (delete-after 'windmove-down))
-(global-set-key (kbd "C-s-<up>") (delete-after 'windmove-up))
 
 (defun open-line-below ()
   (interactive)
