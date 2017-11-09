@@ -241,7 +241,8 @@
                  (if (string= web-mode-cur-language "css")
                      (setq emmet-use-css-transform t)
                    (setq emmet-use-css-transform nil)))))
-  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode)))
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.ejs\\'" . web-mode)))
 
 (use-package lua-mode
   :ensure t
@@ -265,12 +266,6 @@
 
 (use-package ace-window
   :bind ("M-p" . ace-window))
-
-(defun set-ejs-mode ()
-  (when (and (stringp buffer-file-name)
-             (string-match "\\.ejs\\'" buffer-file-name))
-    (web-mode)))
-(add-hook 'find-file-hook 'set-ejs-mode)
 
 ;; font
 (set-fontset-font "fontset-default" '(#x1100 . #xffdc) "AppleMyungjo")
