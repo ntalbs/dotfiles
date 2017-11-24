@@ -45,6 +45,7 @@
  '(markdown-indent-on-enter nil)
  '(markdown-list-indent-width 2)
  '(mmm-global-mode (quote maybe) nil (mmm-mode))
+ '(neo-hidden-regexp-list (quote ("\\.pyc$" "~$" "^#.*#$" "\\.elc$")))
  '(neo-theme (quote nerd))
  '(neo-window-fixed-size nil)
  '(ns-right-alternate-modifier (quote none))
