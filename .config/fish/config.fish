@@ -18,4 +18,3 @@ alias pg_stop "pg_ctl stop"
 alias g  "git"
 alias b  "brazil"
 alias bb "brazil-build"
-
