@@ -132,7 +132,9 @@
   :config (which-key-mode))
 
 (use-package projectile
-  :ensure t)
+  :ensure t
+  :config
+  (projectile-mode))
 
 (use-package counsel-projectile
   :ensure t
