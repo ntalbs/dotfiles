@@ -217,7 +217,7 @@
         ("\C-p" . ac-previous)
         ("\C-n" . ac-next)))
 
-(use-package cider-mode
+(use-package cider
   :ensure t
   :config
   (add-hook 'clojure-mode-hook 'cider-mode)
