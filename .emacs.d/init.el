@@ -201,11 +201,15 @@
               (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
               (define-key yas-keymap [tab] 'yas/next-field))))
 
-(use-package company
-  :ensure t
-  :bind (("C-c /" . company-complete))
-  :config
-  (global-company-mode))
+;; (use-package company
+;;   :ensure t
+;;   :bind (("C-c /" . company-complete)
+;;          ("C-n" . company-select-next)
+;;          ("C-p" . company-select-previous)
+;;          ("C-d" . company-show-numbers)
+;;          ("M-." . company-show-location))
+;;   :config
+;;   (global-company-mode))
 
 (use-package auto-complete
   :init
