@@ -14,3 +14,5 @@ elpa
 /.emacs.d/tutorial
 /.emacs.d/request
 /.lein/repl-history
+*.eld
+/.emacs.d/.dir-locals.el
