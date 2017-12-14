@@ -126,25 +126,20 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-(use-package try
-  :ensure t)
+(use-package try)
 
 (use-package which-key
-  :ensure t
   :config (which-key-mode))
 
 (use-package projectile
-  :ensure t
   :config
   (projectile-mode))
 
 (use-package counsel-projectile
-  :ensure t
   :config
   (counsel-projectile-on))
 
 (use-package ivy
-  :ensure t
   :init
   (ivy-mode t)
   (recentf-mode t)
@@ -156,14 +151,12 @@
          ("C-x C-g" . counsel-git-grep)))
 
 (use-package magit
-  :ensure t
   :bind (("<f9>" . magit-status)))
 
 (use-package neotree
   :bind (("<f8>" . neotree-toggle)))
 
 (use-package flycheck
-  :ensure t
   :init (global-flycheck-mode))
 
 (use-package emmet-mode                 ; zen coding
@@ -223,7 +216,6 @@
         ("\C-n" . ac-next)))
 
 (use-package cider
-  :ensure t
   :config
   (add-hook 'clojure-mode-hook 'cider-mode)
   (add-hook 'cider-mode-hook 'eldoc-mode)
@@ -235,11 +227,9 @@
   :config
   (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode)))
 
-(use-package js2-refactor
-  :ensure t)
+(use-package js2-refactor)
 
 (use-package web-mode
-  :ensure t
   :config
 ;  (setq web-mode-enable-current-element-highlight t)
 ;  (setq web-mode-enable-current-column-highlight t)
@@ -259,7 +249,6 @@
   (add-to-list 'auto-mode-alist '("\\.ejs\\'" . web-mode)))
 
 (use-package lua-mode
-  :ensure t
   :config
   (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
   (add-to-list 'interpreter-mode-alist '("lua" . lua-mode)))
