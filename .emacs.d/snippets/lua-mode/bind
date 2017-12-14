@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : bind
+# --
+hs.hotkey.bind({$1}, "$2", function()
+  $0
+end)
