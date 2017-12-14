@@ -43,4 +43,4 @@
 [diff-so-fancy]
   first-run = false
 [magit]
-	hideCampaign = true
+  hideCampaign = true
