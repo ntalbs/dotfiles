@@ -110,8 +110,6 @@
  '(mode-line ((t (:background "light blue" :foreground "black" :box (:line-width -1 :style released-button)))))
  '(org-code ((t (:inherit nil :foreground "deep pink")))))
 
-(put 'erase-buffer 'disabled nil)
-
 (setq default-directory "~/")
 (add-hook 'before-save-hook 'whitespace-cleanup)
 (global-unset-key (kbd "s-t"))         ; disable Cmd+t which shows font dialog.
@@ -137,10 +135,10 @@
 
 (use-package counsel-projectile
   :config
-  (counsel-projectile-on))
+  (counsel-projectile-mode))
 
 (use-package ivy
-  :init
+  :config
   (ivy-mode t)
   (recentf-mode t)
   :bind (("s-f" . swiper)
@@ -252,6 +250,14 @@
   :config
   (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
   (add-to-list 'interpreter-mode-alist '("lua" . lua-mode)))
+
+(use-package markdown-mode
+  :ensure t
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown"))
 
 (use-package restclient
   :config
