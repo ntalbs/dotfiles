@@ -5,6 +5,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(av-beta "https://atv-deviceproxy-ssl-term-eu-beta.corp.amazon.com")
+ '(av-dev-desktop "http://seongjun.aka.corp.amazon.com")
+ '(av-gamma "https://atv-guava.amazon.com")
+ '(av-prod "https://atv-ext.amazon.com")
  '(backup-by-copying t)
  '(backup-directory-alist (quote (("." . "~/.emacs.d/.emacs_saves"))))
  '(blink-cursor-mode nil)
@@ -76,7 +80,7 @@
      ("gnu" . "http://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (cider-mode find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper ivy magit yaml-mode which-key visual-regexp-steroids use-package try tern-auto-complete stylus-mode restclient paredit-menu org-journal neotree move-text mmm-mode markdown-mode+ langtool js2-refactor goto-last-change flycheck fish-mode exec-path-from-shell emmet-mode duplicate-thing cider)))
+    (json-navigator counsel-projectile ace-window projectile lua-mode find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper ivy magit yaml-mode which-key visual-regexp-steroids use-package try tern-auto-complete stylus-mode restclient paredit-menu org-journal neotree move-text mmm-mode markdown-mode+ langtool js2-refactor goto-last-change flycheck fish-mode exec-path-from-shell emmet-mode duplicate-thing cider)))
  '(recentf-exclude (quote (".*/\\.emacs\\.d\\/elpa/.*el")))
  '(recentf-max-saved-items 100)
  '(scroll-bar-mode nil)
@@ -405,3 +409,6 @@
   (insert (format-time-string "%Y-%m-%d")))
 
 (global-set-key (kbd "C-c .") 'insert-date)
+
+;; load for av-requests
+(load "~/workplace/Av-requests/av-requests.el")
