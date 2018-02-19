@@ -1,6 +1,6 @@
 set -x SHELL /usr/local/bin/fish
-set -x BRAZIL_CLI_BIN /apollo/env/SDETools/bin
-set -x PATH $BRAZIL_CLI_BIN /usr/local/crux /usr/local/bin /usr/local/sbin /usr/bin /bin /usr/sbin /sbin /usr/local/share/git-core/contrib/diff-highlight /workplace/AVClientServicesDevScripts/bin
+set -x TOOLBOX_BIN ~/.toolbox/bin
+set -x PATH $TOOLBOX_BIN /usr/local/bin /usr/local/sbin /usr/bin /bin /usr/sbin /sbin /usr/local/share/git-core/contrib/diff-highlight /workplace/AVClientServicesDevScripts/bin
 set -x JAVA8_HOME (/usr/libexec/java_home -v1.8)
 set -x JAVA9_HOME (/usr/libexec/java_home -v9)
 set -x JAVA_HOME $JAVA8_HOME
