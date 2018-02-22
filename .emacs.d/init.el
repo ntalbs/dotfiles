@@ -186,26 +186,7 @@
 (use-package yasnippet
   :init
   (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
-  (yas-global-mode t)
-  :config
-  (defun yas/org-very-safe-expand ()
-    (let ((yas-fallback-behavior 'return-nil)) (yas-expand)))
-  (add-hook 'org-mode-hook
-            (lambda ()
-              (make-variable-buffer-local 'yas/trigger-key)
-              (setq yas/trigger-key [tab])
-              (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
-              (define-key yas-keymap [tab] 'yas/next-field))))
-
-;; (use-package company
-;;   :ensure t
-;;   :bind (("C-c /" . company-complete)
-;;          ("C-n" . company-select-next)
-;;          ("C-p" . company-select-previous)
-;;          ("C-d" . company-show-numbers)
-;;          ("M-." . company-show-location))
-;;   :config
-;;   (global-company-mode))
+  (yas-global-mode t))
 
 (use-package auto-complete
   :init
