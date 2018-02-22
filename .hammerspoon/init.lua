@@ -18,10 +18,10 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "Down", function()
     local f   = win:frame()
     local max = win:screen():frame()
 
-    f.x = max.w * 0.1
-    f.y = max.h * 0.1
-    f.w = max.w * 0.8
-    f.h = max.h * 0.8
+    f.x = max.x + max.w / 4
+    f.y = max.y
+    f.w = max.w / 2
+    f.h = max.h
 
     win:setFrame(f)
 end)
