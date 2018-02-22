@@ -16,3 +16,4 @@ elpa
 /.lein/repl-history
 *.eld
 /.emacs.d/.dir-locals.el
+/.lein/repl-port
