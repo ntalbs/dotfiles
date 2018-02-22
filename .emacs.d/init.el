@@ -6,7 +6,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(av-beta "https://atv-deviceproxy-ssl-term-eu-beta.corp.amazon.com")
- '(av-dev-desktop "http://seongjun.aka.corp.amazon.com")
+ '(av-dev-desktop "http://seongjun.aka.corp.amazon.com:8080")
  '(av-gamma "https://atv-guava.amazon.com")
  '(av-prod "https://atv-ext.amazon.com")
  '(backup-by-copying t)
