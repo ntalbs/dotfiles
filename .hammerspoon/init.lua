@@ -16,12 +16,12 @@ end
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "Up", function()
     local win = hs.window.focusedWindow()
     local f   = win:frame()
-    local max = win:screen():frame()
+    local s   = win:screen():frame()
 
-    f.x = max.x
-    f.y = max.y
-    f.w = max.w
-    f.h = max.h
+    f.x = s.x
+    f.y = s.y
+    f.w = s.w
+    f.h = s.h
 
     win:setFrame(f)
 end)
@@ -29,12 +29,12 @@ end)
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "Down", function()
     local win = hs.window.focusedWindow()
     local f   = win:frame()
-    local max = win:screen():frame()
+    local s   = win:screen():frame()
 
-    f.x = max.x + max.w / 4
-    f.y = max.y
-    f.w = max.w / 2
-    f.h = max.h
+    f.x = s.x + s.w / 4
+    f.y = s.y
+    f.w = s.w / 2
+    f.h = s.h
 
     win:setFrame(f)
 end)
@@ -42,12 +42,14 @@ end)
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "Left", function()
     local win = hs.window.focusedWindow()
     local f   = win:frame()
-    local max = win:screen():frame()
+    local s   = win:screen():frame()
 
-    f.x = max.x
-    f.w = max.w / 2
-    f.y = max.y
-    f.h = max.h
+    local fw = isLeft(f, s) and f.w * 0.8 or s.w / 2
+
+    f.x = s.x
+    f.w = fw
+    f.y = s.y
+    f.h = s.h
 
     win:setFrame(f)
 end)
@@ -55,14 +57,16 @@ end)
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "Right", function()
     local win = hs.window.focusedWindow()
     local f   = win:frame()
-    local max = win:screen():frame()
+    local s   = win:screen():frame()
 
-    f.x = max.x + max.w / 2
-    f.w = max.w / 2
-    f.y = max.y
-    f.h = max.h
+    local fw = isRight(f, s) and f.w * 0.8 or s.w / 2
 
-    win:setFrame(f)
+    f.x = s.x + s.w - fw
+    f.w = fw
+    f.y = s.y
+    f.h = s.h
+
+    win:setFrameInScreenBounds(f, s)
 end)
 
 function reloadConfig(files)
