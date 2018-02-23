@@ -1,4 +1,8 @@
 hs.window.animationDuration = 0
+hs.logger.defaultLogLevel = 'debug'
+
+local log = hs.logger.new('ntalbs','info')
+
 function isLeft(f, s)
   return f.x == s.x
     and f.y == s.y
