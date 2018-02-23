@@ -1,4 +1,17 @@
 hs.window.animationDuration = 0
+function isLeft(f, s)
+  return f.x == s.x
+    and f.y == s.y
+    and f.h == s.h
+    and f.w ~= s.w
+end
+
+function isRight(f, s)
+  return math.abs(f.x + f.w - s.w - s.x) <= 5
+    and f.y == s.y
+    and f.h == s.h
+    and f.w ~= s.w
+end
 
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "Up", function()
     local win = hs.window.focusedWindow()
