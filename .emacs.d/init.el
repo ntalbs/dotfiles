@@ -293,10 +293,6 @@
    (markdown-java :submode java-mode    :front "```java\n"    :back "```")
    (markdown-clj  :submode clojure-mode :front "```clojure\n" :back "```")))
 
-;;; Add html-js, embedded-css and html-ejs to html-mode
-(add-to-list 'mmm-mode-ext-classes-alist '(web-mode nil html-js))
-(add-to-list 'mmm-mode-ext-classes-alist '(web-mode nil html-css))
-(add-to-list 'mmm-mode-ext-classes-alist '(web-mode nil html-ejs))
 (add-to-list 'mmm-mode-ext-classes-alist '(markdown-mode nil markdown-tex1))
 (add-to-list 'mmm-mode-ext-classes-alist '(markdown-mode nil markdown-tex2))
 (add-to-list 'mmm-mode-ext-classes-alist '(markdown-mode nil markdown-clj))
