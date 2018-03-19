@@ -10,7 +10,7 @@ set -x EDITOR vim
 
 alias java8 "set -x JAVA_HOME $JAVA8_HOME"
 alias java9 "set -x JAVA_HOME $JAVA9_HOME"
-alias bu "brew update; brew upgrade --all; brew cleanup; brew doctor"
+alias bu "brew update; brew upgrade; brew cleanup; brew doctor"
 
 alias pg_start "pg_ctl start -l /usr/local/pgsql/data/logfile"
 alias pg_stop "pg_ctl stop"
