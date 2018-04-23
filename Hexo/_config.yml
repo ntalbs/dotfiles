@@ -102,8 +102,8 @@ hfc_css:
 hfc_js:
   enable: true
   mangle: true
-  output:
-  compress:
+  output: true
+  compress: true
   exclude:
     - '*.min.js'
 
