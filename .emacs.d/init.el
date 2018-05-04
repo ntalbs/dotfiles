@@ -39,7 +39,7 @@
  '(js2-basic-offset 2)
  '(js2-global-externs
    (quote
-    ("$" "_" "setTimeout" "require" "define" "describe" "it" "after" "before" "expect" "xdescribe")))
+    ("$" "_" "setTimeout" "require" "fetch" "define" "describe" "it" "after" "before" "expect" "xdescribe")))
  '(js2-mode-show-parse-errors nil)
  '(js2-mode-show-strict-warnings nil)
  '(kept-new-versions 6)
