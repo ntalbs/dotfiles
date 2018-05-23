@@ -290,8 +290,8 @@
                       (?= ejs-expression nil @ "<%=" @ " " _ " " @ "%>" @)))
    (markdown-tex1 :submode tex-mode     :front "\n\n$$\n"     :back "$$$")
    (markdown-tex2 :submode tex-mode     :front "{% math %}\n" :back "{% endmath %}")
-   (markdown-java :submode java-mode    :front "```java\n"    :back "```")
-   (markdown-clj  :submode clojure-mode :front "```clojure\n" :back "```")))
+   (markdown-java :submode java-mode    :front "```java\n"    :back "```\n")
+   (markdown-clj  :submode clojure-mode :front "```clojure\n" :back "```\n")))
 
 (add-to-list 'mmm-mode-ext-classes-alist '(markdown-mode nil markdown-tex1))
 (add-to-list 'mmm-mode-ext-classes-alist '(markdown-mode nil markdown-tex2))
