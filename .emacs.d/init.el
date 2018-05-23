@@ -220,8 +220,8 @@
   (setq web-mode-css-indent-offset 2)
   (setq web-mode-code-indent-offset 2)
   (setq web-mode-ac-sources-alist
-  '(("html" . (ac-source-emmet-html-aliases ac-source-emmet-html-snippets))
-    ("css" . (ac-source-css-property ac-source-emmet-css-snippets))))
+        '(("html" . (ac-source-emmet-html-aliases ac-source-emmet-html-snippets))
+          ("css" . (ac-source-css-property ac-source-emmet-css-snippets))))
   (add-hook 'web-mode-before-auto-complete-hooks
             '(lambda ()
                (let ((web-mode-cur-language (web-mode-language-at-pos)))
