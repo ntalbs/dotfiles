@@ -114,7 +114,7 @@ hfc_favicons:
   enable: false
 
 ## Themes: http://hexo.io/themes/
-theme: simplet
+theme: simplex
 #exclude_generator:
 
 # Markdown
