@@ -1,7 +1,7 @@
 #name : math-block-aligned
 # --
-{% math %}
+<div>$$
 \begin{aligned}
 $0
 \end{aligned}
-{% endmath %}
+</div>$$
