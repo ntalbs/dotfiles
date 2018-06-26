@@ -22,9 +22,6 @@
  '(default-input-method "korean-hangul3")
  '(delete-old-versions t)
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
- '(exec-path
-   (quote
-    ("/usr/local/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" "/usr/local/Cellar/emacs/24.5/libexec/emacs/24.5/x86_64-apple-darwin14.5.0")))
  '(fringe-mode (quote (nil . 0)) nil (fringe))
  '(global-hl-line-mode t)
  '(help-at-pt-display-when-idle (quote (flymake-overlay)) nil (help-at-pt))
@@ -53,6 +50,7 @@
  '(neo-theme (quote nerd))
  '(neo-window-fixed-size nil)
  '(ns-right-alternate-modifier (quote none))
+ '(org-agenda-files (quote ("~/Documents/todo.org")))
  '(org-cycle-separator-lines 1)
  '(org-default-priority 50)
  '(org-emphasis-alist
@@ -60,11 +58,11 @@
     (("*" bold)
      ("/" italic)
      ("_" underline)
-     ("=" org-verbatim verbatim)
-     ("~" org-code verbatim)
+     ("=" org-verbatim)
+     ("~" org-code)
      ("-"
       (:strike-through t))
-     ("`" org-code verbatim))))
+     ("`" org-code))))
  '(org-enable-priority-commands t)
  '(org-hide-emphasis-markers t)
  '(org-highest-priority 49)
@@ -80,9 +78,12 @@
      ("gnu" . "http://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (json-navigator counsel-projectile ace-window projectile lua-mode find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper ivy magit yaml-mode which-key visual-regexp-steroids use-package try tern-auto-complete stylus-mode restclient paredit-menu org-journal neotree move-text mmm-mode markdown-mode+ langtool js2-refactor goto-last-change flycheck fish-mode exec-path-from-shell emmet-mode duplicate-thing cider)))
+    (cider pdf-tools exec-path-from-shell markdown-mode auto-complete json-navigator counsel-projectile ace-window projectile lua-mode find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper magit yaml-mode which-key visual-regexp-steroids use-package try tern-auto-complete stylus-mode restclient paredit-menu org-journal neotree move-text mmm-mode markdown-mode+ langtool js2-refactor goto-last-change flycheck fish-mode emmet-mode duplicate-thing)))
  '(recentf-exclude (quote (".*/\\.emacs\\.d\\/elpa/.*el")))
  '(recentf-max-saved-items 100)
+ '(safe-local-variable-values
+   (quote
+    ((flycheck-disabled-checkers . javascript-standard))))
  '(scroll-bar-mode nil)
  '(shell-file-name "/bin/bash")
  '(show-paren-mode t)
@@ -98,7 +99,7 @@
  '(tab-width 2)
  '(text-mode-hook (quote (visual-line-mode)))
  '(tool-bar-mode nil)
- '(tramp-default-method "ssh")
+ '(tramp-default-method "ssh" nil (tramp))
  '(version-control t))
 
 (custom-set-faces
@@ -137,10 +138,6 @@
   :config
   (projectile-mode))
 
-(use-package counsel-projectile
-  :config
-  (counsel-projectile-mode))
-
 (use-package ivy
   :config
   (ivy-mode t)
@@ -151,6 +148,10 @@
          ("C-x M-j" . counsel-file-jump)
          ("C-x C-r" . counsel-recentf)
          ("C-x C-g" . counsel-git-grep)))
+
+(use-package counsel-projectile
+  :config
+  (counsel-projectile-mode))
 
 (use-package magit
   :bind (("<f9>" . magit-status)))
@@ -189,6 +190,8 @@
   (yas-global-mode t))
 
 (use-package auto-complete
+  :config
+  (ac-config-default)
   :init
   (global-auto-complete-mode t)
   (auto-complete-mode t)
