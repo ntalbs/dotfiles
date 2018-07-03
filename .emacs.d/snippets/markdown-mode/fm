@@ -1,8 +1,10 @@
 #name : front-matter
 # --
+---
 title: "$1"
 date: $2
-tags: [$3]
+tags: ["$3"]
 slug: "$4"
+draft: true
 ---
 $0

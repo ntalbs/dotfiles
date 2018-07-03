@@ -1,13 +1,17 @@
 #name : euler
 # --
+---
+title: 프로젝트 오일러 $1
+date: $2
 tags: [Project-Euler, Clojure]
-date: $1
-title: 프로젝트 오일러 $2
+slug: project-euler-$3
+draft: true
 ---
 > $4
-> 문제 자세히 보기: [[국어]](http://euler.synap.co.kr/prob_detail.php?id=$2) [[영어]](https://projecteuler.net/problem=$2)
+>
+> 문제 자세히 보기: [[국어]](http://euler.synap.co.kr/prob_detail.php?id=$1) [[영어]](https://projecteuler.net/problem=$1)
 
 $0
 
 ## 참고
-* [프로젝트 오일러 $2 풀이 소스 코드](https://github.com/ntalbs/euler/blob/master/src/p$3.clj)
+* [프로젝트 오일러 $1 풀이 소스 코드](https://github.com/ntalbs/euler/blob/master/src/p$3.clj)
