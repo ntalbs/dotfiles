@@ -22,6 +22,7 @@
  '(default-input-method "korean-hangul3")
  '(delete-old-versions t)
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
+ '(flycheck-python-pycompile-executable "/usr/local/bin/python3")
  '(fringe-mode (quote (nil . 0)) nil (fringe))
  '(global-hl-line-mode t)
  '(help-at-pt-display-when-idle (quote (flymake-overlay)) nil (help-at-pt))
