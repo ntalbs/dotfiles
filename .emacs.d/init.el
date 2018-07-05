@@ -76,7 +76,7 @@
  '(package-archives (quote (("melpa" . "https://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (cider pdf-tools exec-path-from-shell markdown-mode auto-complete json-navigator counsel-projectile ace-window projectile lua-mode find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper magit yaml-mode which-key visual-regexp-steroids use-package try tern-auto-complete stylus-mode restclient paredit-menu org-journal neotree move-text mmm-mode markdown-mode+ langtool js2-refactor goto-last-change flycheck fish-mode emmet-mode duplicate-thing)))
+    (jedi cider pdf-tools exec-path-from-shell markdown-mode auto-complete json-navigator counsel-projectile ace-window projectile lua-mode find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper magit yaml-mode which-key visual-regexp-steroids use-package try tern-auto-complete stylus-mode restclient paredit-menu org-journal neotree move-text mmm-mode markdown-mode+ langtool js2-refactor goto-last-change flycheck fish-mode emmet-mode duplicate-thing)))
  '(recentf-exclude (quote (".*/\\.emacs\\.d\\/elpa/.*el")))
  '(recentf-max-saved-items 200)
  '(safe-local-variable-values
@@ -198,6 +198,11 @@
   (:map ac-complete-mode-map
         ("\C-p" . ac-previous)
         ("\C-n" . ac-next)))
+
+(use-package jedi
+  :config
+  (add-hook 'python-mode-hook 'jedi:setup)
+  (setq jedi:complete-on-dot t))
 
 (use-package cider
   :config
