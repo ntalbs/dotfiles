@@ -294,8 +294,7 @@
              :insert ((?% ejs-code nil @ "<%" @ " " _ " " @ "%>" @)
                       (?# ejs-comment nil @ "<%#" @ " " _ " " @ "%>" @)
                       (?= ejs-expression nil @ "<%=" @ " " _ " " @ "%>" @)))
-   (markdown-tex1 :submode tex-mode     :front "<div>$$\n"     :back "\n$$</div>")
-   (markdown-tex2 :submode tex-mode     :front "{% math %}\n" :back "{% endmath %}")
+   (markdown-tex1 :submode tex-mode     :front "<div>$$\n"     :back "$$</div>")
    (markdown-java :submode java-mode    :front "```java\n"    :back "```\n")
    (markdown-clj  :submode clojure-mode :front "```clojure\n" :back "```\n")))
 
