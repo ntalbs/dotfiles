@@ -51,7 +51,7 @@
  '(neo-theme (quote nerd))
  '(neo-window-fixed-size nil)
  '(ns-right-alternate-modifier (quote none))
- '(org-agenda-files (quote ("~/Documents/todo.org")))
+ '(org-agenda-files (quote ("~/Documents/org/todo.org")))
  '(org-cycle-separator-lines 1)
  '(org-default-priority 50)
  '(org-emphasis-alist
