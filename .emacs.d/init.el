@@ -122,6 +122,107 @@
 
 (exec-path-from-shell-initialize)
 
+;; font
+(set-fontset-font "fontset-default" '(#x1100 . #xffdc) "AppleMyungjo")
+
+;; font size
+(define-key global-map (kbd "s-=") 'text-scale-increase)
+(define-key global-map (kbd "s--") 'text-scale-decrease)
+(defun text-scale-default ()
+  (interactive)
+  (text-scale-adjust 0))
+(define-key global-map (kbd "s-0") 'text-scale-default)
+
+(set-frame-width (selected-frame) 100)
+(set-frame-height (selected-frame) 60)
+
+;; Set up unicode
+;; (set-terminal-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(prefer-coding-system       'utf-8)
+(setq buffer-file-coding-system 'utf-8)
+
+(defun next-user-buffer ()
+  "Switch to the next user buffer in cyclic order. User buffers are those not starting with *."
+  (interactive)
+  (next-buffer)
+  (let ((i 0))
+    (while (and (string-match "^*" (buffer-name)) (< i 50))
+      (setq i (1+ i)) (next-buffer) )))
+
+(defun previous-user-buffer ()
+  "Switch to the previous user buffer in cyclic order. User buffers are those not starting with *."
+  (interactive)
+  (previous-buffer)
+  (let ((i 0))
+    (while (and (string-match "^*" (buffer-name)) (< i 50))
+      (setq i (1+ i)) (previous-buffer) )))
+
+(global-set-key [S-s-left] 'previous-buffer)
+(global-set-key [S-s-right] 'next-buffer)
+(global-set-key [s-left] 'previous-user-buffer)
+(global-set-key [s-right] 'next-user-buffer)
+
+(defun open-line-below ()
+  (interactive)
+  (end-of-line)
+  (open-line 1)
+  (forward-line))
+
+(defun open-line-above ()
+  (interactive)
+  (beginning-of-line)
+  (open-line 1))
+
+(global-unset-key (kbd  "C-o"))
+(global-set-key (kbd "C-o") 'open-line-below)
+(global-set-key (kbd "C-S-o") 'open-line-above)
+
+(defun open-init-file ()
+  (interactive)
+  (find-file "~/.emacs.d/init.el"))
+(global-set-key [f12] 'open-init-file)
+
+(defun open-todo ()
+  (interactive)
+  (find-file "~/Documents/todo.org"))
+(global-set-key [f11] 'open-todo)
+
+(eval-after-load "paredit.el"
+  '(require 'paredit-menu))
+
+;; Cmd+delete
+(fset 'delete-to-line-start
+      (lambda (&optional arg)
+        "C-space C-a delete"
+        (interactive "p")
+        (kmacro-exec-ring-item (quote ([67108896 1 backspace] 0 "%d")) arg)))
+(global-set-key [s-backspace] 'delete-to-line-start)
+
+(defun join-lines-in-region (beg end)
+  "Apply join-line over region."
+  (interactive "r")
+  (if mark-active
+      (let ((beg (region-beginning))
+            (end (copy-marker (region-end))))
+        (goto-char beg)
+        (while (< (point) end)
+          (join-line 1)))
+    (delete-indentation 1)))
+
+(global-set-key (kbd "C-^") 'join-lines-in-region)
+
+;; insert date
+(defun insert-date ()
+  (interactive)
+  (insert (format-time-string "%Y-%m-%d")))
+
+(global-set-key (kbd "C-c .") 'insert-date)
+
+;; load for av-requests
+(load "~/workplace/Av-requests/av-requests.el")
+
 ;; packages
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
@@ -147,9 +248,9 @@
          ("C-x C-r" . counsel-recentf)
          ("C-x C-g" . counsel-git-grep)))
 
-(use-package counsel-projectile
-  :config
-  (counsel-projectile-mode))
+;; (use-package counsel-projectile
+;;   :config
+;;   (counsel-projectile-mode))
 
 (use-package magit
   :bind (("<f9>" . magit-status)))
@@ -281,111 +382,11 @@
   (mmm-add-mode-ext-class 'markdown-mode nil 'md-clj)
   (mmm-add-mode-ext-class 'markdown-mode nil 'md-java))
 
-;; font
-(set-fontset-font "fontset-default" '(#x1100 . #xffdc) "AppleMyungjo")
+(use-package duplicate-thing
+  :bind ("M-s-<down>" . duplicate-thing))
 
-;; font size
-(define-key global-map (kbd "s-=") 'text-scale-increase)
-(define-key global-map (kbd "s--") 'text-scale-decrease)
-(defun text-scale-default ()
-  (interactive)
-  (text-scale-adjust 0))
-(define-key global-map (kbd "s-0") 'text-scale-default)
+(use-package goto-last-change
+  :bind ("C-." . goto-last-change))
 
-(set-frame-width (selected-frame) 100)
-(set-frame-height (selected-frame) 60)
-
-;; goto last change
-(global-set-key [(control ?.)] 'goto-last-change)
-
-;; Set up unicode
-;; (set-terminal-coding-system 'utf-8)
-(set-default-coding-systems 'utf-8)
-(set-keyboard-coding-system 'utf-8)
-(prefer-coding-system       'utf-8)
-(setq buffer-file-coding-system 'utf-8)
-
-;; move line or region with arrow(up, down) key like in eclipse.
-(move-text-default-bindings)
-;; duplicate line or region.
-(global-set-key [M-s-down] 'duplicate-thing)
-
-(defun next-user-buffer ()
-  "Switch to the next user buffer in cyclic order. User buffers are those not starting with *."
-  (interactive)
-  (next-buffer)
-  (let ((i 0))
-    (while (and (string-match "^*" (buffer-name)) (< i 50))
-      (setq i (1+ i)) (next-buffer) )))
-
-(defun previous-user-buffer ()
-  "Switch to the previous user buffer in cyclic order. User buffers are those not starting with *."
-  (interactive)
-  (previous-buffer)
-  (let ((i 0))
-    (while (and (string-match "^*" (buffer-name)) (< i 50))
-      (setq i (1+ i)) (previous-buffer) )))
-
-(global-set-key [S-s-left] 'previous-buffer)
-(global-set-key [S-s-right] 'next-buffer)
-(global-set-key [s-left] 'previous-user-buffer)
-(global-set-key [s-right] 'next-user-buffer)
-
-(defun open-line-below ()
-  (interactive)
-  (end-of-line)
-  (open-line 1)
-  (forward-line))
-
-(defun open-line-above ()
-  (interactive)
-  (beginning-of-line)
-  (open-line 1))
-
-(global-unset-key (kbd  "C-o"))
-(global-set-key (kbd "C-o") 'open-line-below)
-(global-set-key (kbd "C-S-o") 'open-line-above)
-
-(defun open-init-file ()
-  (interactive)
-  (find-file "~/.emacs.d/init.el"))
-(global-set-key [f12] 'open-init-file)
-
-(defun open-todo ()
-  (interactive)
-  (find-file "~/Documents/todo.org"))
-(global-set-key [f11] 'open-todo)
-
-(eval-after-load "paredit.el"
-  '(require 'paredit-menu))
-
-;; Cmd+delete
-(fset 'delete-to-line-start
-      (lambda (&optional arg)
-        "C-space C-a delete"
-        (interactive "p")
-        (kmacro-exec-ring-item (quote ([67108896 1 backspace] 0 "%d")) arg)))
-(global-set-key [s-backspace] 'delete-to-line-start)
-
-(defun join-lines-in-region (beg end)
-  "Apply join-line over region."
-  (interactive "r")
-  (if mark-active
-      (let ((beg (region-beginning))
-            (end (copy-marker (region-end))))
-        (goto-char beg)
-        (while (< (point) end)
-          (join-line 1)))
-    (delete-indentation 1)))
-
-(global-set-key (kbd "C-^") 'join-lines-in-region)
-
-;; insert date
-(defun insert-date ()
-  (interactive)
-  (insert (format-time-string "%Y-%m-%d")))
-
-(global-set-key (kbd "C-c .") 'insert-date)
-
-;; load for av-requests
-(load "~/workplace/Av-requests/av-requests.el")
+(use-package move-text
+  :config (move-text-default-bindings))
