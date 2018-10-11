@@ -147,9 +147,9 @@
          ("C-x C-r" . counsel-recentf)
          ("C-x C-g" . counsel-git-grep)))
 
-(use-package counsel-projectile
-  :config
-  (counsel-projectile-mode))
+;; (use-package counsel-projectile
+;;   :config
+;;   (counsel-projectile-mode))
 
 (use-package magit
   :bind (("<f9>" . magit-status)))
@@ -267,6 +267,18 @@
 (use-package ace-window
   :bind ("M-p" . ace-window))
 
+(use-package mmm-mode
+  :init
+  (setq mmm-global-mode 'maybe)
+  :config
+  (mmm-add-classes
+   '((md-tex  :submode tex-mode     :front "<div>$$\n"    :back "$$</div>")
+     (md-java :submode java-mode    :front "```java\n"    :back "```\n")
+     (md-clj  :submode clojure-mode :front "```clojure\n" :back "```\n")))
+  (mmm-add-mode-ext-class 'markdown-mode nil 'md-tex)
+  (mmm-add-mode-ext-class 'markdown-mode nil 'md-clj)
+  (mmm-add-mode-ext-class 'markdown-mode nil 'md-java))
+
 ;; font
 (set-fontset-font "fontset-default" '(#x1100 . #xffdc) "AppleMyungjo")
 
@@ -283,25 +295,6 @@
 
 ;; goto last change
 (global-set-key [(control ?.)] 'goto-last-change)
-
-;; mmm-mode
-(load-library "mmm-auto")
-(mmm-add-classes
- '((html-ejs :submode js2-mode :front "<%[#=]?" :back "-?%>"
-             :match-face (("<%#" . mmm-comment-submode-face)
-                          ("<%=" . mmm-output-submode-face)
-                          ("<%" . mmm-code-submode-face))
-             :insert ((?% ejs-code nil @ "<%" @ " " _ " " @ "%>" @)
-                      (?# ejs-comment nil @ "<%#" @ " " _ " " @ "%>" @)
-                      (?= ejs-expression nil @ "<%=" @ " " _ " " @ "%>" @)))
-   (markdown-tex1 :submode tex-mode     :front "<div>$$\n"     :back "$$</div>")
-   (markdown-java :submode java-mode    :front "```java\n"    :back "```\n")
-   (markdown-clj  :submode clojure-mode :front "```clojure\n" :back "```\n")))
-
-(add-to-list 'mmm-mode-ext-classes-alist '(markdown-mode nil markdown-tex1))
-(add-to-list 'mmm-mode-ext-classes-alist '(markdown-mode nil markdown-tex2))
-(add-to-list 'mmm-mode-ext-classes-alist '(markdown-mode nil markdown-clj))
-(add-to-list 'mmm-mode-ext-classes-alist '(markdown-mode nil markdown-java))
 
 ;; Set up unicode
 ;; (set-terminal-coding-system 'utf-8)
