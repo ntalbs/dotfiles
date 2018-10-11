@@ -217,7 +217,10 @@
 ;; insert date
 (defun insert-date ()
   (interactive)
-  (insert (format-time-string "%Y-%m-%d")))
+  (let* ((dt (org-time-stamp-inactive))
+         (len (length dt)))
+    (backward-delete-char-untabify len)
+    (insert (substring dt 1 11))))
 
 (global-set-key (kbd "C-c .") 'insert-date)
 
