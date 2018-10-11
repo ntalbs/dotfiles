@@ -147,9 +147,9 @@
          ("C-x C-r" . counsel-recentf)
          ("C-x C-g" . counsel-git-grep)))
 
-;; (use-package counsel-projectile
-;;   :config
-;;   (counsel-projectile-mode))
+(use-package counsel-projectile
+  :config
+  (counsel-projectile-mode))
 
 (use-package magit
   :bind (("<f9>" . magit-status)))
@@ -168,7 +168,9 @@
 (use-package multiple-cursors
   :bind (("C-S-c C-S-c" . mc/edit-lines)
          ("C->" . mc/mark-next-like-this)
+         ("C-s->" . mc/skip-to-next-like-this)
          ("C-<" . mc/mark-previous-like-this)
+         ("C-s-<" . mc/skip-to-previous-like-this)
          ("C-c C->" . mc/mark-all-like-this)))
 
 (use-package expand-region
