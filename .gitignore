@@ -17,3 +17,4 @@ elpa
 *.eld
 /.emacs.d/.dir-locals.el
 /.lein/repl-port
+/.emacs.d/network-security.data
