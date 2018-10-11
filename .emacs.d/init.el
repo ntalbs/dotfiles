@@ -193,12 +193,13 @@
   '(require 'paredit-menu))
 
 ;; Cmd+delete
-(fset 'delete-to-line-start
-      (lambda (&optional arg)
-        "C-space C-a delete"
-        (interactive "p")
-        (kmacro-exec-ring-item (quote ([67108896 1 backspace] 0 "%d")) arg)))
-(global-set-key [s-backspace] 'delete-to-line-start)
+(defun delete-to-line-start ()
+  (interactive)
+  (push-mark)
+  (move-beginning-of-line 1)
+  (kill-region (mark) (point)))
+
+(global-set-key (kbd "s-<backspace>") 'delete-to-line-start)
 
 (defun join-lines-in-region (beg end)
   "Apply join-line over region."
