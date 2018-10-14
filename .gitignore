@@ -4,8 +4,8 @@ fish_history
 elpa
 /.config/brazil
 /.config/cr
-/.config/ninja-dev-sync.json
 /.config/configstore
+/.config/ninja-dev-sync.json
 /.emacs.d/.mc-lists.el
 /.emacs.d/ac-comphist.dat
 /.emacs.d/recentf
@@ -13,8 +13,10 @@ elpa
 /.emacs.d/games
 /.emacs.d/tutorial
 /.emacs.d/request
-/.lein/repl-history
-*.eld
 /.emacs.d/.dir-locals.el
-/.lein/repl-port
 /.emacs.d/network-security.data
+*.elc
+*.eld
+/.lein/repl-history
+/.lein/repl-port
+.python-environments

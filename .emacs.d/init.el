@@ -186,7 +186,7 @@
 
 (defun open-todo ()
   (interactive)
-  (find-file "~/Documents/todo.org"))
+  (find-file "~/Documents/orgs/todo.org"))
 (global-set-key [f11] 'open-todo)
 
 (eval-after-load "paredit.el"
