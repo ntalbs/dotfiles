@@ -147,16 +147,16 @@
   "Switch to the next user buffer in cyclic order. User buffers are those not starting with *."
   (interactive)
   (next-buffer)
-  (let ((i 0))
-    (while (and (string-match "^*" (buffer-name)) (< i 50))
+  (let ((i 0) (buf-cnt (length (buffer-list))))
+    (while (and (string-match "^*" (buffer-name)) (< i buf-cnt))
       (setq i (1+ i)) (next-buffer) )))
 
 (defun previous-user-buffer ()
   "Switch to the previous user buffer in cyclic order. User buffers are those not starting with *."
   (interactive)
   (previous-buffer)
-  (let ((i 0))
-    (while (and (string-match "^*" (buffer-name)) (< i 50))
+  (let ((i 0) (buf-cnt (length (buffer-list))))
+    (while (and (string-match "^*" (buffer-name)) (< i buf-cnt))
       (setq i (1+ i)) (previous-buffer) )))
 
 (global-set-key [S-s-left] 'previous-buffer)
