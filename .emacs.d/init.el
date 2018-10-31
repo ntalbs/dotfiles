@@ -61,8 +61,7 @@
      ("_" underline)
      ("=" org-verbatim)
      ("~" org-code)
-     ("-"
-      (:strike-through t))
+     ("-" strike-through)
      ("`" org-code))))
  '(org-enable-priority-commands t)
  '(org-hide-emphasis-markers t)
@@ -76,7 +75,7 @@
  '(package-archives (quote (("melpa" . "https://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (jedi cider pdf-tools exec-path-from-shell markdown-mode auto-complete json-navigator counsel-projectile ace-window projectile lua-mode find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper magit yaml-mode which-key visual-regexp-steroids use-package try tern-auto-complete stylus-mode restclient paredit-menu org-journal neotree move-text mmm-mode markdown-mode+ langtool js2-refactor goto-last-change flycheck fish-mode emmet-mode duplicate-thing)))
+    (duplicate-thing move-dup package-lint duplicate-lines jedi cider pdf-tools exec-path-from-shell markdown-mode auto-complete json-navigator counsel-projectile ace-window projectile lua-mode find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper magit yaml-mode which-key visual-regexp-steroids use-package try tern-auto-complete stylus-mode restclient paredit-menu org-journal neotree move-text mmm-mode markdown-mode+ langtool js2-refactor goto-last-change flycheck fish-mode emmet-mode)))
  '(recentf-exclude (quote (".*/\\.emacs\\.d\\/elpa/.*el")))
  '(recentf-max-saved-items 200)
  '(safe-local-variable-values
@@ -112,6 +111,9 @@
  '(markdown-italic-face ((t (:inherit font-lock-variable-name-face :slant normal))))
  '(mode-line ((t (:background "light blue" :foreground "black" :box (:line-width -1 :style released-button)))))
  '(org-code ((t (:inherit nil :foreground "deep pink")))))
+
+;; suppress ad-handle-definition: warning
+(setq ad-redefinition-action 'accept)
 
 (setq default-directory "~/")
 (add-hook 'before-save-hook 'whitespace-cleanup)
@@ -227,6 +229,8 @@
 
 ;; load for av-requests
 (load "~/workplace/Av-requests/av-requests.el")
+;; (load "~/GitHub/duplicate-lines/duplicate-lines.el")
+;; (global-set-key (kbd "M-s-<down>") 'duplicate-lines)
 
 ;; packages
 (unless (package-installed-p 'use-package)
@@ -328,8 +332,6 @@
 
 (use-package web-mode
   :config
-;  (setq web-mode-enable-current-element-highlight t)
-;  (setq web-mode-enable-current-column-highlight t)
   (setq web-mode-markup-indent-offset 2)
   (setq web-mode-css-indent-offset 2)
   (setq web-mode-code-indent-offset 2)
@@ -381,17 +383,21 @@
   :config
   (mmm-add-classes
    '((md-tex  :submode tex-mode     :front "<div>$$\n"    :back "$$</div>")
-     (md-java :submode java-mode    :front "```java\n"    :back "```\n")
-     (md-clj  :submode clojure-mode :front "```clojure\n" :back "```\n")))
+     (md-clj  :submode clojure-mode :front "```clojure\n" :back "```\n")
+     (md-lisp :submode lisp-mode    :front "```lisp\n"    :back "```\n")
+     (md-java :submode java-mode    :front "```java\n"    :back "```\n")))
   (mmm-add-mode-ext-class 'markdown-mode nil 'md-tex)
   (mmm-add-mode-ext-class 'markdown-mode nil 'md-clj)
+  (mmm-add-mode-ext-class 'markdown-mode nil 'md-lisp)
   (mmm-add-mode-ext-class 'markdown-mode nil 'md-java))
-
-(use-package duplicate-thing
-  :bind ("M-s-<down>" . duplicate-thing))
 
 (use-package goto-last-change
   :bind ("C-." . goto-last-change))
 
 (use-package move-text
   :config (move-text-default-bindings))
+
+(use-package duplicate-thing
+  :bind ("M-s-<down>" . duplicate-thing))
+
+;; init.el ends here
