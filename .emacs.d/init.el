@@ -75,7 +75,7 @@
  '(package-archives (quote (("melpa" . "https://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (plantuml-mode jdecomp powerline iedit duplicate-thing move-dup package-lint duplicate-lines jedi cider pdf-tools exec-path-from-shell markdown-mode auto-complete json-navigator counsel-projectile ace-window projectile lua-mode find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper magit yaml-mode which-key visual-regexp-steroids use-package try tern-auto-complete stylus-mode restclient paredit-menu org-journal neotree move-text mmm-mode markdown-mode+ langtool js2-refactor goto-last-change flycheck fish-mode emmet-mode)))
+    (graphviz-dot-mode plantuml-mode jdecomp powerline iedit duplicate-thing move-dup package-lint duplicate-lines jedi cider pdf-tools exec-path-from-shell markdown-mode auto-complete json-navigator counsel-projectile ace-window projectile lua-mode find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper magit yaml-mode which-key visual-regexp-steroids use-package try tern-auto-complete stylus-mode restclient paredit-menu org-journal neotree move-text mmm-mode markdown-mode+ langtool js2-refactor goto-last-change flycheck fish-mode emmet-mode)))
  '(recentf-exclude (quote (".*/\\.emacs\\.d\\/elpa/.*el")))
  '(recentf-max-saved-items 200)
  '(safe-local-variable-values
@@ -417,5 +417,7 @@
   (setq plantuml-java-command "/usr/local/bin/plantuml")
   (setq plantuml-jar-path "")
   (add-to-list 'auto-mode-alist '("\\.\\(plant\\)?uml\\'" . plantuml-mode)))
+
+(use-package graphviz-dot-mode)
 
 ;; init.el ends here
