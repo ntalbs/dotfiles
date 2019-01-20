@@ -3,24 +3,21 @@ hs.logger.defaultLogLevel = 'debug'
 
 local log = hs.logger.new('ntalbs','info')
 
-function isNoKoreanKeyboardApp(app)
-  return (app == 'Emacs' or app == 'iTerm2')
+function setKeyLayoutToUs()
+  hs.keycodes.currentSourceID("com.apple.keylayout.US")
 end
 
-hs.window.filter.default:subscribe(
+hs.window.filter.new{'Emacs', 'iTerm2'}:subscribe(
   hs.window.filter.windowFocused,
   function()
-    local app = hs.application.frontmostApplication():name()
-    if isNoKoreanKeyboardApp(app) then
-      hs.keycodes.currentSourceID("com.apple.keylayout.US")
-    end
+    setKeyLayoutToUs()
   end
 )
 
 hs.keycodes.inputSourceChanged(function ()
     local app = hs.application.frontmostApplication():name()
-    if isNoKoreanKeyboardApp(app) then
-      hs.keycodes.currentSourceID("com.apple.keylayout.US")
+    if app == 'Emacs' then
+      setKeyLayoutToUs()
     end
 end)
 
