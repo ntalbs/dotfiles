@@ -5,6 +5,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ac-trigger-key "TAB")
  '(av-beta "https://atv-deviceproxy-ssl-term-eu-beta.corp.amazon.com")
  '(av-dev-desktop "http://seongjun.aka.corp.amazon.com:8080")
  '(av-gamma "https://atv-guava.amazon.com")
@@ -75,7 +76,7 @@
  '(package-archives (quote (("melpa" . "https://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (graphviz-dot-mode plantuml-mode jdecomp powerline iedit duplicate-thing move-dup package-lint duplicate-lines jedi cider pdf-tools exec-path-from-shell markdown-mode auto-complete json-navigator counsel-projectile ace-window projectile lua-mode find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper magit yaml-mode which-key visual-regexp-steroids use-package try tern-auto-complete stylus-mode restclient paredit-menu org-journal neotree move-text mmm-mode markdown-mode+ langtool js2-refactor goto-last-change flycheck fish-mode emmet-mode)))
+    (graphviz-dot-mode plantuml-mode jdecomp powerline iedit duplicate-thing move-dup package-lint duplicate-lines jedi cider exec-path-from-shell markdown-mode auto-complete json-navigator counsel-projectile ace-window projectile lua-mode find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper magit yaml-mode which-key visual-regexp-steroids use-package try tern-auto-complete stylus-mode restclient paredit-menu org-journal neotree move-text mmm-mode markdown-mode+ langtool js2-refactor goto-last-change flycheck fish-mode emmet-mode)))
  '(recentf-exclude (quote (".*/\\.emacs\\.d\\/elpa/.*el")))
  '(recentf-max-saved-items 200)
  '(safe-local-variable-values
@@ -308,7 +309,6 @@
   :init
   (global-auto-complete-mode t)
   (auto-complete-mode t)
-  (ac-set-trigger-key "TAB")
   :bind
   (:map ac-complete-mode-map
         ("\C-p" . ac-previous)
@@ -326,6 +326,8 @@
   :bind
   (:map cider-repl-mode-map
         ("C-c C-k" . cider-repl-clear-buffer)))
+
+(use-package json-mode)
 
 (use-package js2-mode
   :config
