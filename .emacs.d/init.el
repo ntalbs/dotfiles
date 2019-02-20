@@ -220,11 +220,12 @@
 ;; insert date
 (defun insert-date ()
   (interactive)
-  (require 'org)
-  (let* ((dt (org-time-stamp nil))
-         (len (length dt)))
-    (backward-delete-char-untabify len)
-    (insert (substring dt 1 11))))
+  (with-no-warnings
+    (require 'org)
+    (let* ((dt (org-time-stamp nil))
+           (len (length dt)))
+      (backward-delete-char-untabify len)
+      (insert (substring dt 1 11)))))
 
 (global-set-key (kbd "C-c .") 'insert-date)
 
@@ -391,10 +392,11 @@
      (md-clj  :submode clojure-mode :front "```clojure\n" :back "```\n")
      (md-lisp :submode lisp-mode    :front "```lisp\n"    :back "```\n")
      (md-java :submode java-mode    :front "```java\n"    :back "```\n")))
-  (mmm-add-mode-ext-class 'markdown-mode nil 'md-tex)
-  (mmm-add-mode-ext-class 'markdown-mode nil 'md-clj)
-  (mmm-add-mode-ext-class 'markdown-mode nil 'md-lisp)
-  (mmm-add-mode-ext-class 'markdown-mode nil 'md-java))
+  (with-no-warnings
+    (mmm-add-mode-ext-class 'markdown-mode nil 'md-tex)
+    (mmm-add-mode-ext-class 'markdown-mode nil 'md-clj)
+    (mmm-add-mode-ext-class 'markdown-mode nil 'md-lisp)
+    (mmm-add-mode-ext-class 'markdown-mode nil 'md-java)))
 
 (use-package goto-last-change
   :bind ("C-." . goto-last-change))
