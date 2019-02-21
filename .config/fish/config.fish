@@ -25,3 +25,14 @@ alias g  "git"
 alias b  "brazil"
 alias bb "brazil-build"
 alias 'cd..' "cd .."
+
+# edit-and-execute-command
+function edit-commandline
+  set -q EDITOR; or return 1
+  set -l tmpfile (mktemp); or return 1
+  commandline > $tmpfile
+  eval $EDITOR $tmpfile
+  commandline -r -- (cat $tmpfile)
+  rm $tmpfile
+end
+bind \cx\ce edit\-commandline
