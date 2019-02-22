@@ -91,7 +91,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(hl-line ((t (:background "#ffa"))))
+ '(hl-line ((t (:background "#fff"))))
  '(js2-function-call ((t (:inherit default :foreground "dark blue"))))
  '(markdown-bold-face ((t (:inherit font-lock-variable-name-face :foreground "Red" :weight semi-bold))))
  '(markdown-header-face ((t (:inherit font-lock-function-name-face :weight semi-bold))))
@@ -99,9 +99,6 @@
  '(mode-line ((t (:background "light blue" :foreground "black" :box (:line-width -1 :style released-button)))))
  '(org-code ((t (:inherit nil :foreground "deep pink"))))
  '(org-level-1 ((t (:inherit outline-1 :height 1.2)))))
-
-;; suppress ad-handle-definition: warning
-(setq ad-redefinition-action 'accept)
 
 (setq default-directory "~/")
 (add-hook 'before-save-hook 'whitespace-cleanup)
@@ -117,12 +114,17 @@
 (set-fontset-font "fontset-default" '(#x1100 . #xffdc) "AppleMyungjo")
 
 ;; font size
+(set-face-attribute 'default nil :height 140) ; 14pt
+
 (define-key global-map (kbd "s-=") 'text-scale-increase)
 (define-key global-map (kbd "s--") 'text-scale-decrease)
 (defun text-scale-default ()
   (interactive)
   (text-scale-adjust 0))
 (define-key global-map (kbd "s-0") 'text-scale-default)
+
+;; background color
+(set-background-color "#eee")
 
 (defun next-user-buffer ()
   "Switch to the next user buffer in cyclic order. User buffers are those not starting with *."
@@ -208,6 +210,10 @@
 (global-set-key (kbd "C-c .") 'insert-date)
 
 ;; packages
+
+; suppress ad-handle-definition: warning
+(setq ad-redefinition-action 'accept)
+
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
@@ -402,11 +408,10 @@
   :config
   (gradle-mode t))
 
-(toggle-frame-fullscreen)
-
 ;; Set up unicode
-(prefer-coding-system       'utf-8)
-(set-default-coding-systems 'utf-8)
+(prefer-coding-system           'utf-8)
+(set-default-coding-systems     'utf-8)
 (setq buffer-file-coding-system 'utf-8)
 
+(toggle-frame-fullscreen)
 ;; init.el ends here
