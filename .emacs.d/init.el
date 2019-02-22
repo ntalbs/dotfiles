@@ -107,6 +107,7 @@
 (add-hook 'before-save-hook 'whitespace-cleanup)
 (global-unset-key (kbd "s-t"))         ; disable Cmd+t which shows font dialog.
 (global-unset-key (kbd "s-n"))         ; disable Cmd+n which opens a new frame.
+(global-unset-key (kbd "s-p"))         ; disable Cmd+p which prints buffer.
 (global-unset-key (kbd "C-x C-r"))     ; disable C-x C-r which runs find file read-only.
 (global-set-key (kbd "s-<return>") 'toggle-frame-fullscreen)
 
