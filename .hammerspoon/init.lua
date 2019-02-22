@@ -91,6 +91,11 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "Right", function()
     win:setFrameInScreenBounds(f, s)
 end)
 
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "N", function()
+    local win = hs.window.focusedWindow()
+    win:moveToScreen(win:screen():next())
+end)
+
 function reloadConfig(files)
   doReload = false
   for _,file in pairs(files) do
