@@ -15,7 +15,6 @@
  '(column-number-mode t)
  '(command-line-default-directory "~/" t)
  '(css-indent-offset 2)
- '(current-language-environment "Korean")
  '(default-input-method "korean-hangul3")
  '(delete-old-versions t)
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
@@ -51,15 +50,6 @@
  '(org-agenda-files (quote ("~/Documents/org/todo.org")))
  '(org-cycle-separator-lines 1)
  '(org-default-priority 50)
- '(org-emphasis-alist
-   (quote
-    (("*" bold)
-     ("/" italic)
-     ("_" underline)
-     ("=" org-verbatim)
-     ("~" org-code)
-     ("-" strike-through)
-     ("`" org-code))))
  '(org-enable-priority-commands t)
  '(org-hide-emphasis-markers t)
  '(org-highest-priority 49)
@@ -132,14 +122,9 @@
   (text-scale-adjust 0))
 (define-key global-map (kbd "s-0") 'text-scale-default)
 
-(set-frame-width (selected-frame) 100)
-(set-frame-height (selected-frame) 60)
-
 ;; Set up unicode
-;; (set-terminal-coding-system 'utf-8)
-(set-default-coding-systems 'utf-8)
-(set-keyboard-coding-system 'utf-8)
 (prefer-coding-system       'utf-8)
+(set-default-coding-systems 'utf-8)
 (setq buffer-file-coding-system 'utf-8)
 
 (defun next-user-buffer ()
