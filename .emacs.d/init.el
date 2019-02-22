@@ -97,7 +97,8 @@
  '(markdown-header-face ((t (:inherit font-lock-function-name-face :weight semi-bold))))
  '(markdown-italic-face ((t (:inherit font-lock-variable-name-face :slant normal))))
  '(mode-line ((t (:background "light blue" :foreground "black" :box (:line-width -1 :style released-button)))))
- '(org-code ((t (:inherit nil :foreground "deep pink")))))
+ '(org-code ((t (:inherit nil :foreground "deep pink"))))
+ '(org-level-1 ((t (:inherit outline-1 :height 1.2)))))
 
 ;; suppress ad-handle-definition: warning
 (setq ad-redefinition-action 'accept)
