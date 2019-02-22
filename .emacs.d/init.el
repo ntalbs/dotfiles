@@ -124,11 +124,6 @@
   (text-scale-adjust 0))
 (define-key global-map (kbd "s-0") 'text-scale-default)
 
-;; Set up unicode
-(prefer-coding-system       'utf-8)
-(set-default-coding-systems 'utf-8)
-(setq buffer-file-coding-system 'utf-8)
-
 (defun next-user-buffer ()
   "Switch to the next user buffer in cyclic order. User buffers are those not starting with *."
   (interactive)
@@ -408,5 +403,10 @@
   (gradle-mode t))
 
 (toggle-frame-fullscreen)
+
+;; Set up unicode
+(prefer-coding-system       'utf-8)
+(set-default-coding-systems 'utf-8)
+(setq buffer-file-coding-system 'utf-8)
 
 ;; init.el ends here
