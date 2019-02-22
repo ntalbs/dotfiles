@@ -211,11 +211,6 @@
 
 (global-set-key (kbd "C-c .") 'insert-date)
 
-;; load for av-requests
-(load "~/workplace/Av-requests/av-requests.el")
-;; (load "~/GitHub/duplicate-lines/duplicate-lines.el")
-;; (global-set-key (kbd "M-s-<down>") 'duplicate-lines)
-
 ;; packages
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
