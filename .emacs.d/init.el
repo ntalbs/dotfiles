@@ -411,4 +411,7 @@
 (use-package gradle-mode
   :config
   (gradle-mode t))
+
+(toggle-frame-fullscreen)
+
 ;; init.el ends here
