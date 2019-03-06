@@ -47,7 +47,7 @@
  '(neo-theme (quote nerd))
  '(neo-window-fixed-size nil)
  '(ns-right-alternate-modifier (quote none))
- '(org-agenda-files (quote ("~/Documents/org/todo.org")))
+ '(org-agenda-files nil)
  '(org-cycle-separator-lines 1)
  '(org-default-priority 50)
  '(org-enable-priority-commands t)
@@ -63,7 +63,7 @@
  '(package-archives (quote (("melpa" . "https://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (groovy-mode gradle-mode graphviz-dot-mode plantuml-mode jdecomp powerline iedit duplicate-thing move-dup package-lint duplicate-lines jedi cider exec-path-from-shell markdown-mode auto-complete json-navigator counsel-projectile ace-window projectile lua-mode find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper magit yaml-mode which-key visual-regexp-steroids use-package try tern-auto-complete stylus-mode restclient paredit-menu org-journal neotree move-text mmm-mode markdown-mode+ langtool js2-refactor goto-last-change flycheck fish-mode emmet-mode)))
+    (powerline paredit tiny groovy-mode gradle-mode graphviz-dot-mode plantuml-mode jdecomp iedit duplicate-thing move-dup package-lint duplicate-lines jedi cider exec-path-from-shell markdown-mode auto-complete json-navigator counsel-projectile ace-window projectile lua-mode find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper magit yaml-mode which-key visual-regexp-steroids use-package try tern-auto-complete stylus-mode restclient paredit-menu org-journal neotree move-text mmm-mode markdown-mode+ langtool js2-refactor goto-last-change flycheck fish-mode emmet-mode)))
  '(recentf-exclude (quote (".*/\\.emacs\\.d\\/elpa/.*el")))
  '(recentf-max-saved-items 200)
  '(safe-local-variable-values
@@ -411,6 +411,11 @@
   :config
   (with-no-warnings
     (tiny-setup-default)))
+
+;; Disable backup
+(setq backup-inhibited t)
+;; Disable auto save
+(setq auto-save-default nil)
 
 ;; Set up unicode
 (prefer-coding-system           'utf-8)
