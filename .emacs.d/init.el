@@ -417,6 +417,7 @@
 (set-default-coding-systems     'utf-8)
 (setq buffer-file-coding-system 'utf-8)
 
+;; Enter fullscreen mode
 (toggle-frame-fullscreen)
 
 ;; background color
