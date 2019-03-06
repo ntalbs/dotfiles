@@ -54,6 +54,7 @@
  '(org-hide-emphasis-markers t)
  '(org-highest-priority 49)
  '(org-lowest-priority 51)
+ '(org-table-default-size "3x2")
  '(org-todo-keyword-faces
    (quote
     (("PENDING" . "deep pink")
@@ -98,7 +99,8 @@
  '(markdown-italic-face ((t (:inherit font-lock-variable-name-face :slant normal))))
  '(mode-line ((t (:background "light blue" :foreground "black" :box (:line-width -1 :style released-button)))))
  '(org-code ((t (:inherit nil :foreground "deep pink"))))
- '(org-level-1 ((t (:inherit outline-1 :height 1.2)))))
+ '(org-level-1 ((t (:inherit outline-1 :height 1.2 :weight bold))))
+ '(org-table ((t (:foreground "Black" :height 0.9)))))
 
 (setq default-directory "~/")
 (add-hook 'before-save-hook 'whitespace-cleanup)
