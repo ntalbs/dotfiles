@@ -125,9 +125,6 @@
   (text-scale-adjust 0))
 (define-key global-map (kbd "s-0") 'text-scale-default)
 
-;; background color
-(set-background-color "#eee")
-
 (defun next-user-buffer ()
   "Switch to the next user buffer in cyclic order. User buffers are those not starting with *."
   (interactive)
@@ -416,4 +413,8 @@
 (setq buffer-file-coding-system 'utf-8)
 
 (toggle-frame-fullscreen)
+
+;; background color
+(set-background-color "#eee")
+
 ;; init.el ends here
