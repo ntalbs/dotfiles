@@ -407,6 +407,11 @@
   :config
   (gradle-mode t))
 
+(use-package tiny
+  :config
+  (with-no-warnings
+    (tiny-setup-default)))
+
 ;; Set up unicode
 (prefer-coding-system           'utf-8)
 (set-default-coding-systems     'utf-8)
