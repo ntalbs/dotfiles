@@ -100,7 +100,8 @@
  '(mode-line ((t (:background "light blue" :foreground "black" :box (:line-width -1 :style released-button)))))
  '(org-code ((t (:inherit nil :foreground "deep pink"))))
  '(org-level-1 ((t (:inherit outline-1 :height 1.2 :weight bold))))
- '(org-table ((t (:foreground "Black" :height 0.9)))))
+ '(org-table ((t (:foreground "Black" :height 0.9))))
+ '(powerline-inactive1 ((t (:inherit mode-line-inactive :background "grey11" :foreground "gray55")))))
 
 (setq default-directory "~/")
 (add-hook 'before-save-hook 'whitespace-cleanup)
