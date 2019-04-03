@@ -251,9 +251,7 @@
   :init (global-flycheck-mode))
 
 (use-package emmet-mode                 ; zen coding
-  :config
-  (add-hook 'sgml-mode-hook 'emmet-mode)
-  (add-hook 'web-mode-hook 'emmet-mode))
+  :hook (sgml-mode web-mode))
 
 (use-package iedit
   :ensure t)
