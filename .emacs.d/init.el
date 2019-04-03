@@ -37,6 +37,7 @@
  '(js2-mode-show-strict-warnings nil)
  '(kept-new-versions 6)
  '(kept-old-versions 2)
+ '(lsp-ui-doc-border "gray55")
  '(lua-indent-level 2)
  '(markdown-enable-math t)
  '(markdown-indent-on-enter nil)
@@ -84,6 +85,7 @@
  '(text-mode-hook (quote (visual-line-mode)))
  '(tool-bar-mode nil)
  '(tramp-default-method "ssh" nil (tramp))
+ '(typescript-indent-level 2)
  '(version-control t))
 
 (custom-set-faces
@@ -93,6 +95,8 @@
  ;; If there is more than one, they won't work right.
  '(hl-line ((t (:background "#ccc"))))
  '(js2-function-call ((t (:inherit default :foreground "dark blue"))))
+ '(lsp-ui-sideline-code-action ((t (:foreground "SpringGreen4"))))
+ '(lsp-ui-sideline-current-symbol ((t (:foreground "dark blue" :box (:line-width -1 :color "white") :weight ultra-bold :height 0.99))))
  '(markdown-bold-face ((t (:inherit font-lock-variable-name-face :foreground "Red" :weight semi-bold))))
  '(markdown-header-face ((t (:inherit font-lock-function-name-face :weight semi-bold))))
  '(markdown-italic-face ((t (:inherit font-lock-variable-name-face :slant normal))))
@@ -397,7 +401,20 @@
   (with-no-warnings
     (tiny-setup-default)))
 
-;; Disable backup
+(use-package lsp-mode
+  :commands lsp
+  :config
+  (add-hook 'typescript-mode-hook #'lsp))
+
+(use-package lsp-ui
+  :commands lsp-ui-mode
+  :config
+  (add-hook 'lsp-mode-hook 'lst-ui-mode))
+
+(use-package company-lsp
+  :commands company-lsp)
+
+;; disable backup
 (setq backup-inhibited t)
 ;; Disable auto save
 (setq auto-save-default nil)
