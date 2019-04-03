@@ -208,10 +208,10 @@
 
 (global-set-key (kbd "C-c .") 'insert-date)
 
-;; packages
-
-; suppress ad-handle-definition: warning
+;; suppress ad-handle-definition: warning
 (setq ad-redefinition-action 'accept)
+
+;; packages
 
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
