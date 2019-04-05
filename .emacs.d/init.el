@@ -409,7 +409,7 @@
 (use-package lsp-ui
   :commands lsp-ui-mode
   :config
-  (add-hook 'lsp-mode-hook 'lst-ui-mode))
+  (add-hook 'lsp-mode-hook 'lsp-ui-mode))
 
 (use-package company-lsp
   :commands company-lsp)
