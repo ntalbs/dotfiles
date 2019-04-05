@@ -414,7 +414,14 @@
 (use-package company-lsp
   :commands company-lsp)
 
-;; disable backup
+(use-package avy
+  :bind
+  ("C-:" . avy-goto-char)
+  ("C-'" . avy-goto-char-timer)
+  ("C-c w" . avy-goto-word-1)
+  ("C-c l" . avy-goto-line))
+
+;; Disable backup
 (setq backup-inhibited t)
 ;; Disable auto save
 (setq auto-save-default nil)
