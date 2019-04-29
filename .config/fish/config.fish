@@ -3,15 +3,6 @@ set -x EDITOR vim
 set -x TOOLBOX_BIN ~/.toolbox/bin
 set -x PATH $TOOLBOX_BIN /usr/local/bin /usr/local/sbin /usr/bin /bin /usr/sbin /sbin /usr/local/share/git-core/contrib/diff-highlight /workplace/AVClientServicesDevScripts/bin
 
-# JDK
-function switch-jdk
-  set -x JAVA_HOME (/usr/libexec/java_home $argv[1])
-end
-
-alias java8  "switch-jdk -v1.8"
-alias java9  "switch-jdk -v9"
-alias java11 "switch-jdk -v11"
-
 # brew
 alias bu "brew update; brew upgrade; brew cleanup; brew doctor"
 
