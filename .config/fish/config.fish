@@ -1,7 +1,7 @@
 set -x SHELL /usr/local/bin/fish
 set -x EDITOR vim
 set -x TOOLBOX_BIN ~/.toolbox/bin
-set -x PATH $TOOLBOX_BIN /usr/local/bin /usr/local/sbin /usr/bin /bin /usr/sbin /sbin /usr/local/share/git-core/contrib/diff-highlight /workplace/AVClientServicesDevScripts/bin
+set -x PATH $TOOLBOX_BIN ~/.avne/bin ~/bin /usr/local/bin /usr/local/sbin /usr/bin /bin /usr/sbin /sbin /usr/local/share/git-core/contrib/diff-highlight /workplace/AVClientServicesDevScripts/bin ~/.cargo/bin
 
 # brew
 alias bu "brew update; brew upgrade; brew cleanup; brew doctor"
