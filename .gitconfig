@@ -1,12 +1,6 @@
 [core]
   excludesfile = /Users/seongjun/.gitignore_global
   pager = diff-so-fancy | less --tabs=4 -RFX
-[difftool "sourcetree"]
-  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-  path =
-[mergetool "sourcetree"]
-  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-  trustExitCode = true
 [user]
   email = seongjun@amazon.com
   name = "Seongjun Yun"
