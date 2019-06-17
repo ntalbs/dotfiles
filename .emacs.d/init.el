@@ -365,7 +365,7 @@
   (setq mmm-global-mode 'maybe)
   :config
   (mmm-add-classes
-   '((md-tex  :submode tex-mode     :front "<div>$$\n"    :back "$$</div>")
+   '((md-tex  :submode tex-mode     :front "\\$\\$\\%math\n" :back "\\$\\$")
      (md-clj  :submode clojure-mode :front "```clojure\n" :back "```\n")
      (md-lisp :submode lisp-mode    :front "```lisp\n"    :back "```\n")
      (md-java :submode java-mode    :front "```java\n"    :back "```\n")))
