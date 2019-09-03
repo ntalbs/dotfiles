@@ -349,16 +349,6 @@
   :config
   (add-to-list 'auto-mode-alist '("\\.http\\'" . restclient-mode)))
 
-(use-package langtool
-  :init
-  (setq langtool-language-tool-jar "/usr/local/LanguageTool-3.3/languagetool-commandline.jar")
-  (setq langtool-default-language "en-US")
-  :bind (("C-x 4 w" . langtool-check)
-         ("C-x 4 W" . langtool-check-done)
-         ("C-x 4 l" . langtool-switch-default-language)
-         ("C-x 4 4" . langtool-show-message-at-point)
-         ("C-x 4 c" . langtool-correct-buffer)))
-
 (use-package ace-window
   :bind ("M-p" . ace-window))
 
