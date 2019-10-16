@@ -17,12 +17,15 @@
  '(column-number-mode t)
  '(command-line-default-directory "~/" t)
  '(css-indent-offset 2)
+ '(custom-safe-themes
+   (quote
+    ("2540689fd0bc5d74c4682764ff6c94057ba8061a98be5dd21116bf7bf301acfb" default)))
  '(default-input-method "korean-hangul3")
  '(delete-old-versions t)
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
  '(flycheck-python-pycompile-executable "/usr/local/bin/python3")
- '(fringe-mode (quote (nil . 0)) nil (fringe))
  '(global-hl-line-mode t)
+ '(groovy-indent-offset 2)
  '(help-at-pt-display-when-idle (quote (flymake-overlay)) nil (help-at-pt))
  '(help-at-pt-timer-delay 0.5)
  '(hightlight-parenthese-mode t)
@@ -45,7 +48,6 @@
  '(markdown-enable-math t)
  '(markdown-indent-on-enter nil)
  '(markdown-list-indent-width 2)
- '(mmm-global-mode (quote maybe) nil (mmm-mode))
  '(neo-hidden-regexp-list (quote ("\\.pyc$" "~$" "^#.*#$" "\\.elc$")))
  '(neo-theme (quote nerd))
  '(neo-window-fixed-size nil)
@@ -66,7 +68,7 @@
  '(package-archives (quote (("melpa" . "https://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (rust-mode flycheck-plantuml go-mode flycheck-mmark afternoon-theme company-lsp company lsp-java lsp-ui lsp-mode lsp-typescript powerline paredit tiny groovy-mode gradle-mode graphviz-dot-mode plantuml-mode jdecomp iedit duplicate-thing move-dup package-lint duplicate-lines jedi cider exec-path-from-shell markdown-mode json-navigator counsel-projectile projectile lua-mode find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper magit yaml-mode which-key visual-regexp-steroids use-package try stylus-mode restclient paredit-menu org-journal neotree move-text mmm-mode markdown-mode+ langtool js2-refactor goto-last-change flycheck fish-mode emmet-mode)))
+    (tern poly-markdown polymode mmm-mode rust-mode flycheck-plantuml go-mode flycheck-mmark afternoon-theme company-lsp company lsp-java lsp-ui lsp-mode lsp-typescript powerline paredit tiny groovy-mode gradle-mode graphviz-dot-mode plantuml-mode jdecomp iedit duplicate-thing move-dup package-lint duplicate-lines jedi cider exec-path-from-shell markdown-mode json-navigator counsel-projectile projectile lua-mode find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper magit yaml-mode which-key visual-regexp-steroids use-package try stylus-mode restclient paredit-menu org-journal neotree move-text markdown-mode+ js2-refactor goto-last-change flycheck fish-mode emmet-mode)))
  '(plantuml-default-exec-mode (quote jar))
  '(plantuml-java-command "/usr/local/bin/plantuml")
  '(plantuml-server-url "")
@@ -91,7 +93,7 @@
  '(tab-width 2)
  '(text-mode-hook (quote (visual-line-mode)))
  '(tool-bar-mode nil)
- '(tramp-default-method "ssh" nil (tramp))
+ '(tramp-default-method "ssh")
  '(typescript-indent-level 2)
  '(version-control t))
 
@@ -300,7 +302,8 @@
   :config
   (global-company-mode)
   (define-key company-active-map (kbd "C-p") 'company-select-previous)
-  (define-key company-active-map (kbd "C-n") 'company-select-next))
+  (define-key company-active-map (kbd "C-n") 'company-select-next)
+  (add-to-list 'company-backends 'company-tern))
 
 (use-package jedi
   :config
@@ -319,7 +322,8 @@
 
 (use-package js2-mode
   :config
-  (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode)))
+  (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+  (add-hook 'js2-mode-hook 'tern-mode))
 
 (use-package js2-refactor)
 
@@ -336,10 +340,23 @@
   (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
   (add-to-list 'interpreter-mode-alist '("lua" . lua-mode)))
 
+(defun auto-margin ()
+  "Set margins in current buffer."
+  (interactive)
+  (setq right-fringe-width 0)
+  (let ((margin 0)
+        (desired-width 80)
+        (actual-width (window-total-width)))
+    (setq margin (- actual-width desired-width))
+    (if (> margin 0)
+        (setq right-margin-width margin))))
+
 (use-package markdown-mode
   :ensure t
   :commands (markdown-mode gfm-mode)
-  :config (add-hook 'markdown-mode-hook #'flycheck-mode)
+  :config
+  (add-hook 'markdown-mode-hook #'flycheck-mode)
+  ;; (add-hook 'markdown-mode-hook 'auto-margin)
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'"       . markdown-mode)
          ("\\.markdown\\'" . markdown-mode)
@@ -424,6 +441,38 @@
   ("C-c w" . avy-goto-word-1)
   ("C-c l" . avy-goto-line))
 
+(defun smile ()
+  "Print smile in *Messages* buffer."
+  (interactive)
+  (switch-to-buffer "*scratch*")
+  (newline) (insert "                           oooo$$$$$$$$$$$$oooo")
+  (newline) (insert "                        oo$$$$$$$$$$$$$$$$$$$$$$$$o")
+  (newline) (insert "                     oo$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$o         o$   $$ o$")
+  (newline) (insert "     o $ oo        o$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$o       $$ $$ $$o$")
+  (newline) (insert "  oo $ $ \"$      o$$$$$$$$$    $$$$$$$$$$$$$    $$$$$$$$$o       $$$o$$o$")
+  (newline) (insert "  \"$$$$$$o$     o$$$$$$$$$      $$$$$$$$$$$      $$$$$$$$$$o    $$$$$$$$")
+  (newline) (insert "    $$$$$$$    $$$$$$$$$$$      $$$$$$$$$$$      $$$$$$$$$$$$$$$$$$$$$$$")
+  (newline) (insert "    $$$$$$$$$$$$$$$$$$$$$$$    $$$$$$$$$$$$$    $$$$$$$$$$$$$$  \"\"\"$$$")
+  (newline) (insert "     \"$$$\"\"\"\"$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$     \"$$$")
+  (newline) (insert "      $$$   o$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$     \"$$$o")
+  (newline) (insert "     o$$\"   $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$       $$$o")
+  (newline) (insert "     $$$    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\" \"$$$$$$ooooo$$$$o")
+  (newline) (insert "    o$$$oooo$$$$$  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$   o$$$$$$$$$$$$$$$$$")
+  (newline) (insert "    $$$$$$$$\"$$$$   $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$     $$$$\"\"\"\"\"\"\"\"")
+  (newline) (insert "   \"\"\"\"       $$$$    \"$$$$$$$$$$$$$$$$$$$$$$$$$$$$\"      o$$$")
+  (newline) (insert "              \"$$$o     \"\"\"$$$$$$$$$$$$$$$$$$\"$$\"         $$$")
+  (newline) (insert "                $$$o          \"$$\"\"$$$$$$\"\"\"\"           o$$$")
+  (newline) (insert "                 $$$$o                                o$$$\"")
+  (newline) (insert "                  \"$$$$o      o$$$$$$o\"$$$$o        o$$$$")
+  (newline) (insert "                    \"$$$$$oo     ""$$$$o$$$$$o   o$$$$\"\"")
+  (newline) (insert "                       \"\"$$$$$oooo  \"$$$o$$$$$$$$$\"\"\"")
+  (newline) (insert "                          \"\"$$$$$$$oo $$$$$$$$$$")
+  (newline) (insert "                                  \"\"\"\"$$$$$$$$$$$")
+  (newline) (insert "                                      $$$$$$$$$$$$")
+  (newline) (insert "                                       $$$$$$$$$$\"")
+  (newline) (insert "                                        \"$$$\"\"\"\"")
+  (newline))
+
 ;; Disable backup
 (setq backup-inhibited t)
 ;; Disable auto save
@@ -435,6 +484,6 @@
 (setq buffer-file-coding-system 'utf-8)
 
 ;; background color
-(set-background-color "#eee")
+;; (set-background-color "#eee")
 
 ;; init.el ends here
