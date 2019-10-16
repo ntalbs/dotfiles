@@ -19,6 +19,10 @@ alias '..' "cd .."
 alias '...' "cd ../.."
 alias '....' "cd ../../.."
 alias 'cd..' "cd .."
+alias cdacm "cd /workplace/ACM"
+alias cdd "cd /workplace/ACM/AVDuotronics"
+alias cda "cd /workplace/ACM/AVDuotronicsAdmin"
+alias 'update-avne' "/usr/bin/curl --negotiate -fLSsu: 'https://drive.corp.amazon.com/view/ahmadida%40/scripts/avne-install.sh' -o /tmp/avne-install.sh; and /bin/bash /tmp/avne-install.sh"
 
 # edit-and-execute-command
 function edit-commandline
