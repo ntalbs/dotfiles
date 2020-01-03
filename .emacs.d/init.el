@@ -68,7 +68,7 @@
  '(package-archives (quote (("melpa" . "https://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (tern poly-markdown polymode mmm-mode rust-mode flycheck-plantuml go-mode flycheck-mmark afternoon-theme company-lsp company lsp-java lsp-ui lsp-mode lsp-typescript powerline paredit tiny groovy-mode gradle-mode graphviz-dot-mode plantuml-mode jdecomp iedit duplicate-thing move-dup package-lint duplicate-lines jedi cider exec-path-from-shell markdown-mode json-navigator counsel-projectile projectile lua-mode find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper magit yaml-mode which-key visual-regexp-steroids use-package try stylus-mode restclient paredit-menu org-journal neotree move-text markdown-mode+ js2-refactor goto-last-change flycheck fish-mode emmet-mode)))
+    (clojure-mode racer flycheck-rust cargo flymake-rust tern poly-markdown polymode mmm-mode rust-mode flycheck-plantuml go-mode flycheck-mmark afternoon-theme company-lsp company lsp-java lsp-ui lsp-mode lsp-typescript powerline paredit tiny groovy-mode gradle-mode graphviz-dot-mode plantuml-mode jdecomp iedit duplicate-thing move-dup package-lint duplicate-lines jedi cider exec-path-from-shell markdown-mode json-navigator counsel-projectile projectile lua-mode find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper magit yaml-mode which-key visual-regexp-steroids use-package try stylus-mode restclient paredit-menu org-journal neotree move-text markdown-mode+ js2-refactor goto-last-change flycheck fish-mode emmet-mode)))
  '(plantuml-default-exec-mode (quote jar))
  '(plantuml-java-command "/usr/local/bin/plantuml")
  '(plantuml-server-url "")
@@ -115,7 +115,7 @@
  '(markdown-italic-face ((t (:inherit font-lock-variable-name-face :slant normal))))
  '(mode-line ((t (:background "light blue" :foreground "black" :box (:line-width -1 :style released-button)))))
  '(org-code ((t (:inherit nil :foreground "deep pink"))))
- '(org-level-1 ((t (:inherit outline-1 :height 1.2 :weight bold))))
+ '(org-level-1 ((t (:inherit outline-1 :foreground "gray30" :weight bold :height 1.2))))
  '(org-table ((t (:foreground "Black" :height 0.9))))
  '(powerline-inactive1 ((t (:inherit mode-line-inactive :background "grey11" :foreground "gray55")))))
 
@@ -310,6 +310,12 @@
   (add-hook 'python-mode-hook 'jedi:setup)
   (setq jedi:complete-on-dot t))
 
+(use-package rust-mode
+  :config
+  (add-hook 'rust-mode-hook 'cargo-minor-mode)
+  (add-hook 'rust-mode-hook #'racer-mode)
+  (add-hook 'racer-mode-hook #'eldoc-mode))
+
 (use-package cider
   :config
   (add-hook 'clojure-mode-hook 'cider-mode)
@@ -485,5 +491,3 @@
 
 ;; background color
 ;; (set-background-color "#eee")
-
-;; init.el ends here
