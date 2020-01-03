@@ -1,4 +1,4 @@
-# .bashrc
+# .bashrc for cloud dev desktop
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -14,22 +14,19 @@ RESET="\[$(tput sgr0)\]"
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
-export PS1="dev-dsk-seongjun ${GREEN}\w${YELLOW}\$(parse_git_branch)${RESET} > "
+export PS1="cloud-dsktop-seongjun ${GREEN}\w${YELLOW}\$(parse_git_branch)${RESET} > "
 
-BRAZIL_CLI_BIN=/apollo/env/BrazilCLI/bin
-BARK_CLI_BIN=/apollo/env/BarkCLI/bin
+TOOLBOX_BIN=$HOME/.toolbox/bin
 AMAZON_AWS_CLI_BIN=/apollo/env/AmazonAwsCli/bin
 ENV_IMPROVEMENT_BIN=/apollo/env/envImprovement/bin
-export PATH=$BRAZIL_CLI_BIN:$BARK_CLI_BIN:$ENV_IMPROVEMENT_BIN:$AMAZON_AWS_CLI_BIN:$PATH
+export PATH=$TOOLBOX_BIN:$ENV_IMPROVEMENT_BIN:$AMAZON_AWS_CLI_BIN:$PATH
 
 alias k="kinit -f"
 alias b="brazil"
 alias bb="brazil-build"
 alias bws="brazil ws show"
-alias cdp="cd /workplace/DeviceProxy/src/ATVDeviceProxy"
-alias cdpa="cd /apollo/env/ATVDeviceProxy"
-alias cdpal="cd /apollo/env/ATVDeviceProxy/var/output/logs"
-alias cdis="cd /workplace/DIS/src/ATVDeviceInitializationService"
+alias cdis="cd /workspace/DIS/src/ATVDeviceInitializationService"
 alias cdisa="cd /apollo/env/ATVDeviceInitializationService"
 alias cdisal="cd /apollo/env/ATVDeviceInitializationService/var/output/logs"
-alias attach-dp="brazil ws env attach --alias ATVDeviceProxy"
+
+alias attach-dis="brazil ws env attach --alias ATVDeviceInitializationService"
