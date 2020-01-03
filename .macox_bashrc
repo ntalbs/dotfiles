@@ -1,0 +1,35 @@
+# .bashrc
+
+# User specific aliases and functions
+GREEN="\[$(tput setaf 2)\]"
+YELLOW="\[$(tput setaf 3)\]"
+RESET="\[$(tput sgr0)\]"
+
+# Prompt
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+export PS1="macbook ${GREEN}\w${YELLOW}\$(parse_git_branch)${RESET} > "
+
+CARGO_BIN=$HOME/.cargo/bin
+TOOLBOX_BIN=$HOME/.toolbox/bin
+export PATH=$CARGO_BIN:$TOOLBOX_BIN:/usr/local/bin:$PATH
+
+alias ls="ls -GF"
+alias k="kinit -f"
+alias b="brazil"
+alias bb="brazil-build"
+alias bws="brazil ws show"
+alias cdp="cd /workspace/DeviceProxy/src/ATVDeviceProxy"
+alias cdpa="cd /apollo/env/ATVDeviceProxy"
+alias cdis="cd /workspace/DIS/src/ATVDeviceInitializationService"
+alias cd..="cd .."
+alias ..="cd .. "
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias cdacm="cd /workspace/ACM"
+alias cdd="cd /workspace/ACM/AVDuotronics"
+alias cda="cd /workspace/ACM/AVDuotronicsAdmin"
+
+# brew
+alias bu="brew update; brew upgrade; brew cleanup; brew doctor"
