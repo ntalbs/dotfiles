@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+
+ssh dev
+if [ "$?" -ne "0" ]; then
+   mwinit
+   ssh dev
+fi
