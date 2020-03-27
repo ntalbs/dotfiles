@@ -37,7 +37,7 @@ alias ....="cd ../../.."
 alias cdacm="cd /workspace/ACM"
 alias cdd="cd /workspace/ACM/AVDuotronics/src/AVDuotronics"
 alias cda="cd /workspace/ACM/AVDuotronicsAdmin/src/AVDuotronicsAdmin"
-alias lsync="sudo lsyncd ~/lsync.cfg"
+alias lsync="sudo lsyncd ~/lsync.cfg; tail -f /var/log/lsyncd.log"
 
 # brew
 alias bu="brew update; brew upgrade; brew cleanup; brew doctor"
