@@ -65,13 +65,17 @@
     (("PENDING" . "deep pink")
      ("IN-PROGRESS" . "blue"))))
  '(org-todo-keywords (quote ((sequence "TODO" "IN-PROGRESS" "PENDING" "DONE"))))
- '(package-archives (quote (("melpa" . "https://melpa.org/packages/"))))
+ '(package-archives
+   (quote
+    (("melpa" . "https://melpa.org/packages/")
+     ("elpa" . "https://elpa.gnu.org/packages/"))))
+ '(package-enable-at-startup nil)
  '(package-selected-packages
    (quote
-    (rust-auto-use clojure-mode racer flycheck-rust cargo flymake-rust tern poly-markdown polymode mmm-mode rust-mode flycheck-plantuml go-mode flycheck-mmark afternoon-theme company-lsp company lsp-java lsp-ui lsp-mode lsp-typescript powerline paredit tiny groovy-mode gradle-mode graphviz-dot-mode plantuml-mode jdecomp iedit duplicate-thing move-dup package-lint duplicate-lines jedi cider exec-path-from-shell markdown-mode json-navigator counsel-projectile projectile lua-mode find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper magit yaml-mode which-key visual-regexp-steroids use-package try stylus-mode restclient paredit-menu org-journal neotree move-text markdown-mode+ js2-refactor goto-last-change flycheck fish-mode emmet-mode)))
- '(plantuml-default-exec-mode (quote jar))
- '(plantuml-java-command "/usr/local/bin/plantuml")
- '(plantuml-server-url "")
+    (queue rust-auto-use clojure-mode racer flycheck-rust cargo flymake-rust tern poly-markdown polymode mmm-mode rust-mode flycheck-plantuml go-mode flycheck-mmark afternoon-theme company-lsp company lsp-java lsp-ui lsp-mode lsp-typescript powerline paredit tiny groovy-mode gradle-mode graphviz-dot-mode plantuml-mode jdecomp iedit duplicate-thing move-dup package-lint duplicate-lines jedi cider exec-path-from-shell markdown-mode json-navigator counsel-projectile projectile lua-mode find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper magit yaml-mode which-key visual-regexp-steroids use-package try stylus-mode restclient paredit-menu org-journal neotree move-text markdown-mode+ js2-refactor goto-last-change flycheck fish-mode emmet-mode)))
+ '(plantuml-default-exec-mode (quote executable))
+ '(plantuml-executable-path "/usr/local/bin/plantuml")
+ '(plantuml-indent-level 2)
  '(recentf-exclude (quote (".*/\\.emacs\\.d\\/elpa/.*el")))
  '(recentf-max-saved-items 200)
  '(rust-indent-offset 2)
@@ -133,7 +137,7 @@
 (set-fontset-font "fontset-default" '(#x1100 . #xffdc) "AppleMyungjo")
 
 ;; font size
-(set-face-attribute 'default nil :height 140) ; 14pt
+(set-face-attribute 'default nil :height 150) ; 15pt
 
 (define-key global-map (kbd "s-=") 'text-scale-increase)
 (define-key global-map (kbd "s--") 'text-scale-decrease)
@@ -228,6 +232,11 @@
 ;; suppress ad-handle-definition: warning
 (setq ad-redefinition-action 'accept)
 
+;; manual map from ext to mode
+(add-to-list 'auto-mode-alist '("\\.sh\\'" . sh-mode))
+(add-to-list 'auto-mode-alist '("ssh-dev" . sh-mode))
+(add-to-list 'auto-mode-alist '("\\.bashrc-macbook\\'" . sh-mode))
+
 ;; packages
 
 (unless (package-installed-p 'use-package)
@@ -317,6 +326,7 @@
   (add-hook 'racer-mode-hook #'eldoc-mode))
 
 (use-package cider
+  :ensure t
   :config
   (add-hook 'clojure-mode-hook 'cider-mode)
   (add-hook 'cider-mode-hook 'eldoc-mode)
