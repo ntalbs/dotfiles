@@ -22,6 +22,7 @@ ENV_IMPROVEMENT_BIN=/apollo/env/envImprovement/bin
 export PATH=$TOOLBOX_BIN:$ENV_IMPROVEMENT_BIN:$AMAZON_AWS_CLI_BIN:$PATH
 
 alias k="kinit -f"
+alias kmw="kinit -f && mwinit -o"
 alias b="brazil"
 alias bb="brazil-build"
 alias bws="brazil ws show"
