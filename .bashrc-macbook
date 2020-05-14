@@ -12,15 +12,16 @@ parse_git_branch() {
 export PS1="macbook ${GREEN}\w${YELLOW}\$(parse_git_branch)${RESET} > "
 
 MY_BIN=~/bin
+AC_DEV_TOOL_BIN=/workspace/ACDevTooling/bin
 CARGO_BIN=$HOME/.cargo/bin
 TOOLBOX_BIN=$HOME/.toolbox/bin
-export PATH=$MY_BIN:$CARGO_BIN:$TOOLBOX_BIN:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$MY_BIN:$CARGO_BIN:$TOOLBOX_BIN:$AC_DEV_TOOL_BIN:/usr/local/bin:/usr/local/sbin:$PATH
 
 # Bash completion@2
 [[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
 
 # alias
-alias ls="ls -GF"
+alias ls="exa -F"
 alias k="kinit -f"
 alias b="brazil"
 alias bb="brazil-build"
@@ -33,6 +34,7 @@ alias cd..="cd .."
 alias ..="cd .. "
 alias ...="cd ../.."
 alias ....="cd ../../.."
+
 alias cdacm="cd /workspace/ACM"
 alias cdd="cd /workspace/ACM/AVDuotronics/src/AVDuotronics"
 alias cda="cd /workspace/ACM/AVDuotronicsAdmin/src/AVDuotronicsAdmin"
