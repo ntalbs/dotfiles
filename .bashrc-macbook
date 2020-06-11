@@ -10,6 +10,7 @@ parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 export PS1="macbook ${GREEN}\w${YELLOW}\$(parse_git_branch)${RESET} > "
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-14.jdk/Contents/Home/
 
 MY_BIN=~/bin
 AC_DEV_TOOL_BIN=/workspace/ACDevTooling/bin
@@ -22,6 +23,7 @@ export PATH=$MY_BIN:$CARGO_BIN:$TOOLBOX_BIN:$AC_DEV_TOOL_BIN:/usr/local/bin:/usr
 
 # alias
 alias ls="exa -F"
+alias cat=bat
 alias k="kinit -f"
 alias b="brazil"
 alias bb="brazil-build"
