@@ -1,7 +1,9 @@
 #! /usr/bin/env bash
 
-ssh dev
+SSH_OPTS="-L 1080:localhost:1080 -L 5555:localhost:5555 -L 5005:localhost:5005 -L 2080:localhost:2080 -L 5556:localhost:5556 -L 5006:localhost:5006"
+
+ssh $SSH_OPTS dev
 if [ "$?" -ne "0" ]; then
    mwinit
-   ssh dev
+   ssh $SSH_OPTS dev
 fi
