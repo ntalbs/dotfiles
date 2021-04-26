@@ -47,3 +47,52 @@ alias aatc="ada credentials update --account=884307244203 --provider=conduit --r
 
 # brew
 alias bu="brew update; brew upgrade; brew cleanup; brew doctor"
+
+# AWS: getting ACM admin secret
+get_secret() {
+    declare -A acm_accounts=(
+        ["beta:eu"]="121699701758"
+        ["beta:fe"]="846749500028"
+        ["beta:na"]="222704021565"
+        ["gamma:eu"]="055598853583"
+        ["gamma:fe"]="096764392817"
+        ["gamma:na"]="107644371309"
+        ["prod:eu"]="473626789569"
+        ["prod:fe"]="884715204624"
+        ["prod:na"]="070205909094"
+    )
+    declare -A airport_regions=(
+        ["eu"]="eu-west-1"
+        ["fe"]="us-west-2"
+        ["na"]="us-east-1"
+    )
+    stage=${1:-beta}
+    region=${2:-eu}
+    airport_region=${airport_regions[$region]}
+
+    aws_account_id=${acm_accounts["$stage:$region"]}
+
+    res=$(curl -s --location-trusted \
+               -c ~/.midway/cookie \
+               -b ~/.midway/cookie \
+               -X POST \
+               -H "Accept: application/json" \
+               -d "{\"awsAccountId\":\"$aws_account_id\",\"awsPartition\": \"aws\"}" \
+               https://iibs-midway.corp.amazon.com/GetSecurityTokenByAccount)
+    access_key=$(echo $res | jq -r ".accessKeyId")
+    secret_access_key=$(echo $res | jq -r ".secretAccessKey")
+    token=$(echo $res | jq -r ".sessionToken")
+
+    aws configure set region eu-west-1 --profile acm-temp
+    aws configure set aws_access_key_id $access_key --profile acm-tmp
+    aws configure set aws_secret_access_key $secret_access_key --profile acm-tmp
+    aws configure set aws_session_token $token --profile acm-tmp
+
+    echo "$stage-$region"
+    aws secretsmanager get-secret-value \
+        --secret-id "admin/api-key" \
+        --region $airport_region \
+        --output json \
+        --profile acm-tmp \
+        | jq -r ".SecretString"
+}
