@@ -9,7 +9,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(backup-by-copying t)
- '(backup-directory-alist (quote (("." . "~/.emacs.d/.emacs_saves"))))
+ '(backup-directory-alist '(("." . "~/.emacs.d/.emacs_saves")))
  '(blink-cursor-mode nil)
  '(c-basic-offset 2)
  '(c-max-one-liner-length 120)
@@ -18,15 +18,14 @@
  '(command-line-default-directory "~/" t)
  '(css-indent-offset 2)
  '(custom-safe-themes
-   (quote
-    ("2540689fd0bc5d74c4682764ff6c94057ba8061a98be5dd21116bf7bf301acfb" default)))
+   '("2540689fd0bc5d74c4682764ff6c94057ba8061a98be5dd21116bf7bf301acfb" default))
  '(default-input-method "korean-hangul3")
  '(delete-old-versions t)
- '(ediff-window-setup-function (quote ediff-setup-windows-plain))
+ '(ediff-window-setup-function 'ediff-setup-windows-plain)
  '(flycheck-python-pycompile-executable "/usr/local/bin/python3")
  '(global-hl-line-mode t)
  '(groovy-indent-offset 2)
- '(help-at-pt-display-when-idle (quote (flymake-overlay)) nil (help-at-pt))
+ '(help-at-pt-display-when-idle '(flymake-overlay) nil (help-at-pt))
  '(help-at-pt-timer-delay 0.5)
  '(hightlight-parenthese-mode t)
  '(indent-tabs-mode nil)
@@ -37,8 +36,7 @@
  '(js-indent-level 2)
  '(js2-basic-offset 2)
  '(js2-global-externs
-   (quote
-    ("$" "_" "setTimeout" "require" "fetch" "define" "describe" "it" "after" "before" "expect" "xdescribe")))
+   '("$" "_" "setTimeout" "require" "fetch" "define" "describe" "it" "after" "before" "expect" "xdescribe"))
  '(js2-mode-show-parse-errors nil)
  '(js2-mode-show-strict-warnings nil)
  '(kept-new-versions 6)
@@ -48,10 +46,11 @@
  '(markdown-enable-math t)
  '(markdown-indent-on-enter nil)
  '(markdown-list-indent-width 2)
- '(neo-hidden-regexp-list (quote ("\\.pyc$" "~$" "^#.*#$" "\\.elc$")))
- '(neo-theme (quote nerd))
+ '(neo-hidden-regexp-list '("\\.pyc$" "~$" "^#.*#$" "\\.elc$"))
+ '(neo-theme 'nerd)
  '(neo-window-fixed-size nil)
- '(ns-right-alternate-modifier (quote none))
+ '(nrepl-use-ssh-fallback-for-remote-hosts t)
+ '(ns-right-alternate-modifier 'none)
  '(org-agenda-files nil)
  '(org-cycle-separator-lines 1)
  '(org-default-priority 50)
@@ -60,45 +59,36 @@
  '(org-highest-priority 49)
  '(org-lowest-priority 51)
  '(org-table-default-size "3x2")
- '(org-todo-keyword-faces
-   (quote
-    (("PENDING" . "deep pink")
-     ("IN-PROGRESS" . "blue"))))
- '(org-todo-keywords (quote ((sequence "TODO" "IN-PROGRESS" "PENDING" "DONE"))))
- '(package-archives
-   (quote
-    (("melpa" . "https://melpa.org/packages/")
-     ("elpa" . "https://elpa.gnu.org/packages/"))))
+ '(org-todo-keyword-faces '(("PENDING" . "deep pink") ("IN-PROGRESS" . "blue")))
+ '(org-todo-keywords '((sequence "TODO" "IN-PROGRESS" "PENDING" "DONE")))
+ '(package-archives '(("melpa" . "https://melpa.org/packages/")))
  '(package-enable-at-startup nil)
  '(package-selected-packages
-   (quote
-    (queue rust-auto-use clojure-mode racer flycheck-rust cargo flymake-rust tern poly-markdown polymode mmm-mode rust-mode flycheck-plantuml go-mode flycheck-mmark afternoon-theme company-lsp company lsp-java lsp-ui lsp-mode lsp-typescript powerline paredit tiny groovy-mode gradle-mode graphviz-dot-mode plantuml-mode jdecomp iedit duplicate-thing move-dup package-lint duplicate-lines jedi cider exec-path-from-shell markdown-mode json-navigator counsel-projectile projectile lua-mode find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper magit yaml-mode which-key visual-regexp-steroids use-package try stylus-mode restclient paredit-menu org-journal neotree move-text markdown-mode+ js2-refactor goto-last-change flycheck fish-mode emmet-mode)))
- '(plantuml-default-exec-mode (quote executable))
+   '(typescript-mode magit queue rust-auto-use clojure-mode racer flycheck-rust cargo flymake-rust tern poly-markdown polymode mmm-mode rust-mode flycheck-plantuml go-mode flycheck-mmark afternoon-theme company-lsp company lsp-java lsp-ui lsp-mode lsp-typescript powerline paredit tiny groovy-mode gradle-mode graphviz-dot-mode plantuml-mode jdecomp iedit duplicate-thing move-dup package-lint duplicate-lines jedi cider exec-path-from-shell markdown-mode json-navigator counsel-projectile projectile find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper yaml-mode which-key visual-regexp-steroids use-package try stylus-mode restclient paredit-menu org-journal neotree move-text markdown-mode+ js2-refactor goto-last-change flycheck fish-mode emmet-mode))
+ '(plantuml-default-exec-mode 'executable)
  '(plantuml-executable-path "/usr/local/bin/plantuml")
  '(plantuml-indent-level 2)
- '(recentf-exclude (quote (".*/\\.emacs\\.d\\/elpa/.*el")))
+ '(python-shell-interpreter "python3")
+ '(recentf-exclude '(".*/\\.emacs\\.d\\/elpa/.*el"))
  '(recentf-max-saved-items 200)
  '(rust-indent-offset 2)
- '(safe-local-variable-values
-   (quote
-    ((flycheck-disabled-checkers . javascript-standard))))
+ '(safe-local-variable-values '((flycheck-disabled-checkers . javascript-standard)))
  '(scroll-bar-mode nil)
  '(shell-file-name "/bin/bash")
  '(show-paren-mode t)
  '(speedbar-indentation-width 2)
  '(speedbar-supported-extension-expressions
-   (quote
-    (".org" ".el" ".emacs" ".java" ".js" ".s?html" ".clj" ".json" ".md" ".css")))
+   '(".org" ".el" ".emacs" ".java" ".js" ".s?html" ".clj" ".json" ".md" ".css"))
  '(speedbar-use-images nil)
  '(split-height-threshold 80)
  '(split-width-threshold 300)
  '(standard-indent 1)
  '(tab-stop-list nil)
  '(tab-width 2)
- '(text-mode-hook (quote (visual-line-mode)))
+ '(text-mode-hook '(visual-line-mode))
  '(tool-bar-mode nil)
  '(tramp-default-method "ssh")
- '(typescript-indent-level 2)
+ '(typescript-indent-level 4)
  '(version-control t))
 
 (custom-set-faces
@@ -322,8 +312,8 @@
 (use-package rust-mode
   :config
   (add-hook 'rust-mode-hook 'cargo-minor-mode)
-  (add-hook 'rust-mode-hook #'racer-mode)
-  (add-hook 'racer-mode-hook #'eldoc-mode))
+  (add-hook 'rust-mode-hook 'racer-mode)
+  (add-hook 'racer-mode-hook 'eldoc-mode))
 
 (use-package cider
   :ensure t
@@ -350,11 +340,6 @@
   (setq web-mode-code-indent-offset 2)
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.ejs\\'" . web-mode)))
-
-(use-package lua-mode
-  :config
-  (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
-  (add-to-list 'interpreter-mode-alist '("lua" . lua-mode)))
 
 (defun auto-margin ()
   "Set margins in current buffer."
