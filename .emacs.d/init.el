@@ -310,10 +310,16 @@
   (setq jedi:complete-on-dot t))
 
 (use-package rust-mode
-  :config
-  (add-hook 'rust-mode-hook 'cargo-minor-mode)
-  (add-hook 'rust-mode-hook 'racer-mode)
-  (add-hook 'racer-mode-hook 'eldoc-mode))
+  :hook ((rust-mode . flycheck-rust-setup)
+         (rust-mode . flycheck-rust)
+         (rust-mode . lsp)
+         (rust-mode . lsp-lens-mode)
+         (rust-mode . cargo-minor-mode)
+         (rust-mode . racer-mode)
+         (rust-mode . eldoc-mode))
+  :custom
+  (add-hook 'ruest-mode 'flycheck-rust-setup)
+  (lsp-rust-server 'rust-analyzer))
 
 (use-package cider
   :ensure t
