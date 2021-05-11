@@ -431,7 +431,7 @@
 (use-package lsp-mode
   :commands lsp
   :config
-  (add-hook 'typescript-mode-hook #'lsp))
+  :hook ((rust-mode typescript-mode) . lsp))
 
 (use-package lsp-ui
   :commands lsp-ui-mode
