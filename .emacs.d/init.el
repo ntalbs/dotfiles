@@ -1,3 +1,9 @@
+;;; init.el --- My init.el file.
+
+;;; Commentary:
+
+;;; Code:
+
 ;; Enter fullscreen mode
 (toggle-frame-fullscreen)
 
@@ -455,3 +461,5 @@
 
 ;; background color
 ;; (set-background-color "#eee")
+
+;;; init.el ends here
