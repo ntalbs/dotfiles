@@ -318,14 +318,12 @@
          (rust-mode . racer-mode)
          (rust-mode . eldoc-mode))
   :custom
-  (add-hook 'ruest-mode 'flycheck-rust-setup)
   (lsp-rust-server 'rust-analyzer))
 
 (use-package cider
   :ensure t
-  :config
-  (add-hook 'clojure-mode-hook 'cider-mode)
-  (add-hook 'cider-mode-hook 'eldoc-mode)
+  :hook ((clojure-mode . cider-mode)
+         (cider-mode . eldoc-mode))
   :bind
   (:map cider-repl-mode-map
         ("C-c C-k" . cider-repl-clear-buffer)))
@@ -333,9 +331,9 @@
 (use-package json-mode)
 
 (use-package js2-mode
+  :hook ((js2-mode . tern-mode))
   :config
-  (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-  (add-hook 'js2-mode-hook 'tern-mode))
+  (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode)))
 
 (use-package js2-refactor)
 
@@ -361,9 +359,7 @@
 (use-package markdown-mode
   :ensure t
   :commands (markdown-mode gfm-mode)
-  :config
-  (add-hook 'markdown-mode-hook #'flycheck-mode)
-  ;; (add-hook 'markdown-mode-hook 'auto-margin)
+  :hook ((markdown-mode . flycheck-mode))
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'"       . markdown-mode)
          ("\\.markdown\\'" . markdown-mode)
@@ -435,8 +431,7 @@
 
 (use-package lsp-ui
   :commands lsp-ui-mode
-  :config
-  (add-hook 'lsp-mode-hook 'lsp-ui-mode))
+  :hook ((lsp-mode . lsp-ui-mode)))
 
 (use-package company-lsp
   :commands company-lsp)
