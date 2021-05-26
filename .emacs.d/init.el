@@ -164,12 +164,14 @@
 (global-set-key [s-right] 'next-user-buffer)
 
 (defun open-line-below ()
+  "Open a line below the current position."
   (interactive)
   (end-of-line)
   (open-line 1)
   (forward-line))
 
 (defun open-line-above ()
+  "Open a line above the current position."
   (interactive)
   (beginning-of-line)
   (open-line 1))
@@ -179,11 +181,13 @@
 (global-set-key (kbd "C-S-o") 'open-line-above)
 
 (defun open-init-file ()
+  "Open init.el file."
   (interactive)
   (find-file "~/.emacs.d/init.el"))
 (global-set-key [f12] 'open-init-file)
 
 (defun open-todo ()
+  "Open todo.org file."
   (interactive)
   (find-file "~/Documents/orgs/todo.org"))
 (global-set-key [f11] 'open-todo)
@@ -193,6 +197,7 @@
 
 ;; Cmd+delete
 (defun delete-to-line-start ()
+  "Delete everything from the current position to the beginning of the line."
   (interactive)
   (push-mark)
   (move-beginning-of-line 1)
@@ -201,7 +206,9 @@
 (global-set-key (kbd "s-<backspace>") 'delete-to-line-start)
 
 (defun join-lines-in-region (beg end)
-  "Apply join-line over region."
+  "Apply 'join-line' over region.
+BEG beginning of the region.
+END end of the region."
   (interactive "r")
   (if mark-active
       (let ((beg (region-beginning))
