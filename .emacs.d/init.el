@@ -106,7 +106,7 @@
  '(company-scrollbar-fg ((t (:background "dark blue"))))
  '(company-template-field ((t (:background "LightBlue1" :foreground "black"))))
  '(company-tooltip ((t (:background "light gray" :foreground "black"))))
- '(hl-line ((t (:background "#ccc"))))
+ '(hl-line ((t (:background "#ddd"))))
  '(js2-function-call ((t (:inherit default :foreground "dark blue"))))
  '(lsp-ui-sideline-code-action ((t (:foreground "SpringGreen4"))))
  '(lsp-ui-sideline-current-symbol ((t (:foreground "dark blue" :box (:line-width -1 :color "white") :weight ultra-bold :height 0.99))))
