@@ -18,9 +18,6 @@ CARGO_BIN=$HOME/.cargo/bin
 TOOLBOX_BIN=$HOME/.toolbox/bin
 export PATH=$MY_BIN:$CARGO_BIN:$TOOLBOX_BIN:$AC_DEV_TOOL_BIN:/usr/local/bin:/usr/local/sbin:$PATH
 
-# Bash completion@2
-[[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
-
 # alias
 alias ls="exa -F"
 alias cat=bat
