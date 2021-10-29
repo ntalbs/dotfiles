@@ -13,7 +13,7 @@ parse_git_branch() {
 export PS1="macbook ${GREEN}\w${YELLOW}\$(parse_git_branch)${RESET} > "
 
 MY_BIN=~/bin
-AC_DEV_TOOL_BIN=/workspace/ACDevTooling/bin
+AC_DEV_TOOL_BIN=/workplace/ACDevTooling/bin
 CARGO_BIN=$HOME/.cargo/bin
 TOOLBOX_BIN=$HOME/.toolbox/bin
 export PATH=$MY_BIN:$CARGO_BIN:$TOOLBOX_BIN:$AC_DEV_TOOL_BIN:/usr/local/bin:/usr/local/sbin:$PATH
@@ -28,17 +28,17 @@ alias bb="brazil-build"
 alias bws="brazil ws show"
 alias brb="brazil-recursive-cmd brazil-build"
 
-alias cdp="cd /workspace/Personal"
-alias cdis="cd /workspace/DIS/src/ATVDeviceInitializationService"
+alias cdp="cd /workplace/Personal"
+alias cdis="cd /workplace/DIS/src/ATVDeviceInitializationService"
 
 alias cd..="cd .."
 alias ..="cd .. "
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
-alias cdacm="cd /workspace/ACM"
-alias cdd="cd /workspace/ACM/AVDuotronics/src/AVDuotronics"
-alias cda="cd /workspace/ACM/AVDuotronicsAdmin/src/AVDuotronicsAdmin"
+alias cdacm="cd /workplace/ACM"
+alias cdd="cd /workplace/ACM/AVDuotronics/src/AVDuotronics"
+alias cda="cd /workplace/ACM/AVDuotronicsAdmin/src/AVDuotronicsAdmin"
 alias lsync="sudo killall lsyncd; sudo lsyncd ~/lsync.cfg; tail -f /var/log/lsyncd.log"
 
 alias aatc="ada credentials update --account=884307244203 --provider=conduit --role=IibsAdminAccess-DO-NOT-DELETE --once"
@@ -94,3 +94,4 @@ get_secret() {
         --profile acm-tmp \
         | jq -r ".SecretString"
 }
+. "$HOME/.cargo/env"
