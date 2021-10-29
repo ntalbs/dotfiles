@@ -1,12 +1,12 @@
-;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*- 
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*-
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("Blog Draft"
  (filename . "~/blog-hugo/content/draft/")
- (front-context-string . "scale.md\n  -rw-r")
- (rear-context-string . "96  5 Feb 09:23 ")
- (position . 279))
+ (front-context-string . "fountain-pen.md\n")
+ (rear-context-string . "04 12 Apr  2020 ")
+ (position . 254))
 ("Velociraptor"
  (filename . "/workspace/Personal/Velociraptor/")
  (front-context-string . ".editorconfig\n  ")
