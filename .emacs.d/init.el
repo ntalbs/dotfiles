@@ -70,7 +70,7 @@
  '(package-archives '(("melpa" . "https://melpa.org/packages/")))
  '(package-enable-at-startup nil)
  '(package-selected-packages
-   '(typescript-mode magit queue rust-auto-use clojure-mode racer flycheck-rust cargo flymake-rust tern poly-markdown polymode mmm-mode rust-mode flycheck-plantuml go-mode flycheck-mmark afternoon-theme company-lsp company lsp-java lsp-ui lsp-mode lsp-typescript powerline paredit tiny groovy-mode gradle-mode graphviz-dot-mode plantuml-mode jdecomp iedit duplicate-thing move-dup package-lint duplicate-lines jedi cider exec-path-from-shell markdown-mode json-navigator counsel-projectile projectile find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper yaml-mode which-key visual-regexp-steroids use-package try stylus-mode restclient paredit-menu org-journal neotree move-text markdown-mode+ js2-refactor goto-last-change flycheck fish-mode emmet-mode))
+   '(sws-mode typescript-mode magit queue rust-auto-use clojure-mode racer flycheck-rust cargo flymake-rust tern poly-markdown polymode mmm-mode rust-mode flycheck-plantuml go-mode flycheck-mmark afternoon-theme company-lsp company lsp-java lsp-ui lsp-mode lsp-typescript powerline paredit tiny groovy-mode gradle-mode graphviz-dot-mode plantuml-mode jdecomp iedit duplicate-thing move-dup package-lint duplicate-lines jedi cider exec-path-from-shell markdown-mode json-navigator counsel-projectile projectile find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper yaml-mode which-key visual-regexp-steroids use-package try stylus-mode restclient paredit-menu org-journal neotree move-text markdown-mode+ js2-refactor goto-last-change flycheck fish-mode emmet-mode))
  '(plantuml-default-exec-mode 'executable)
  '(plantuml-executable-path "/usr/local/bin/plantuml")
  '(plantuml-indent-level 2)
@@ -393,7 +393,7 @@ END end of the region."
    '((md-tex  :submode tex-mode     :front "\\$\\$\\%math\n" :back "\\$\\$")
      (md-clj  :submode clojure-mode :front "```clojure\n" :back "```\n")
      (md-lisp :submode lisp-mode    :front "```lisp\n"    :back "```\n")
-     (md-java :submode java-mode    :front "```java\n"    :back "```\n")))
+     (md-java :submode java-mode    :front "```java"    :back "```")))
   (with-no-warnings
     (mmm-add-mode-ext-class 'markdown-mode nil 'md-tex)
     (mmm-add-mode-ext-class 'markdown-mode nil 'md-clj)
@@ -448,13 +448,6 @@ END end of the region."
 
 (use-package company-lsp
   :commands company-lsp)
-
-(use-package avy
-  :bind
-  ("C-:" . avy-goto-char)
-  ("C-'" . avy-goto-char-timer)
-  ("C-c w" . avy-goto-word-1)
-  ("C-c l" . avy-goto-line))
 
 ;; Disable backup
 (setq backup-inhibited t)
