@@ -42,6 +42,7 @@ alias ....="cd ../../.."
 alias cdacm="cd /workspace/ACM"
 alias cdd="cd /workspace/ACM/AVDuotronics/src/AVDuotronics"
 alias cda="cd /workspace/ACM/AVDuotronicsAdmin/src/AVDuotronicsAdmin"
+alias cdn="cd /workplace/ACN/ACNClientNotificationService/src/ACNClientNotificationService"
 
 alias attach-dis="brazil ws env attach --alias ATVDeviceInitializationService"
 alias register_with_aaa="/apollo/env/AAAWorkspaceSupport/bin/register_with_aaa.py"
