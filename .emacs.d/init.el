@@ -94,7 +94,7 @@
  '(text-mode-hook '(visual-line-mode))
  '(tool-bar-mode nil)
  '(tramp-default-method "ssh")
- '(typescript-indent-level 4)
+ '(typescript-indent-level 2)
  '(version-control t))
 
 (custom-set-faces
