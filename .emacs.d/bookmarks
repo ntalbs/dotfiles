@@ -12,19 +12,4 @@
  (front-context-string . "config-gen\n  drw")
  (rear-context-string . "56 22 Nov 09:31 ")
  (position . 232))
-("Velociraptor"
- (filename . "/workspace/Github/Velociraptor/")
- (front-context-string . ".editorconfig\n  ")
- (rear-context-string . "00 25 Feb 20:28 ")
- (position . 293))
-("Stackulus"
- (filename . "/workspace/Github/Stackulus/")
- (front-context-string . ".eslintrc.json\n ")
- (rear-context-string . "89  6 Jan 16:59 ")
- (position . 300))
-("org-refile-last-stored"
- (filename . "~/Documents/orgs/my-project.org")
- (front-context-string . "** Template engi")
- (rear-context-string . "Template engine\n")
- (position . 5134))
 )
