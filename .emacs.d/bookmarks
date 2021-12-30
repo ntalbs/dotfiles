@@ -7,13 +7,18 @@
  (front-context-string . "fountain-pen.md\n")
  (rear-context-string . "04 12 Apr  2020 ")
  (position . 254))
+("rust"
+ (filename . "/workplace/Github/rust/")
+ (front-context-string . "config-gen\n  drw")
+ (rear-context-string . "56 22 Nov 09:31 ")
+ (position . 232))
 ("Velociraptor"
- (filename . "/workspace/Personal/Velociraptor/")
+ (filename . "/workspace/Github/Velociraptor/")
  (front-context-string . ".editorconfig\n  ")
  (rear-context-string . "00 25 Feb 20:28 ")
  (position . 293))
 ("Stackulus"
- (filename . "/workspace/Personal/Stackulus/")
+ (filename . "/workspace/Github/Stackulus/")
  (front-context-string . ".eslintrc.json\n ")
  (rear-context-string . "89  6 Jan 16:59 ")
  (position . 300))
