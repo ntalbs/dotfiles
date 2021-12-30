@@ -28,8 +28,8 @@ alias bb="brazil-build"
 alias bws="brazil ws show"
 alias brb="brazil-recursive-cmd brazil-build"
 
-alias cdp="cd /workplace/Personal"
-alias cdr="cd /workplace/Personal/rust"
+alias cdp="cd /workplace/Github"
+alias cdr="cd /workplace/Github/rust"
 alias cdis="cd /workplace/DIS/src/ATVDeviceInitializationService"
 
 alias cd..="cd .."
@@ -97,3 +97,4 @@ get_secret() {
         | jq -r ".SecretString"
 }
 . "$HOME/.cargo/env"
+export JAVA_TOOLS_OPTIONS="-Dlog4j2.formatMsgNoLookups=true"
