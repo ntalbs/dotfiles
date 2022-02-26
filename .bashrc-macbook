@@ -16,7 +16,15 @@ MY_BIN=~/bin
 AC_DEV_TOOL_BIN=/workplace/ACDevTooling/bin
 CARGO_BIN=$HOME/.cargo/bin
 TOOLBOX_BIN=$HOME/.toolbox/bin
-export PATH=$MY_BIN:$CARGO_BIN:$TOOLBOX_BIN:$AC_DEV_TOOL_BIN:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$MY_BIN:$CARGO_BIN:$TOOLBOX_BIN:$AC_DEV_TOOL_BIN:/usr/local/bin:/usr/local/sbin:/workplace/devtools/src/ATVAndroidDevTools/gradle/scripts:$PATH
+
+export JAVA8_HOME=/usr/local/Cellar/openjdk@8/1.8.0+312/libexec/openjdk.jdk/Contents/Home
+export JAVA11_HOME=/usr/local/Cellar/openjdk@11/11.0.12/libexec/openjdk.jdk/Contents/Home
+export JAVA17_HOME=/usr/local/Cellar/openjdk/17.0.2/libexec/openjdk.jdk/Contents/Home
+
+alias java8="export JAVA_HOME=$JAVA8_HOME"
+alias java11="export JAVA_HOME=$JAVA11_HOME"
+alias java17="export JAVA_HOME=$JAVA17_HOME"
 
 # alias
 alias ls="exa -F"
@@ -98,3 +106,7 @@ get_secret() {
 }
 . "$HOME/.cargo/env"
 export JAVA_TOOLS_OPTIONS="-Dlog4j2.formatMsgNoLookups=true"
+
+
+# Android
+export ANDROID_HOME=/Users/seongjun/Library/Android/sdk
