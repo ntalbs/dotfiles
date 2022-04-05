@@ -4,6 +4,9 @@
 
 ;;; Code:
 
+;; Hide toolbar
+(tool-bar-mode -1)
+
 ;; Enter fullscreen mode
 (toggle-frame-fullscreen)
 
@@ -49,6 +52,7 @@
  '(kept-old-versions 2)
  '(lsp-ui-doc-border "gray55")
  '(lua-indent-level 2)
+ '(magit-refresh-status-buffer nil)
  '(markdown-enable-math t)
  '(markdown-indent-on-enter nil)
  '(markdown-list-indent-width 2)
@@ -80,7 +84,6 @@
  '(python-shell-interpreter "python3")
  '(recentf-exclude '(".*/\\.emacs\\.d\\/elpa/.*el"))
  '(recentf-max-saved-items 200)
- '(rust-indent-offset 2)
  '(safe-local-variable-values '((flycheck-disabled-checkers . javascript-standard)))
  '(scroll-bar-mode nil)
  '(shell-file-name "/bin/bash")
@@ -141,12 +144,14 @@
 (define-key global-map (kbd "s-=") 'text-scale-increase)
 (define-key global-map (kbd "s--") 'text-scale-decrease)
 (defun text-scale-default ()
+  "Scale to default."
   (interactive)
   (text-scale-adjust 0))
 (define-key global-map (kbd "s-0") 'text-scale-default)
 
 (defun next-user-buffer ()
-  "Switch to the next user buffer in cyclic order. User buffers are those not starting with *."
+  "Switch to the next user buffer in cyclic order.
+User buffers are those not starting with *."
   (interactive)
   (next-buffer)
   (let ((i 0) (buf-cnt (length (buffer-list))))
@@ -154,7 +159,8 @@
       (setq i (1+ i)) (next-buffer) )))
 
 (defun previous-user-buffer ()
-  "Switch to the previous user buffer in cyclic order. User buffers are those not starting with *."
+  "Switch to the previous user buffer in cyclic order.
+User buffers are those not starting with *."
   (interactive)
   (previous-buffer)
   (let ((i 0) (buf-cnt (length (buffer-list))))
@@ -225,6 +231,7 @@ END end of the region."
 
 ;; insert date
 (defun insert-date ()
+  "Insert date."
   (interactive)
   (with-no-warnings
     (require 'org)
