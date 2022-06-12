@@ -7,7 +7,7 @@ function setKeyLayoutToUs()
   hs.keycodes.currentSourceID("com.apple.keylayout.US")
 end
 
-hs.window.filter.new{'Emacs', 'iTerm2'}:subscribe(
+hs.window.filter.new{'Emacs', 'iTerm2', 'Warp'}:subscribe(
   hs.window.filter.windowFocused,
   function()
     setKeyLayoutToUs()
