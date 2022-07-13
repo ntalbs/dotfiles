@@ -101,7 +101,9 @@
  '(tool-bar-mode nil)
  '(tramp-default-method "ssh")
  '(typescript-indent-level 2)
- '(version-control t))
+ '(version-control t)
+ '(vr/command-python
+   "python3 /Users/seongjun/.emacs.d/elpa/visual-regexp-steroids-20170222.253/regexp.py"))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
