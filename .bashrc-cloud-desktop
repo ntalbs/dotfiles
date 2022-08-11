@@ -30,19 +30,7 @@ alias b="brazil"
 alias bb="brazil-build"
 alias bws="brazil ws show"
 
-alias cdis="cd /workspace/DIS/src/ATVDeviceInitializationService"
-alias cdisa="cd /apollo/env/ATVDeviceInitializationService"
-alias cdisal="cd /apollo/env/ATVDeviceInitializationService/var/output/logs"
-
 alias cd..="cd .."
 alias ..="cd .. "
 alias ...="cd ../.."
 alias ....="cd ../../.."
-
-alias cdacm="cd /workspace/ACM"
-alias cdd="cd /workspace/ACM/AVDuotronics/src/AVDuotronics"
-alias cda="cd /workspace/ACM/AVDuotronicsAdmin/src/AVDuotronicsAdmin"
-alias cdn="cd /workplace/ACN/ACNClientNotificationService/src/ACNClientNotificationService"
-
-alias attach-dis="brazil ws env attach --alias ATVDeviceInitializationService"
-alias register_with_aaa="/apollo/env/AAAWorkspaceSupport/bin/register_with_aaa.py"

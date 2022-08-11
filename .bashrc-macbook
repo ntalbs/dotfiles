@@ -38,17 +38,12 @@ alias brb="brazil-recursive-cmd brazil-build"
 
 alias cdp="cd /workplace/Github"
 alias cdr="cd /workplace/Github/rust"
-alias cdis="cd /workplace/DIS/src/ATVDeviceInitializationService"
 
 alias cd..="cd .."
 alias ..="cd .. "
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
-alias cdacm="cd /workplace/ACM"
-alias cdd="cd /workplace/ACM/AVDuotronics/src/AVDuotronics"
-alias cda="cd /workplace/ACM/AVDuotronicsAdmin/src/AVDuotronicsAdmin"
-alias cdn="cd /workplace/ACN/ACNClientNotificationService/src/ACNClientNotificationService"
 alias lsync="sudo killall lsyncd; sudo lsyncd ~/lsync.cfg; tail -f /var/log/lsyncd.log"
 
 alias aatc="ada credentials update --account=884307244203 --provider=conduit --role=IibsAdminAccess-DO-NOT-DELETE --once"
