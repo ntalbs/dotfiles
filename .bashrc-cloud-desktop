@@ -34,3 +34,5 @@ alias cd..="cd .."
 alias ..="cd .. "
 alias ...="cd ../.."
 alias ....="cd ../../.."
+
+alias cdf="cd /workspace/CloudFront"
