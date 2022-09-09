@@ -36,3 +36,4 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 
 alias cdf="cd /workspace/CloudFront"
+alias cdn="cd /workspace/CloudFront/EdgeNginx/src/EdgeNginx"
