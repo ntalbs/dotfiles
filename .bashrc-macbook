@@ -56,6 +56,3 @@ alias bu="brew update; brew upgrade; brew cleanup; brew doctor"
 . "$HOME/.cargo/env"
 export JAVA_TOOLS_OPTIONS="-Dlog4j2.formatMsgNoLookups=true"
 
-
-# Android
-export ANDROID_HOME=/Users/seongjun/Library/Android/sdk
