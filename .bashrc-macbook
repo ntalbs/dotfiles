@@ -47,8 +47,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 
 alias lsync="sudo killall lsyncd; sudo lsyncd ~/lsync.cfg; tail -f /var/log/lsyncd.log"
-
-alias aatc="ada credentials update --account=884307244203 --provider=conduit --role=IibsAdminAccess-DO-NOT-DELETE --once"
+alias aatc="ada credentials update --account=864661773271 --provider=isengard --role=Admin --once"
 
 # brew
 alias bu="brew update; brew upgrade; brew cleanup; brew doctor"
