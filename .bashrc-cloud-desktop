@@ -22,7 +22,8 @@ ENV_IMPROVEMENT_BIN=/apollo/env/envImprovement/bin
 export PATH=$TOOLBOX_BIN:$AMAZON_AWS_CLI_BIN:$PATH:$ENV_IMPROVEMENT_BIN
 
 alias k="kinit -f"
-alias kmw="kinit -f && mwinit -o"
+alias m="mwinit -s -o"
+alias km="k && m"
 
 alias sam='. ~/.samdev.env && brazil-build-tool-exec sam'
 
