@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+
+ssh -t dev 'tmux -CC attach -t edge'
