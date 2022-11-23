@@ -1,3 +1,9 @@
 #! /usr/bin/env bash
 
 ssh -t dev 'tmux -CC attach -t edge'
+
+if [ $? != 0 ]; then
+    clear
+    echo "Couldn't find tmux session. Creating a new session..."
+    ssh -t dev 'tmux -CC new -s edge'
+fi
