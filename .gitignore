@@ -19,6 +19,7 @@ elpa
 /.emacs.d/tramp
 /.emacs.d/transient/
 /.emacs.d/tutorial
+/.emacs.d/url/
 *.elc
 *.eld
 /.lein/repl-history
