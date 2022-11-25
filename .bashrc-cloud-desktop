@@ -19,7 +19,7 @@ export PS1="cloud-dsktop-seongjun ${GREEN}\w${YELLOW}\$(parse_git_branch)${RESET
 TOOLBOX_BIN=$HOME/.toolbox/bin
 AMAZON_AWS_CLI_BIN=/apollo/env/AmazonAwsCli/bin
 ENV_IMPROVEMENT_BIN=/apollo/env/envImprovement/bin
-export PATH=$TOOLBOX_BIN:$AMAZON_AWS_CLI_BIN:$PATH:$ENV_IMPROVEMENT_BIN
+export PATH=$TOOLBOX_BIN:$AMAZON_AWS_CLI_BIN:$PATH:$ENV_IMPROVEMENT_BIN:~/.local/bin
 
 alias k="kinit -f"
 alias m="mwinit -s -o"
