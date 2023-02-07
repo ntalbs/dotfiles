@@ -38,3 +38,5 @@
   first-run = false
 [magit]
   hideCampaign = true
+[init]
+  defaultBranch = main
