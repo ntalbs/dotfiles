@@ -16,6 +16,12 @@ parse_git_branch() {
 }
 export PS1="cloud-dsktop-seongjun ${GREEN}\w${YELLOW}\$(parse_git_branch)${RESET} > "
 
+# ssh-add
+ssh-add() {
+    eval `ssh-agent -s`
+    /usr/bin/ssh-add
+}
+
 TOOLBOX_BIN=$HOME/.toolbox/bin
 AMAZON_AWS_CLI_BIN=/apollo/env/AmazonAwsCli/bin
 ENV_IMPROVEMENT_BIN=/apollo/env/envImprovement/bin
