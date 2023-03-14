@@ -45,5 +45,4 @@ alias ....="cd ../../.."
 
 alias ngx-clean="killall ld-linux-x86-64"
 
-alias cdf="cd /workspace/CloudFront"
-alias cdn="cd /workspace/CloudFront/EdgeNginx/src/EdgeNginx"
+alias cdn="cd ~/ws//EdgeNginx/src/EdgeNginx"
