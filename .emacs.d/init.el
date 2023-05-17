@@ -81,7 +81,7 @@
  '(package-archives '(("melpa-stable" . "https://stable.melpa.org/packages/")))
  '(package-enable-at-startup nil)
  '(package-selected-packages
-   '(rust-mode dockerfile-mode rustic sws-mode typescript-mode magit queue rust-auto-use clojure-mode racer flycheck-rust cargo flymake-rust tern poly-markdown polymode mmm-mode flycheck-plantuml go-mode flycheck-mmark afternoon-theme company-lsp company lsp-java lsp-ui lsp-mode lsp-typescript powerline paredit tiny groovy-mode gradle-mode graphviz-dot-mode plantuml-mode jdecomp iedit duplicate-thing move-dup package-lint duplicate-lines jedi cider exec-path-from-shell markdown-mode json-navigator counsel-projectile projectile find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper yaml-mode which-key visual-regexp-steroids use-package try stylus-mode restclient paredit-menu org-journal neotree move-text markdown-mode+ js2-refactor goto-last-change flycheck fish-mode emmet-mode))
+   '(rust-mode dockerfile-mode rustic sws-mode typescript-mode magit queue rust-auto-use clojure-mode racer flycheck-rust cargo flymake-rust tern poly-markdown polymode mmm-mode flycheck-plantuml go-mode flycheck-mmark afternoon-theme company-lsp company lsp-java lsp-ui lsp-mode lsp-typescript powerline paredit tiny groovy-mode gradle-mode graphviz-dot-mode plantuml-mode jdecomp iedit duplicate-thing move-dup package-lint duplicate-lines cider exec-path-from-shell markdown-mode json-navigator counsel-projectile projectile find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper yaml-mode which-key visual-regexp-steroids use-package try stylus-mode restclient paredit-menu org-journal neotree move-text markdown-mode+ js2-refactor goto-last-change flycheck fish-mode emmet-mode))
  '(plantuml-default-exec-mode 'executable)
  '(plantuml-executable-path "/usr/local/bin/plantuml")
  '(plantuml-indent-level 2)
@@ -332,11 +332,6 @@ END end of the region."
   (define-key company-active-map (kbd "C-p") 'company-select-previous)
   (define-key company-active-map (kbd "C-n") 'company-select-next)
   (add-to-list 'company-backends 'company-tern))
-
-(use-package jedi
-  :config
-  (add-hook 'python-mode-hook 'jedi:setup)
-  (setq jedi:complete-on-dot t))
 
 (use-package rust-mode
   :hook ((rust-mode . flycheck-rust-setup)
