@@ -438,10 +438,6 @@ END end of the region."
 
 (use-package groovy-mode)
 
-(use-package gradle-mode
-  :config
-  (gradle-mode t))
-
 (use-package tiny
   :config
   (with-no-warnings
