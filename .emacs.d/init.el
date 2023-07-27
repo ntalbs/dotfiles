@@ -403,12 +403,14 @@ END end of the region."
    '((md-tex  :submode tex-mode     :front "\\$\\$\\%math\n" :back "\\$\\$")
      (md-clj  :submode clojure-mode :front "```clojure\n" :back "```\n")
      (md-lisp :submode lisp-mode    :front "```lisp\n"    :back "```\n")
-     (md-java :submode java-mode    :front "```java"    :back "```")))
+     (md-java :submode java-mode    :front "```java\n"    :back "```\n")
+     (md-rust :submode rust-mode    :front "```rust\n"    :back "```\n")))
   (with-no-warnings
     (mmm-add-mode-ext-class 'markdown-mode nil 'md-tex)
     (mmm-add-mode-ext-class 'markdown-mode nil 'md-clj)
     (mmm-add-mode-ext-class 'markdown-mode nil 'md-lisp)
-    (mmm-add-mode-ext-class 'markdown-mode nil 'md-java)))
+    (mmm-add-mode-ext-class 'markdown-mode nil 'md-java)
+    (mmm-add-mode-ext-class 'markdown-mode nil 'md-rust)))
 
 (use-package goto-last-change
   :bind ("C-." . goto-last-change))
