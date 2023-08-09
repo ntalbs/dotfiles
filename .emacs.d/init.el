@@ -329,7 +329,7 @@ END end of the region."
   (global-company-mode)
   (define-key company-active-map (kbd "C-p") 'company-select-previous)
   (define-key company-active-map (kbd "C-n") 'company-select-next)
-  (add-to-list 'company-backends 'company-tern))
+  (add-to-list 'company-backends 'company-dabbrev-code))
 
 (use-package rust-mode
   :hook ((rust-mode . flycheck-rust-setup)
