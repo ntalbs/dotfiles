@@ -221,7 +221,7 @@ User buffers are those not starting with *."
 (global-set-key (kbd "s-<backspace>") 'delete-to-line-start)
 
 (defun join-lines-in-region (beg end)
-  "Apply 'join-line' over region.
+  "Apply \\='join-line over region.
 BEG beginning of the region.
 END end of the region."
   (interactive "r")
