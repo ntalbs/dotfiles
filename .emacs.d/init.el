@@ -78,7 +78,7 @@
      ("IN-PROGRESS" . "blue")
      ("LATER" . "DarkOrange1")))
  '(org-todo-keywords '((sequence "TODO" "IN-PROGRESS" "PENDING" "DONE")))
- '(package-archives '(("melpa-stable" . "https://stable.melpa.org/packages/")))
+ '(package-archives '(("melpa" . "https://melpa.org/packages/")))
  '(package-enable-at-startup nil)
  '(package-selected-packages
    '(rust-mode dockerfile-mode rustic sws-mode typescript-mode magit queue rust-auto-use clojure-mode racer flycheck-rust cargo flymake-rust tern poly-markdown polymode mmm-mode flycheck-plantuml go-mode flycheck-mmark afternoon-theme company-lsp company lsp-java lsp-ui lsp-mode lsp-typescript powerline paredit tiny groovy-mode gradle-mode graphviz-dot-mode plantuml-mode jdecomp iedit duplicate-thing move-dup package-lint duplicate-lines cider exec-path-from-shell markdown-mode json-navigator counsel-projectile projectile find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper yaml-mode which-key visual-regexp-steroids use-package try stylus-mode restclient paredit-menu org-journal neotree move-text markdown-mode+ js2-refactor goto-last-change flycheck fish-mode emmet-mode))
@@ -261,8 +261,6 @@ END end of the region."
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
-
-(use-package try)
 
 (use-package which-key
   :config (which-key-mode))
