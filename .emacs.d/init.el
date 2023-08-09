@@ -436,24 +436,10 @@ END end of the region."
 
 (use-package graphviz-dot-mode)
 
-(use-package groovy-mode)
-
 (use-package tiny
   :config
   (with-no-warnings
     (tiny-setup-default)))
-
-(use-package lsp-mode
-  :commands lsp
-  :config
-  :hook ((rust-mode typescript-mode) . lsp))
-
-(use-package lsp-ui
-  :commands lsp-ui-mode
-  :hook ((lsp-mode . lsp-ui-mode)))
-
-(use-package company-lsp
-  :commands company-lsp)
 
 ;; Disable backup
 (setq backup-inhibited t)
