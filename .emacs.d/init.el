@@ -8,7 +8,7 @@
 (tool-bar-mode -1)
 
 ;; Enter fullscreen mode
-(toggle-frame-fullscreen)
+;(toggle-frame-fullscreen)
 
 (package-initialize)
 
@@ -81,7 +81,7 @@
  '(package-archives '(("melpa" . "https://melpa.org/packages/")))
  '(package-enable-at-startup nil)
  '(package-selected-packages
-   '(rust-mode dockerfile-mode rustic sws-mode typescript-mode magit queue rust-auto-use clojure-mode racer flycheck-rust cargo flymake-rust tern poly-markdown polymode mmm-mode flycheck-plantuml go-mode flycheck-mmark afternoon-theme company-lsp company lsp-java lsp-ui lsp-mode lsp-typescript powerline paredit tiny groovy-mode gradle-mode graphviz-dot-mode plantuml-mode jdecomp iedit duplicate-thing move-dup package-lint duplicate-lines cider exec-path-from-shell markdown-mode json-navigator counsel-projectile projectile find-file-in-project web-mode 2048-game expand-region clj-refactor json-mode counsel swiper yaml-mode which-key visual-regexp-steroids use-package try stylus-mode restclient paredit-menu org-journal neotree move-text markdown-mode+ js2-refactor goto-last-change flycheck fish-mode emmet-mode))
+   '(markdown-mode cargo-mode cider company company-lsp counsel counsel-projectile dockerfile-mode duplicate-thing exec-path-from-shell find-file-in-project flycheck flycheck-mmark flycheck-plantuml graphviz-dot-mode iedit ivy json-mode json-navigator lsp-java lsp-typescript magit markdown-mode mmm-mode move-dup move-text neotree org-journal package-lint paredit paredit-menu plantuml-mode poly-markdown polymode powerline projectile queue restclient rust-auto-use rust-mode rustic s stylus-mode swiper sws-mode tern tiny typescript-mode visual-regexp-steroids web-mode yasnippet multiple-cursors yaml-mode))
  '(plantuml-default-exec-mode 'executable)
  '(plantuml-executable-path "/usr/local/bin/plantuml")
  '(plantuml-indent-level 2)
@@ -261,9 +261,6 @@ END end of the region."
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
-
-(use-package which-key
-  :config (which-key-mode))
 
 (use-package projectile
   :config
