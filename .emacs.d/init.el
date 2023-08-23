@@ -81,7 +81,7 @@
  '(package-archives '(("melpa" . "https://melpa.org/packages/")))
  '(package-enable-at-startup nil)
  '(package-selected-packages
-   '(markdown-mode cargo-mode cider company company-lsp counsel counsel-projectile dockerfile-mode duplicate-thing exec-path-from-shell find-file-in-project flycheck flycheck-mmark flycheck-plantuml graphviz-dot-mode iedit ivy json-mode json-navigator lsp-java lsp-typescript magit markdown-mode mmm-mode move-dup move-text neotree org-journal package-lint paredit paredit-menu plantuml-mode poly-markdown polymode powerline projectile queue restclient rust-auto-use rust-mode rustic s stylus-mode swiper sws-mode tern tiny typescript-mode visual-regexp-steroids web-mode yasnippet multiple-cursors yaml-mode))
+   '(flycheck-rust markdown-mode cargo-mode cider company company-lsp counsel counsel-projectile dockerfile-mode duplicate-thing exec-path-from-shell find-file-in-project flycheck flycheck-mmark flycheck-plantuml graphviz-dot-mode iedit ivy json-mode json-navigator lsp-java lsp-typescript magit markdown-mode mmm-mode move-dup move-text neotree org-journal package-lint paredit paredit-menu plantuml-mode poly-markdown polymode powerline projectile queue restclient rust-auto-use rust-mode rustic s stylus-mode swiper sws-mode tern tiny typescript-mode visual-regexp-steroids web-mode yasnippet multiple-cursors yaml-mode))
  '(plantuml-default-exec-mode 'executable)
  '(plantuml-executable-path "/usr/local/bin/plantuml")
  '(plantuml-indent-level 2)
@@ -419,11 +419,6 @@ END end of the region."
 (use-package powerline
   :config
   (powerline-default-theme))
-
-(use-package jdecomp
-  :config
-  (jdecomp-mode 1)
-  (setq jdecomp-decompiler-paths '((cfr . "/usr/local/Cellar/cfr-decompiler/0.132/libexec/cfr_0_132.jar"))))
 
 (use-package plantuml-mode
   :config
