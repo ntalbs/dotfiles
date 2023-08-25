@@ -353,8 +353,6 @@ END end of the region."
   :config
   (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode)))
 
-(use-package js2-refactor)
-
 (use-package web-mode
   :config
   (setq web-mode-markup-indent-offset 2)
