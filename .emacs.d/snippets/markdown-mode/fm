@@ -2,9 +2,11 @@
 # --
 ---
 title: "$1"
-date: $2
-tags: ["$3"]
-slug: "$4"
+description: $2
+keywords: [$3]
+date: $4
+tags: ["$5"]
+slug: "$6"
 draft: true
 ---
 $0
