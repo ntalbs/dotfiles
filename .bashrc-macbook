@@ -50,6 +50,7 @@ alias ....="cd ../../.."
 alias lsync="sudo killall lsyncd; sudo lsyncd ~/lsync.cfg; tail -f /var/log/lsyncd.log"
 alias ada_seongjun="ada credentials update --account=864661773271 --provider=isengard --role=Admin"
 alias ada_lmec="ada credentials update --account=476683275086 --provider=isengard --role=Admin"
+alias ada_validator="ada credentials update --account=406674773778 --provider=isengard --role=ReadOnly"
 
 # brew
 alias bu="brew update; brew upgrade; brew cleanup; brew doctor"
