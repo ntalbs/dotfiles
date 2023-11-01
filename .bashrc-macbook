@@ -33,7 +33,7 @@ alias ls="exa -F"
 alias cat=bat
 
 alias k="kinit -f"
-alias m="mwinit --aea"
+alias m="mwinit --ssh-public-key ~/.ssh/id_ecdsa.pub"
 alias b="brazil"
 alias bb="brazil-build"
 alias bws="brazil ws show"
