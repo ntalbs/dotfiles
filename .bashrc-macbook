@@ -39,8 +39,17 @@ alias bb="brazil-build"
 alias bws="brazil ws show"
 alias brb="brazil-recursive-cmd brazil-build"
 
-alias cdp="cd /workplace/Github"
+#alias cdp="cd /workplace/Github"
 alias cdr="cd /workplace/Github/rust"
+
+alias cdb="cd /workplace/FoodTasting/src/EdgeFeatureParcelBuilder/"
+alias cdp="cd /workplace/FoodTasting/src/EdgeFeatureParcelPusher/"
+alias cdv="cd /workplace/FoodTasting/src/EdgeParcelValidatorLib/"
+alias cds="cd /workplace/FoodTasting/src/EdgeFeatureParcelService/"
+alias cdo="cd /workplace/FoodTasting/src/EdgeParcelOrchestratorLib/"
+alias cdm="cd /workplace/FoodTasting/src/EdgeFoodTasterStripeMapping/"
+
+alias ssh-dbg="ssh -L 5005:localhost:5005 dev"
 
 alias cd..="cd .."
 alias ..="cd .. "
