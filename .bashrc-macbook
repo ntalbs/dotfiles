@@ -48,6 +48,7 @@ alias cdv="cd /workplace/FoodTasting/src/EdgeParcelValidatorLib/"
 alias cds="cd /workplace/FoodTasting/src/EdgeFeatureParcelService/"
 alias cdo="cd /workplace/FoodTasting/src/EdgeParcelOrchestratorLib/"
 alias cdm="cd /workplace/FoodTasting/src/EdgeFoodTasterStripeMapping/"
+alias cdob="cd /workplace/CurrentBuilder/src/EdgeParcelBuilder"
 
 alias ssh-dbg="ssh -L 5005:localhost:5005 dev"
 
@@ -60,7 +61,7 @@ alias lsync="sudo killall lsyncd; sudo lsyncd ~/lsync.cfg; tail -f /var/log/lsyn
 alias ada_seongjun="ada credentials update --account=864661773271 --provider=isengard --role=Admin"
 alias ada_lmec="ada credentials update --account=476683275086 --provider=isengard --role=Admin"
 alias ada_validator="ada credentials update --account=406674773778 --provider=isengard --role=ReadOnly"
-
+alias ada_fd_gamma="ada credentials update --account=248358725730 --provider=isengard --role=Admin"
 # brew
 alias bu="brew update; brew upgrade; brew cleanup; brew doctor"
 
