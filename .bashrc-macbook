@@ -50,7 +50,7 @@ alias cdo="cd /workplace/FoodTasting/src/EdgeParcelOrchestratorLib/"
 alias cdm="cd /workplace/FoodTasting/src/EdgeFoodTasterStripeMapping/"
 alias cdob="cd /workplace/CurrentBuilder/src/EdgeParcelBuilder"
 
-alias ssh-dbg="ssh -L 5005:localhost:5005 dev"
+alias ssh-dbg="ssh -L 3000:localhost:3000 -L 5005:localhost:5005 dev"
 
 alias cd..="cd .."
 alias ..="cd .. "
